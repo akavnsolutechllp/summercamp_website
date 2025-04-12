@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@font-face {
+  font-family:'Nabana Shadow Bold';
+  src: url('/fonts/nabana.shadow-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family:'Switzal Regular';
+  src: url('/fonts/switzal.regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family:'Montserrat Regular';
+  src: url('/fonts/montserrat.regular.ttf') format('truetype');
+}
+
+.font-nabana{
+  font-family: Nabana Shadow Bold;
+}
+
+.font-switzal{
+  font-family: Switzal Regular;
+}
+
+.font-montserrat{
+  font-family: Montserrat Regular
+}
