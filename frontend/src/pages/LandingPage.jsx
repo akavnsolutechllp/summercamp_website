@@ -18,10 +18,10 @@ const LandingPage = () => {
   const birdY = useTransform(scrollYProgress, [0, 0.5], [0, -300]); // slight up
 
   //Sun movement based on scroll
-  const sunY = useTransform(scrollYProgress, [0,0.5],[0,300])
+  const sunY = useTransform(scrollYProgress, [0,0.5],[0,300]);
 
   return (
-    <div className='min-h-[74vh] xl:min-h-[90vh] 2xl:min-h-[85vh] w-full flex flex-col justify-center items-center bg-gradient-to-t from-[#4fa3f7] via-[#4fc2f7d8] to-[#4fc2f746] text-[#ffffff] relative py-4'>
+    <div className='min-h-[74vh] xl:min-h-[90vh] 2xl:min-h-[85vh] w-full flex flex-col justify-center items-center bg-gradient-to-t from-[#4fa3f7] via-[#4fc2f7d8] to-[rgba(43,78,255,0.84)] text-[#ffffff] relative py-4'>
 
       <motion.div
         initial={{ opacity: 0, y: 500 }}
@@ -38,7 +38,7 @@ const LandingPage = () => {
         transition={{ duration: 2 }}
         src={cloud}
         alt="clouds"
-        className='w-1/2 2xl:w-1/5 xl:w-1/4 absolute top-20 left-4'
+        className='w-1/2 md:w-1/3 2xl:w-1/5 xl:w-1/4 absolute top-20 left-4'
       />
 
       <motion.img
@@ -48,23 +48,23 @@ const LandingPage = () => {
         transition={{ duration: 2 }}
         src={cloud2}
         alt="clouds"
-        className='w-1/3 2xl:w-1/6 xl:w-1/4 absolute bottom-32 2xl:bottom-64 right-1'
+        className='w-1/3 md:w-1/4 2xl:w-1/6 xl:w-1/4 absolute bottom-32 2xl:bottom-64 right-1'
       />
 
-<motion.img
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  style={{ x: birdX, y: birdY }}
-  transition={{ duration: 2, stiffness: 50 }}
-  src={birds}
-  alt="birds"
-  className='w-1/2 2xl:w-1/5 xl:w-1/4 absolute bottom-20 xl:left-32 2xl:left-44'
-/>
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          style={{ x: birdX, y: birdY }}
+          transition={{ duration: 2, stiffness: 50 }}
+          src={birds}
+          alt="birds"
+          className='w-1/2 2xl:w-1/5 xl:w-1/4 absolute bottom-20 xl:left-32 2xl:left-44'
+        />
 
       <img
         src={tree}
         alt="trees"
-        className='w-1/4 2xl:w-1/10 xl:w-1/8 absolute -bottom-2 2xl:-bottom-6 xl:-bottom-8 2xl:left-20 left-4'
+        className='w-1/4 md:w-1/6 2xl:w-1/10 xl:w-1/8 absolute -bottom-2 2xl:-bottom-6 xl:-bottom-8 2xl:left-20 left-4'
       />
 
       <div className='h-auto w-full flex flex-col justify-center items-center gap-2'>
@@ -72,7 +72,7 @@ const LandingPage = () => {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className='text-[12vw] 2xl:text-[6vw] xl:text-[7vw] font-nabana z-10 mt-4 2xl:mt-8'
+          className='text-[12vw] md:text-[8vw] 2xl:text-[6vw] xl:text-[7vw] font-nabana z-10 mt-4 2xl:mt-8'
         >
           Summer Camp
         </motion.h1>
@@ -81,7 +81,7 @@ const LandingPage = () => {
           initial={{ opacity: 0, y: -70 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className='text-[10vw] 2xl:text-[5vw] xl:text-[6vw] font-nabana -mt-2'
+          className='text-[10vw] md:text-[6vw] 2xl:text-[5vw] xl:text-[6vw] font-nabana -mt-2'
         >
           2025
         </motion.h2>
@@ -90,7 +90,7 @@ const LandingPage = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, delay: 2, stiffness: 50 }}
-          className='bg-[#FFC107] px-6 py-1 rounded-full font-switzal text-[8vw] xl:text-[3vw] 2xl:text-[1.8vw] text-white drop-shadow-2xl border border-white mt-4'
+          className='bg-[#FFC107] px-6 py-1 rounded-full font-switzal text-[8vw] xl:text-[3vw] md:text-[5.5vw] 2xl:text-[1.8vw] text-white drop-shadow-2xl border border-white mt-4'
         >
           Register Now
         </motion.button>
