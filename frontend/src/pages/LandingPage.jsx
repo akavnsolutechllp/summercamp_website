@@ -65,11 +65,11 @@ const LandingPage = () => {
       id="home"
       className="min-h-screen h-auto bg-[#283353] w-full flex flex-col justify-center items-center relative py-4 overflow-hidden"
     >
-      <img src={Logo} alt="" className="w-1/2 bg-white drop-shadow-lg rounded-full xl:absolute xl:top-10 xl:left-4 2xl:top-24 2xl:left-2 xl:w-1/8 2xl:w-[10%]" />
+      <img src={Logo} alt="" className="hidden bg-white drop-shadow-lg rounded-full xl:block xl:absolute xl:top-10 xl:left-4 2xl:top-24 2xl:left-2 xl:w-1/8 2xl:w-[10%]" />
       
       <div className="h-auto w-full flex flex-col justify-center items-center p-2">
         {/* <img src={smallrainbow} alt="" className='absolute w-full h-full top-36 opacity-25 xl:hidden' /> */}
-        <div className="h-full w-full flex flex-col justify-center items-center gap-3 xl:gap-5 mt-8 lg:mt-8 xl:mt-0 z-20 ">
+        <div className="h-full w-full flex flex-col justify-center items-center gap-3 xl:gap-5 lg:mt-8 xl:mt-0 z-20 ">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -88,13 +88,12 @@ const LandingPage = () => {
               stiffness: 80,
               type: spring,
             }}
-            className="font-montserrat text-white text-justify tracking-tighter xl:tracking-normal xl:text-center xl:text-lg text-base 2xl:text-center 2xl:tracking-tight p-2 lg:mt-0 md:w-[80%] lg:w-[60%] xl:w-[80%]"
+            className="font-montserrat text-white text-justify tracking-tight xl:tracking-normal xl:text-center xl:text-lg text-base 2xl:text-center 2xl:tracking-tight p-2 lg:mt-0 md:w-[80%] lg:w-[60%] xl:w-[80%]"
           >
-            Join our exciting STEM Summer Camp where curiosity meets innovation!
+            Join our exciting STEM Summer Camps where curiosity meets innovation!
             Packed with hands-on science experiments, tech challenges, and
             creative engineering projects, we’ve got everything to spark your
-            child’s imagination and make this summer a memorable one—rain or
-            shine!
+            child’s imagination and make this summer a memorable one!
           </motion.p>
           <motion.button
             onClick={handleRegister}

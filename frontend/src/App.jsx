@@ -6,6 +6,8 @@ import Payment from './pages/Payment';
 import Programs from './pages/Programs';
 import Registration from './pages/Registration';
 import Liability from './pages/Liability';
+import About from './pages/AboutUs';
+import AboutUs2 from './pages/AboutUs2';
 
 
 const App = () => {
@@ -24,6 +26,7 @@ requestAnimationFrame(raf);
     <Router>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/aboutus' element={<AboutUs2/>} />
         <Route path='/payment' element={<Payment/>} />
         <Route path='/programs' element={<Programs/>} />
         <Route path='/register' element={<Registration/>} />

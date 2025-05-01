@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss()],
   server: {
     allowedHosts: [
-      'term-cir-upload-greeting.trycloudflare.com'
+      'standings-rarely-ext-criminal.trycloudflare.com'
     ]
   }
 })

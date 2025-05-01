@@ -6,10 +6,10 @@ import { motion } from 'framer-motion'
 import smallrainbow from '../assets/small-rainbow2.png'
 import stem from '../assets/stem.jpg';
 import inventor from '../assets/inventors.jpg';
-import robot from '../assets/robot.jpg';
+import robo from '../assets/robot.jpg';
 import circuit from '../assets/circuit.jpg';
-import eco from '../assets/eco_explorer.jpg'
-import mini from '../assets/mini_stem.jpg'
+import eco from '../assets/eco_explorer.jpg';
+import mini from '../assets/mini_stem.jpg';
 
 import bg from '../assets/cards-bg.jpeg'
 
@@ -17,6 +17,8 @@ import vect17 from '../assets/17.png';
 
 import map from '../assets/MAP.png';
 import location from '../assets/location.png';
+import Navbar from '../Components/Navbar';
+import Menu from '../Components/Menu';
 
 const Programs = () => {
 
@@ -39,213 +41,250 @@ const Programs = () => {
   };
 
   return (
-    <div className='min-h-screen h-auto w-full bg-gradient-to-b from-[#FF0066]/10 flex flex-col justify-start items-center gap-2 p-4' >
-        <h2 className='font-montserrat font-semibold bg-white border border-[#4281FF] p-2 rounded-lg text-6xl text-[#4281FF]'>Programs</h2>
-        <div className='h-auto w-full 2xl:w-[80%] flex flex-col 2xl:grid 2xl:grid-cols-3 justify-center items-center gap-8 mt-4'>
-            <motion.div 
-             variants={cardVariant}
-             initial="hidden"
-             whileInView="visible"
-             viewport={{ once: true }}
-            className='h-auto w-full 2xl:h-[60vh] flex flex-col justify-center items-center gap-2 z-10 border border-[#FE1219]/20 shadow-xl shadow-black/30 rounded-2xl p-4 relative overflow-hidden' >
-              <img src={bg} alt="" className='absolute w-full h-full object-cover z-10 opacity-40' />
-                <motion.h1 custom={0} variants={textVariant} className='font-montserrat font-semibold text-4xl text-white bg-[#FE1219] p-1 rounded-lg z-20'>Stem Builders</motion.h1>
-                <motion.img  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.5 }} src={stem} alt="" className='rounded-lg z-20 2xl:w-[60%]' />
-                <motion.h3 custom={1} variants={textVariant} className='font-montserrat text-[#FE1219] bg-white border p-2 rounded-lg text-center text-xl mt-2 z-20'>Engineering & Structures</motion.h3>
-                <motion.p custom={2} variants={textVariant} className='font-montserrat text-sm text-black border bg-white p-2 rounded-lg text-center z-20'> Put your engineering skills-to the text as you desig-and build towers,bridges, and more! </motion.p>
-            </motion.div>
-            <motion.div 
-            variants={cardVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className='h-auto w-full 2xl:h-[60vh] flex flex-col justify-center items-center gap-2 z-10 border border-[#FDA216]/20 shadow-xl shadow-black/30 rounded-2xl p-4 relative overflow-hidden' >
-                 <img src={bg} alt="" className='absolute w-full h-full object-cover z-10 opacity-40' />
-                <motion.h1 custom={0} variants={textVariant} className='font-montserrat font-semibold text-4xl text-white bg-[#FDA216] p-1 rounded-lg text-center z-20'>Inventor’s Workshop</motion.h1>
-                <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} src={inventor} alt="" className='rounded-lg z-20 2xl:w-[60%]' />
-                <motion.h3 custom={1} variants={textVariant} className='font-montserrat text-[#FDA216] bg-white border py-2 px-8 rounded-lg text-center text-xl mt-2 z-20'>Design Thinking & Problem-Solving</motion.h3>
-                <motion.p custom={2} variants={textVariant} className='font-montserrat text-sm text-black border bg-white p-2 rounded-lg text-center z-20'> Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations. </motion.p>
-            </motion.div>
-            <motion.div 
-             variants={cardVariant}
-             initial="hidden"
-             whileInView="visible"
-             viewport={{ once: true }}
-             className='h-auto w-full 2xl:h-[60vh] flex flex-col justify-center items-center gap-2 z-10 border border-[#F60E9A]/20 shadow-xl shadow-black/30 rounded-2xl p-4 relative overflow-hidden' >
-                <img src={bg} alt="" className='absolute w-full h-full object-cover z-10 opacity-40' />
-                <motion.h1 custom={0} variants={textVariant} className='font-montserrat font-semibold text-4xl text-white bg-[#F60E9A] p-1 rounded-lg text-center z-20'>Robo Coding Camp</motion.h1>
-                <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} src={robot} alt="" className='rounded-lg z-20 2xl:w-[60%]' />
-                <motion.h3 custom={1} variants={textVariant} className='font-montserrat text-[#F60E9A] border bg-white py-2 px-12 text-center rounded-lg text-xl mt-2 z-20'>Coding, Robotics, and Circuits</motion.h3>
-                <motion.p custom={2} variants={textVariant} className='font-montserrat text-sm text-black border bg-white text-center p-2 rounded-lg z-20'> Discover the world of coding and robotics! Learn to program robots and games. </motion.p>
-            </motion.div>
-            <motion.div
-            variants={cardVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }} 
-            className='h-auto w-full 2xl:h-[60vh] flex flex-col justify-center items-center gap-2 z-10 border border-[#2f710b]/20 shadow-xl shadow-black/30 rounded-2xl p-4 relative overflow-hidden' >
-                <img src={bg} alt="" className='absolute w-full h-full object-cover z-10 opacity-40' />
-                <motion.h1 custom={0} variants={textVariant} className='font-montserrat font-semibold text-4xl text-white bg-[#2f710b] p-1 rounded-lg z-20'>Circuit Science</motion.h1>
-                <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} src={circuit} alt="" className='rounded-lg z-20 2xl:w-[60%]' />
-                <motion.h3 custom={1} variants={textVariant} className='font-montserrat text-[#2f710b] bg-white py-2 px-16 border text-center rounded-lg text-xl mt-2 z-20'>Coding, Robotics, and Circuits</motion.h3>
-                <motion.p custom={2} variants={textVariant} className='font-montserrat text-sm text-black bg-white border text-center p-2 rounded-lg z-20'> Discover the world of coding and robotics! Learn to program robots and games. </motion.p>
-            </motion.div>
-            <motion.div 
-            variants={cardVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }} 
-            className='h-auto w-full 2xl:h-[60vh] flex flex-col justify-center items-center gap-2 z-10 border border-[#1290c2]/20 shadow-xl shadow-black/30 rounded-2xl p-4 relative overflow-hidden' >
-                 <img src={bg} alt="" className='absolute w-full h-full object-cover z-10 opacity-40' />
-                <motion.h1 custom={0} variants={textVariant} className='font-montserrat font-semibold p-2 rounded-lg text-center text-4xl text-white bg-[#1290c2] z-20'>Eco Explorers</motion.h1>
-                <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} src={eco} alt="" className='rounded-lg z-20 2xl:w-[60%]' />
-                <motion.h3 custom={1} variants={textVariant} className='font-montserrat text-[#1290c2] bg-white p-2 rounded-lg border text-center text-xl mt-2 z-20'>Environment & Sustainability</motion.h3>
-                <motion.p custom={2} variants={textVariant} className='font-montserrat text-sm text-black bg-white p-2 rounded-lg border text-center rounded-lg z-20'> Discover the wonders of nature! investigace ecosystems, sustainabi-lity, and more. </motion.p>
-            </motion.div>
-            <motion.div 
-            variants={cardVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }} 
-            className='h-auto w-full 2xl:h-[60vh] flex flex-col justify-center items-center gap-2 z-10 border border-[#F60E9A]/20 shadow-xl shadow-black/30 rounded-2xl p-4 relative overflow-hidden' >
-                <img src={bg} alt="" className='absolute w-full h-full object-cover z-10 opacity-40' />
-                <motion.h1 custom={0} variants={textVariant} className='font-montserrat text-3xl text-white bg-[#673190] p-2 rounded-lg text-center z-20'>Mini Makers (STEAM)</motion.h1>
-                <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} src={mini} alt="" className='rounded-lg z-20 2xl:w-[60%]' />
-                <motion.h3 custom={1} variants={textVariant} className='font-montserrat text-[#673190] bg-white p-2 rounded-lg border text-center text-2xl mt-2 z-20'>Science + Art (STEAM)</motion.h3>
-                <motion.p custom={2} variants={textVariant} className='font-montserrat text-sm text-black bg-white p-2 rounded-lg text-center border z-20'> Combine science and art as you create wear-able art, scribbibung machines, and more! </motion.p>
-            </motion.div>
-        </div>
+    <div className='min-h-screen h-auto w-full bg-[#16003E] flex flex-col justify-start items-center pb-2' >
+      <Navbar/>
+      <Menu/>
+      <h2 className="font-gardion text-6xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        Programs
+      </h2>
+      <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[84%] 2xl:w-[70%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 md:gap-8 lg:gap-6 xl:gap-8 gap-4 px-4 py-4 z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{scale:1.02}}
+          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+        >
+          <h1 className="font-gardion text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+            STEM Builders
+          </h1>
+          <div className="h-[40%] w-full flex justify-center items-center z-20">
+            <img src={stem} alt="" className='w-[80%] lg:w-[66%] 2xl:w-[50%]' />
+          </div>
+          <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base 2xl:text-lg font-montserrat  w-full z-20">
+            Engineering & Structures
+          </h3>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center font-montserrat text-sm'>Put your engineering skills-to the text as you desig and build towers, bridges, and more!</h4>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{scale:1.02}}
+          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+        >
+          <h1 className="font-gardion text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+            Inventor’s Workshop
+          </h1>
+          <div className="h-[40%] w-full flex justify-center items-center z-20">
+            <img src={inventor} alt="" className='w-[80%] lg:w-[63%] 2xl:w-[50%]' />
+          </div>
+          <h3 className="text-white bg-[#E31DB0] py-1 px-8 xl:px-12 2xl:px-2 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
+            Design Thinking & Problem-Solving
+          </h3>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center font-montserrat text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{scale:1.02}}
+          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+        >
+          <h1 className="font-gardion text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+            Robo Coding Camp
+          </h1>
+          <div className="h-[40%] w-full flex justify-center items-center z-20">
+            <img src={robo} alt=""  className='w-[80%] lg:w-[63%] 2xl:w-[50%]' />
+          </div>
+          <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
+            Coding, Robotics, and Circuits
+          </h3>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center font-montserrat text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{scale:1.02}}
+          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+        >
+          <h1 className="font-gardion text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+            Circuit Science
+          </h1>
+          <div className="h-[40%] w-full flex justify-center items-center z-20">
+            <img src={circuit} alt="" className='w-[80%] lg:w-[66%] 2xl:w-[70%]' />
+          </div>
+          <h3 className="text-white bg-[#E31DB0] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
+            Electricity & Circuits
+          </h3>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center font-montserrat text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{scale:1.02}}
+         className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+        >
+          <h1 className="font-gardion text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+            Eco Explorers
+          </h1>
+          <div className="h-[40%] w-full flex justify-center items-center z-20">
+            <img src={eco} alt="" className='w-[80%] lg:w-[66%] 2xl:w-[70%]' />
+          </div>
+          <h3 className="text-white bg-[#F79824] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
+            Environment & Sustainability
+          </h3>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center font-montserrat text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{scale:1.02}}
+          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+        >
+          <h1 className="font-gardion text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+            Mini Makers
+          </h1>
+          <div className="h-[40%] w-full flex justify-center items-center z-20">
+            <img src={mini} alt="" className='w-[80%] lg:w-[68%] 2xl:w-[70%]' />
+          </div>
+          <h3 className="text-white bg-[#E31DB0] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
+            Science + Art (STEAM)
+          </h3>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center font-montserrat text-sm'>Combine science and art as you create wear-able art, scribbibung machines, and more!</h4>
+        
+        </motion.div>
+      </motion.div>
         <div className='h-auto w-full flex flex-col justify-center items-center gap-2 mt-4 2xl:mt-12' >
-            <h2 className='font-montserrat font-semibold text-2xl 2xl:text-6xl z-10 bg-[#FE1219] p-2 text-white rounded-lg'>Programs by Location</h2>
-            <div className='h-auto w-full 2xl:w-[80%] flex flex-col 2xl:grid 2xl:grid-cols-3  justify-center items-start font-montserrat shadow-md shadow-black/20 p-2 rounded-lg z-10 gap-8'>
-                
-                <div className='w-full h-auto flex flex-col justify-center items-start border border-black/40 p-2 gap-2 rounded-xl'>
-                <h1 className='text-2xl mb-3'>📍GSMST </h1>
-                <h3 className='text-2xl font-light px-2'>June 2 - June 5</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-white shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1'>Circuit Science</h4>
+        <h2 className="font-gardion text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        Locations
+         </h2>
+            <div className='h-auto w-full xl:w-[74%] 2xl:w-[80%] flex flex-col xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-3  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>
+              
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST </h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 2 - June 5</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start border border-black/40 p-2 gap-2 rounded-xl'>
-                <h1 className='text-2xl mb-3'>📍Northview High School </h1>
-                <h3 className='text-2xl font-light px-2'>June 9 – June 12</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-white shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1'>Circuit Science</h4>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School </h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 9 – June 12</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start border border-black/40 p-2 gap-2 rounded-xl'>
-                <h1 className='text-lg mb-3'>📍North Gwinnett Middle School </h1>
-                <h3 className='text-2xl font-light px-2'>June 16 – June 19</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-white shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1'>Circuit Science</h4>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <h1 className='text-lg mb-3 text-black 2xl:text-white'>📍North Gwinnett Middle School </h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 16 – June 19</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start border border-black/40 p-2 gap-2 rounded-xl'>
-                <h1 className='text-2xl mb-3'>📍Alpharetta High School</h1>
-                <h3 className='text-2xl font-light px-2'>June 23 – June 26</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-white shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1'>Circuit Science</h4>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Alpharetta High School</h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 23 – June 26</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start border border-black/40 p-2 gap-2 rounded-xl'>
-                <h1 className='text-2xl mb-3'>📍GSMST</h1>
-                <h3 className='text-2xl font-light px-2'>June 30 – July 3</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-white shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1'>STEM Builders</h4>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1'>Robo Coding Camp</h4>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST</h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 30 – July 3</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>STEM Builders</h4>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Robo Coding Camp</h4>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start border border-black/40 p-2 gap-2 rounded-xl'>
-                <h1 className='text-2xl mb-3'>📍Northview High School</h1>
-                <h3 className='text-2xl font-light px-2'>July 7 – July 10</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-white shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1'>STEM Builders</h4>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1'>Robo Coding Camp</h4>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School</h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>July 7 – July 10</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>STEM Builders</h4>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Robo Coding Camp</h4>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start border border-black/40 p-2 gap-2 rounded-xl'>
-                <h1 className='text-lg mb-3'>📍North Gwinnett Middle School</h1>
-                <h3 className='text-2xl font-light px-2'>July 14 – July 17</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-white shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1'>STEM Builders</h4>
-                  <h3 className='text-lg bg-[#208cda] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1'>Robo Coding Camp</h4>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <h1 className='text-lg mb-3 text-black 2xl:text-white'>📍North Gwinnett Middle School</h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>July 14 – July 17</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>STEM Builders</h4>
+                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
+                  <h4 className='text-xl p-1 text-white'>Robo Coding Camp</h4>
                 </div>
                 </div>
 
             </div>
         </div>
-        <div className='h-auto w-full flex flex-col justify-start items-center bg-[#208cda] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
-            <h2 className='font-montserrat font-bold text-3xl text-white'>Timings</h2>
+        <div className='h-auto w-[92%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
+            <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Timings</h2>
             <h4 className='font-montserrat text-xl bg-white w-full text-center rounded-2xl'>Monday - Thursday</h4>
             <div className='w-full h-auto flex justify-center items-center gap-2 relative'>
-                  <div className='min-h-[10vh] w-full bg-[#a9dbff] border border-white rounded-xl flex flex-col justify-center items-center font-montserrat text-lg font-medium' >
+                  <div className='min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex flex-col justify-center items-center font-montserrat text-lg font-medium' >
                     <h1>Morning</h1>
-                    <h4>9 AM - 12 PM</h4>
+                    <h4>09:00 - 12:00</h4>
                   </div>
-                  <div className='min-h-[10vh] w-full bg-[#a9dbff] border border-white rounded-xl flex flex-col justify-center items-center font-montserrat text-lg font-medium' >
+                  <div className='min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex flex-col justify-center items-center font-montserrat text-lg font-medium' >
                   <h1>Afternoon</h1>
-                  <h4>1 PM - 4 PM</h4>
+                  <h4>01:00 - 04:00</h4>
                   </div>
             </div>
             <div>
 
             </div>
-            <img src={vect17} alt="" className='absolute w-1/3 -top-8 left-0' />
-            <img src={vect17} alt="" className='absolute w-1/3 -top-8 right-0' />
+            
         </div>
-        <div className='h-auto w-full flex flex-col justify-start items-center bg-[#FE1219] rounded-3xl px-4 py-2 overflow-hidden py-2 relative'>
-          <h2 className='font-montserrat font-bold text-3xl text-white'>Location</h2>
-          <div className='h-auto w-full bg-white flex flex-col justify-center items-center rounded-3xl p-2' >
-              <div className='h-auto w-full flex flex-col justify-center items-center'>
-                <img src={location} alt="" className='w-1/2 ' />
-                <div className='flex flex-col justify-center items-start gap-8' >
-                <h1 className='font-montserrat px-2 border-b border-dashed pb-4'>GSMST [970 McElvaney Ln NW, Lawrenceville, GA 30044]</h1>
-                <h1 className='font-montserrat px-2 border-b border-dashed pb-4'>North Gwinnett Middle School [170 Peachtree Industrial Blvd, Sugar Hill, GA 30518]</h1>
-                <h1 className='font-montserrat px-2'>Northview Middle School [10625 Parsons Rd, Johns Creek, GA 30097]</h1>
-                </div>
-              </div>  
-          </div>
-        </div>
-        <div className='h-auto w-full flex flex-col justify-center items-center border  rounded-3xl px-4 py-2 overflow-hidden relative mt-4'>
-        <h2 className='font-montserrat font-bold text-3xl'>Fees</h2>
+      
+        <div className='h-auto w-[92%] xl:w-[40%] flex flex-col justify-center items-center bg-[#FFB202] rounded-3xl px-4 py-2 overflow-hidden relative mt-4'>
+        <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Fees</h2>
         <div className='h-full w-full flex flex-col justify-center items-center gap-2 '>
-            <div className='flex flex-col justify-center items-center w-full p-2 gap-4'>
-              <div className='w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl'>
-                <h1>HalfDay</h1>
+            <div className='flex flex-col justify-center items-center w-full p-2 gap-4 text-'>
+              <div className='w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white'>
+                <h1>Half Day</h1>
                 <h1>$230</h1>
               </div>
-              <div className='w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl'>
+              <div className='w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white'>
                 <h1>Full Day</h1>
                 <h1>$430</h1>
               </div>
             </div>
         </div>
         </div>
-        <a href='/register' className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg'>Enroll Now</a>
+        <a href='/register' className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-2'>Enroll Now</a>
     </div>
   )
 }
