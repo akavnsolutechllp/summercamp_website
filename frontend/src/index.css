@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @font-face {
   font-family:'Nabana Shadow Bold';
   src: url('/fonts/nabana.shadow-bold.ttf') format('truetype');
@@ -14,6 +15,33 @@
   src: url('/fonts/montserrat.regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family:'Milker Regular';
+  src: url('/fonts/milker.regular.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'Greater Theory Regular';
+  src: url('/fonts/greater-theory.regular.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'AYIXOL Trial';
+  src: url('/fonts/AYIXOL Trial.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Milkyway DEMO Regular';
+  src: url('/fonts/milkyway-demo.regular.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'Gardion Demo';
+  src: url('Fonts/gardion.demo.ttf') format('truetype');
+}
+
+
+
 .font-nabana{
   font-family: Nabana Shadow Bold;
 }
@@ -24,4 +52,50 @@
 
 .font-montserrat{
   font-family: Montserrat Regular
+}
+
+.font-milker{
+  font-family: Milker Regular;
+}
+
+.font-gt{
+  font-family: Greater Theory Regular;
+}
+
+.font-ayi{
+  font-family:'AYIXOL Trial'
+}
+
+.font-milky{
+  font-family:'Milkyway DEMO Regular'
+}
+
+.font-gardion{
+  font-family: 'Gardion Demo';
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.bg-stroke{
+  -webkit-text-stroke: 1px white;
+}
+
+.main-bg{
+  background-image: url('/main-bg2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-register{
+  background-image: url('/registration_bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.map{
+  background-image: url('/MAP.png');
+  background-size: cover;
+  background-position: center;
 }

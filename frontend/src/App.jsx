@@ -1,10 +1,12 @@
 import React from 'react'
 import Lenis from 'lenis'
-import LandingPage from './pages/LandingPage';
-import About from './pages/AboutUs';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Payment from './pages/Payment';
+import Programs from './pages/Programs';
 import Registration from './pages/Registration';
-import Program from './pages/Program';
-import OurStaff from './pages/OurStaff';
+import Liability from './pages/Liability';
+
 
 const App = () => {
   // Initialize Lenis
@@ -19,13 +21,15 @@ function raf(time) {
 requestAnimationFrame(raf);
 
   return (
-    <div className='h-auto w-full flex flex-col justify-start items-center overflow-hidden'>
-      <LandingPage/>
-     <About/>
-     <Program/>
-     <OurStaff/>
-     <Registration/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/payment' element={<Payment/>} />
+        <Route path='/programs' element={<Programs/>} />
+        <Route path='/register' element={<Registration/>} />
+        <Route path='/liability' element={<Liability/>} />
+      </Routes>
+    </Router>
   )
 }
 

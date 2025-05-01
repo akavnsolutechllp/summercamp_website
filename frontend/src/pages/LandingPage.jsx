@@ -1,100 +1,124 @@
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import cloud from '../assets/cloud.webp';
-import cloud2 from '../assets/cloud2.webp';
-import birds from '../assets/birds.png';
-import tree from '../assets/tree.png';
+import React from "react";
+import Navbar from "../Components/Navbar";
+import Logo from "../assets/logo.png";
+import paint from "../assets/paint.png";
+import vect0 from "../assets/1.png";
+import vect2 from "../assets/2.png";
+import vect3 from "../assets/3.png";
+import vect4 from "../assets/9.png";
+import vect5 from "../assets/15.png";
+import vect6 from "../assets/16.png";
+import vect7 from "../assets/21.png";
+import vect8 from "../assets/8.png";
+import vect1 from "../assets/vect1.png";
+
+import vect9 from "../assets/7.png";
+
+import { useNavigate } from "react-router-dom";
+
+import rainbow from "../assets/rainbow.jpg";
+import smallrainbow from "../assets/small-rainbow2.png";
+
+import mobile from '../assets/mobile-landing-bg.jpg'
+
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+import {
+  easeInOut,
+  motion,
+  spring,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 const LandingPage = () => {
-  //scroll progress calculator.
+  const navigate = useNavigate();
+
   const { scrollYProgress } = useScroll();
 
-  // Cloud movement based on scroll
-  const cloudLeftX = useTransform(scrollYProgress, [0, 0.3], [0, -150]); // move left
-  const cloudRightX = useTransform(scrollYProgress, [0, 0.3], [0, 150]);  // move right
+  const elem1X = useTransform(scrollYProgress, [0, 0.5], [0, -100]); // move left
+  const elem2X = useTransform(scrollYProgress, [0, 0.5], [0, 100]); // move right
 
-  //Birds movement based on scroll
-  const birdX = useTransform(scrollYProgress, [0, 0.5], [0, 600]); // horizontal movement
-  const birdY = useTransform(scrollYProgress, [0, 0.5], [0, -300]); // slight up
+  const elem3X = useTransform(scrollYProgress, [0, 0.5], [0, -80]); // move right
+  const elem4X = useTransform(scrollYProgress, [0, 0.5], [0, 80]); // move right
 
-  //Sun movement based on scroll
-  const sunY = useTransform(scrollYProgress, [0,0.5],[0,300]);
+  const elem5X = useTransform(scrollYProgress, [0, 0.3], [0, -200]);
+  const elem6X = useTransform(scrollYProgress, [0, 0.3], [0, 200]);
+
+  const elem8X = useTransform(scrollYProgress, [0, 0.3], [0, -200]);
+
+  const scrollToSection = (sectionId) => {
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: { y: `#${sectionId}`, offsetY: 70 },
+      ease: "power2.inOut",
+    });
+  };
+
+  const handleRegister = () => {
+    navigate("/register");
+  };
 
   return (
-    <div className='min-h-[74vh] xl:min-h-[90vh] 2xl:min-h-[85vh] w-full flex flex-col justify-center items-center bg-gradient-to-t from-[#4fa3f7] via-[#4fc2f7d8] to-[rgba(43,78,255,0.84)] text-[#ffffff] relative py-4'>
-
-      <motion.div
-        initial={{ opacity: 0, y: 500 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, stiffness: 500, damping: 10 }}
-        style={{y:sunY}}
-        className='h-32 w-32 2xl:h-44 2xl:w-44 bg-[#FFC107] rounded-full absolute top-4'
-      />
-
-      <motion.img
-        initial={{ x: -200 }}
-        animate={{ x: 0 }}
-        style={{ x: cloudLeftX }}
-        transition={{ duration: 2 }}
-        src={cloud}
-        alt="clouds"
-        className='w-1/2 md:w-1/3 2xl:w-1/5 xl:w-1/4 absolute top-20 left-4'
-      />
-
-      <motion.img
-        initial={{ x: 200 }}
-        animate={{ x: 0 }}
-        style={{ x: cloudRightX }}
-        transition={{ duration: 2 }}
-        src={cloud2}
-        alt="clouds"
-        className='w-1/3 md:w-1/4 2xl:w-1/6 xl:w-1/4 absolute bottom-32 2xl:bottom-64 right-1'
-      />
-
-        <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          style={{ x: birdX, y: birdY }}
-          transition={{ duration: 2, stiffness: 50 }}
-          src={birds}
-          alt="birds"
-          className='w-1/2 2xl:w-1/5 xl:w-1/4 absolute bottom-20 xl:left-32 2xl:left-44'
-        />
-
-      <img
-        src={tree}
-        alt="trees"
-        className='w-1/4 md:w-1/6 2xl:w-1/10 xl:w-1/8 absolute -bottom-2 2xl:-bottom-6 xl:-bottom-8 2xl:left-20 left-4'
-      />
-
-      <div className='h-auto w-full flex flex-col justify-center items-center gap-2'>
-        <motion.h1
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className='text-[12vw] md:text-[8vw] 2xl:text-[6vw] xl:text-[7vw] font-nabana z-10 mt-4 2xl:mt-8'
-        >
-          Summer Camp
-        </motion.h1>
-
-        <motion.h2
-          initial={{ opacity: 0, y: -70 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className='text-[10vw] md:text-[6vw] 2xl:text-[5vw] xl:text-[6vw] font-nabana -mt-2'
-        >
-          2025
-        </motion.h2>
-
-        <motion.button
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, delay: 2, stiffness: 50 }}
-          className='bg-[#FFC107] px-6 py-1 rounded-full font-switzal text-[8vw] xl:text-[3vw] md:text-[5.5vw] 2xl:text-[1.8vw] text-white drop-shadow-2xl border border-white mt-4'
-        >
-          Register Now
-        </motion.button>
+    <div
+      id="home"
+      className="min-h-screen h-auto bg-[#283353] w-full flex flex-col justify-center items-center relative py-4 overflow-hidden"
+    >
+      <img src={Logo} alt="" className="w-1/2 bg-white drop-shadow-lg rounded-full xl:absolute xl:top-10 xl:left-4 2xl:top-24 2xl:left-2 xl:w-1/8 2xl:w-[10%]" />
+      
+      <div className="h-auto w-full flex flex-col justify-center items-center p-2">
+        {/* <img src={smallrainbow} alt="" className='absolute w-full h-full top-36 opacity-25 xl:hidden' /> */}
+        <div className="h-full w-full flex flex-col justify-center items-center gap-3 xl:gap-5 mt-8 lg:mt-8 xl:mt-0 z-20 ">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1, stiffness: 80, type: spring }}
+            className="font-gardion text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-7xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[8vw] 2xl:text-[6vw] text-center"
+          >
+            <p className="">Spark Stem</p>
+            <p className="">Academy</p>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1.3,
+              stiffness: 80,
+              type: spring,
+            }}
+            className="font-montserrat text-white text-justify tracking-tighter xl:tracking-normal xl:text-center xl:text-lg text-base 2xl:text-center 2xl:tracking-tight p-2 lg:mt-0 md:w-[80%] lg:w-[60%] xl:w-[80%]"
+          >
+            Join our exciting STEM Summer Camp where curiosity meets innovation!
+            Packed with hands-on science experiments, tech challenges, and
+            creative engineering projects, we’ve got everything to spark your
+            child’s imagination and make this summer a memorable one—rain or
+            shine!
+          </motion.p>
+          <motion.button
+            onClick={handleRegister}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            whileHover={{ scale: 1.5 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{
+              duration: 1,
+              delay: 1.6,
+              type: "spring",
+              stiffness: 80,
+            }}
+            className="bg-[#f79824] text-white border-2 font-montserrat text-xl py-3 px-6 mt-4 rounded-full shadow-md hover:shadow-[#FF0066] xl:hover:cursor-pointer transition-all duration-300"
+          >
+            Enroll Now
+          </motion.button>
+        </div>
       </div>
+        
+      <motion.img style={{x:elem1X}} src={vect0} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:right-[24%]" />
+      <motion.img style={{x:elem2X}} src={vect2} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:left-[24%]" />
+      <motion.img style={{x:elem3X}} src={vect9} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:left-[24%] 2xl:top-[24%]" />
+      <motion.img style={{x:elem4X}} src={vect4} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:right-[24%] 2xl:top-[24%]" />
     </div>
   );
 };
