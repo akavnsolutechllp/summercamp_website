@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/user', userRoutes);
+app.use("/api/payment", require("./routes/payment"));
+
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
