@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss()],
   server: {
     allowedHosts: [
-      'standings-rarely-ext-criminal.trycloudflare.com'
+      'filing-generous-defend-publishers.trycloudflare.com'
     ]
   }
 })

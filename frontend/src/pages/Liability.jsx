@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 import rainbow  from '../assets/rainbow.jpg'
 
 import {easeInOut, motion, spring, useScroll, useTransform } from 'framer-motion';
+import Navbar from '../Components/Navbar';
+import Menu from '../Components/Menu';
 
 const Liability = () => {
 
@@ -26,7 +28,7 @@ const Liability = () => {
     const { scrollYProgress: vect3Progress } = useScroll({ target: vect3Ref, offset: ["start end", "end start"] });
     const { scrollYProgress: vect4Progress } = useScroll({ target: vect4Ref, offset: ["start end", "end start"] });
   
-    const vect1X = useTransform(vect1Progress, [0, 1], [150, 0]);
+    const vect1X = useTransform(vect1Progress, [0, 0.5], [150, 0]);
     const vect2X = useTransform(vect2Progress, [0, 1], [-150, 0]);
     const vect3X = useTransform(vect3Progress, [0, 1], [100, 0]);
     const vect4X = useTransform(vect4Progress, [0, 1], [-100, 0]);
@@ -54,6 +56,7 @@ const Liability = () => {
         if (!res.ok) throw new Error('Failed to submit');
         const result = await res.json();
         console.log('Success:', result);
+        localStorage.setItem('userId', result.userId);
         navigate('/payment');
   
       } catch (err) {
@@ -62,28 +65,29 @@ const Liability = () => {
     };
 
   return (
-    <div id='liability' className='min-h-screen w-full flex flex-col justify-center items-center bg-[#FFF6E3] p-4 relative'>
-       <img src={rainbow} alt="" className='absolute w-full h-full' />
-      <form onSubmit={handleSubmit(onSubmit)} className='w-full md:w-[70%] lg:w-[50%] flex flex-col justify-center items-center bg-white drop-shadow-lg rounded-xl p-4 '>
-        <h2 className='font-montserrat font-semibold text-[#FF0066] text-4xl md:text-3xl lg:text-4xl 2xl:text-6xl w-full'>Spark Stem Academy</h2>
-        <h4 className=' w-full my-2'>Liability Waiver and Release Form</h4>
+    <div id='liability' className='h-full w-full flex flex-col justify-center items-center bg-gradient-to-b from-[#283253] via-[#283253] to-[#16003E] relative'>
+      <Navbar/>
+      <Menu/>
+      <div className='min-h-screen w-full flex flex-col justify-center items-center p-4' >
+      <form onSubmit={handleSubmit(onSubmit)} className='w-full md:w-[70%] lg:w-[50%] 2xl:w-[40%] flex flex-col justify-center items-center bg-white drop-shadow-lg rounded-xl p-4 '>
+        <h4 className=' w-full my-2 font-semibold'>Liability Waiver and Release Form</h4>
 
         {/* Camper Info Fields */}
         <div className='w-full h-auto flex flex-col justify-center items-start mt-2'>
           <label>Camper’s Full Name:</label>
-          <input {...register('camperName')} className='w-full border-b border-black/30 p-2' />
+          <input type='text' {...register('camperName')} className='w-full border-b border-black/30 p-2' />
 
           <label className='mt-1'>Date of Birth:</label>
-          <input {...register('dob')} className='w-full border-b border-black/30 p-2' />
+          <input type='date' {...register('dob')} className='w-full border-b border-black/30 p-2' />
 
           <label className='mt-1'>Parent/Guardian Name:</label>
-          <input {...register('parentName')} className='w-full border-b border-black/30 p-2' />
+          <input type='text' {...register('parentName')} className='w-full border-b border-black/30 p-2' />
 
-          <label className='mt-1'>Phone Number:</label>
-          <input {...register('phone')} className='w-full border-b border-black/30 p-2' />
+          <label className='mt-1'>Contact Number:</label>
+          <input type='tel' {...register('phone')} className='w-full border-b border-black/30 p-2' />
 
           <label className='mt-1'>Email Address:</label>
-          <input {...register('email')} className='w-full border-b border-black/30 p-2' />
+          <input type='email' {...register('email')} className='w-full border-b border-black/30 p-2' />
         </div>
         <div className='w-full h-auto flex flex-col justify-start items-start gap-3 mt-4'>
             <h1 className='font-montserrat font-bold '>1. Acknowledgment of Risk</h1>
@@ -98,16 +102,16 @@ const Liability = () => {
         {/* Medical Section */}
         <div className='w-full mt-4'>
           <label>Known Allergies/Medical Conditions:</label>
-          <input {...register('medicalConditions')} className='w-full border-b border-black/30 p-2' />
+          <input type='text' {...register('medicalConditions')} className='w-full border-b border-black/30 p-2' />
 
           <label className='mt-1'>Medications to be Administered (if any):</label>
-          <input {...register('medications')} className='w-full border-b border-black/30 p-2' />
+          <input type='text' {...register('medications')} className='w-full border-b border-black/30 p-2' />
 
           <label className='mt-1'>Emergency Contact Name:</label>
-          <input {...register('emergencyContactName')} className='w-full border-b border-black/30 p-2' />
+          <input type='text' {...register('emergencyContactName')} className='w-full border-b border-black/30 p-2' />
 
-          <label className='mt-1'>Emergency Contact Phone:</label>
-          <input {...register('emergencyContactPhone')} className='w-full border-b border-black/30 p-2' />
+          <label className='mt-1'>Emergency Contact Number:</label>
+          <input type='tel' {...register('emergencyContactPhone')} className='w-full border-b border-black/30 p-2' />
         </div>
 
         <div className='w-full h-auto flex flex-col justify-start items-start gap-3 mt-4'>
@@ -133,8 +137,6 @@ const Liability = () => {
         <div className='w-full mt-4'>
           <h1 className='text-lg font-montserrat mb-2'>5. Consent and Release</h1>
           <p>By signing below, I acknowledge that I have read and understand this waiver, and agree to all terms outlined. I release and hold harmless Spark STEM Academy, its staff, volunteers, and affiliates from any liability or claims related to my child’s participation.</p>
-          <label className='mt-2 font-bold'>Signature of Parent/Guardian:</label>
-          <SignaturePad /> {/* Optional: Capture and send image blob or canvas data */}
 
           <label className='mt-2'>Date:</label>
           <input type="date" {...register('signedDate')} className='w-full border-b border-black/30 p-2' />
@@ -144,6 +146,9 @@ const Liability = () => {
           Submit & Proceed to Payment
         </button>
       </form>
+      </div>
+       
+      
 
       {/* Decorative images */}
       <motion.img 
@@ -151,14 +156,14 @@ const Liability = () => {
         style={{ x: vect1X }}
         src={vect1} 
         alt="" 
-        className='hidden lg:block absolute w-1/4 left-4 -top-[12%] opacity-90' 
+        className='hidden lg:block 2xl:block absolute w-1/4 left-4 -top-[12%] 2xl:top-[12%] opacity-90' 
       />
       <motion.img 
         ref={vect2Ref}
         style={{ x: vect2X }}
         src={vect2} 
         alt="" 
-        className='hidden lg:block absolute w-1/4 right-4 top-[10%] opacity-90' 
+        className='hidden lg:block 2xl:block absolute w-1/4 right-4 top-[10%] 2xl:top-[24%] opacity-90' 
       />
       <motion.img 
         ref={vect3Ref}

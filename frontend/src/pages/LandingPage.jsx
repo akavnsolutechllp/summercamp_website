@@ -63,7 +63,7 @@ const LandingPage = () => {
   return (
     <div
       id="home"
-      className="min-h-screen h-auto bg-[#283353] w-full flex flex-col justify-center items-center relative py-4 overflow-hidden"
+      className="min-h-screen h-auto bg-gradient-to-b  from-[#283353] via-[#16003E] to-[#16003E] w-full flex flex-col justify-center items-center relative py-4 overflow-hidden"
     >
       <img src={Logo} alt="" className="hidden bg-white drop-shadow-lg rounded-full xl:block xl:absolute xl:top-10 xl:left-4 2xl:top-24 2xl:left-2 xl:w-1/8 2xl:w-[10%]" />
       

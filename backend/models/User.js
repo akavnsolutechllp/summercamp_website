@@ -5,17 +5,19 @@ const userSchema = new mongoose.Schema({
   studentFirstName: { type: String, required: true },
   studentLastName: { type: String, required: true },
   grade: { type: String, required: true },
-  allergies: { type: String },
+  age: { type: Number, required: true }, 
   tshirtSize: { type: String, required: true },
-  parentFirstName: { type: String, required: true },
-  parentLastName: { type: String, required: true },
-  email: { type: String, required: true },
-  phone: { type: String, required: true },
+  gender: { type: String, required: true },
   camp: { type: String, required: true },
   location: { type: String, required: true },
+  timings: { type: String }, // Only used if camp === 'half'
+
+  // Liability Form Data
   camperName: { type: String },
   dob: { type: String },
   parentName: { type: String },
+  phone: {type: Number},
+  email: {type: String},
   medicalConditions: { type: String },
   medications: { type: String },
   emergencyContactName: { type: String },
@@ -23,8 +25,8 @@ const userSchema = new mongoose.Schema({
   mediaRelease: { type: String },
   signedDate: { type: String },
 
-  // Signature (optional as base64 string)
-  signature: { type: String } // You can store base64 data from SignaturePad if needed
+  // Signature (optional)
+  signature: { type: String }
 
 }, { timestamps: true });
 

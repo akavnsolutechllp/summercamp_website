@@ -65,7 +65,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base 2xl:text-lg font-montserrat  w-full z-20">
             Engineering & Structures
           </h3>
-          <h4 className='bg-white text-black  p-1 border rounded-lg text-center font-montserrat text-sm'>Put your engineering skills-to the text as you desig and build towers, bridges, and more!</h4>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Put your engineering skills-to the text as you desig and build towers, bridges, and more!</h4>
         </motion.div>
 
         <motion.div
@@ -85,7 +85,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#E31DB0] py-1 px-8 xl:px-12 2xl:px-2 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Design Thinking & Problem-Solving
           </h3>
-          <h4 className='bg-white text-black  p-1 border rounded-lg text-center font-montserrat text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -104,7 +104,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Coding, Robotics, and Circuits
           </h3>
-          <h4 className='bg-white text-black  p-1 border rounded-lg text-center font-montserrat text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -123,7 +123,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#E31DB0] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Electricity & Circuits
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center font-montserrat text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -142,7 +142,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Environment & Sustainability
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center font-montserrat text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -161,7 +161,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#E31DB0] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Science + Art (STEAM)
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center font-montserrat text-sm'>Combine science and art as you create wear-able art, scribbibung machines, and more!</h4>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Combine science and art as you create wear-able art, scribbibung machines, and more!</h4>
         
         </motion.div>
       </motion.div>
