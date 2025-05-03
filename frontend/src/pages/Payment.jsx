@@ -46,32 +46,57 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
         if (paymentIntent.status === "succeeded") {
             alert("Payment successful!");
     
+            const payload = {
+                userId: userId,
+                firstName: userData.studentFirstName,
+                lastName: userData.studentLastName,
+                email: userData.email,
+                phone: userData.phone,
+                campType: selectedCamp,
+                timing: selectedCamp === "half" ? selectedTiming : "full-day",
+                location: userData.location,
+                amount: amount.replace("$", ""),
+            };
+    
             try {
-                const payload = {
-                    userId: userId,
-                    firstName: userData.studentFirstName,
-                    lastName: userData.studentLastName,
-                    email: userData.email,
-                    phone: userData.phone,
-                    campType: selectedCamp,
-                    timing: selectedCamp === "half" ? selectedTiming : "full-day",
-                    location: userData.location,
-                    amount: amount.replace("$", ""),
-                };
-            
-                await axios.post("http://localhost:5000/api/payment/send-invoice", payload, {
-                    headers: { "Content-Type": "application/json" },
-                });      
-                console.log("Invoice response:", res.data);
-                alert("Invoice emailed successfully!");
+                // 1. Download invoice
+                const res = await axios.post(
+                    "http://localhost:5000/api/payment/generate-invoice",
+                    payload,
+                    { responseType: "blob" } // Expect PDF blob
+                );
+    
+                const url = window.URL.createObjectURL(new Blob([res.data]));
+                const link = document.createElement("a");
+                link.href = url;
+                link.setAttribute("download", `Invoice_${userData.studentFirstName}_${userData.studentLastName}.pdf`);
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+    
             } catch (err) {
-                console.error("Invoice error:", err.response?.data || err.message || err);
-                alert("Payment succeeded, but invoice failed to send.");
+                console.error("Invoice download error:", err.response?.data || err.message || err);
+                alert("Payment succeeded, but invoice download failed.");
+            }
+    
+            try {
+                // 2. Send invoice to email
+                const emailRes = await axios.post("http://localhost:5000/api/payment/send-invoice", payload);
+                if (emailRes.data.success) {
+                    alert("Invoice also sent to your email!");
+                } else {
+                    alert("Invoice email failed to send.");
+                }
+            } catch (err) {
+                console.error("Invoice email error:", err.response?.data || err.message || err);
+                alert("Payment succeeded, but sending invoice email failed.");
             }
         }
     
         setProcessing(false);
     };
+    
+    
     
 
     return (

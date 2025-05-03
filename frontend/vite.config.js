@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss()],
   server: {
     allowedHosts: [
-      'filing-generous-defend-publishers.trycloudflare.com'
+      'prayer-m-fire-arrow.trycloudflare.com'
     ]
   }
 })
