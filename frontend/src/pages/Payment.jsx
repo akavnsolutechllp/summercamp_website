@@ -6,10 +6,13 @@ import axios from 'axios';
 const stripePromise = loadStripe("pk_test_51RHlofA5NifUX0tMnXjDo9j6WXtW3ZjCIiqFJKpb0VnWogATjF2EJ3e25y77RKfAgFrel03W3fxNnITW9YsNPobg001cPjcNnG");
 
 const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
+    
     const stripe = useStripe();
     const elements = useElements();
     const [clientSecret, setClientSecret] = useState(null);
     const [processing, setProcessing] = useState(false);
+
+    const userId = localStorage.getItem("userId");
 
     useEffect(() => {
         const fetchClientSecret = async () => {
@@ -45,6 +48,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
     
             try {
                 const payload = {
+                    userId: userId,
                     firstName: userData.studentFirstName,
                     lastName: userData.studentLastName,
                     email: userData.email,
@@ -54,11 +58,14 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                     location: userData.location,
                     amount: amount.replace("$", ""),
                 };
-    
-                await axios.post("http://localhost:5000/api/payment/send-invoice", payload);
+            
+                await axios.post("http://localhost:5000/api/payment/send-invoice", payload, {
+                    headers: { "Content-Type": "application/json" },
+                });      
+                console.log("Invoice response:", res.data);
                 alert("Invoice emailed successfully!");
             } catch (err) {
-                console.error("Invoice error:", err);
+                console.error("Invoice error:", err.response?.data || err.message || err);
                 alert("Payment succeeded, but invoice failed to send.");
             }
         }

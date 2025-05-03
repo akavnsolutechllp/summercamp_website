@@ -2,6 +2,13 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   // Registration Form Data
+  invoice: {
+    type: {
+      invoiceid: { type: String },
+      sent: { type: Boolean, default: false }
+    },
+    default: {}
+  },
   studentFirstName: { type: String, required: true },
   studentLastName: { type: String, required: true },
   grade: { type: String, required: true },
@@ -16,7 +23,7 @@ const userSchema = new mongoose.Schema({
   camperName: { type: String },
   dob: { type: String },
   parentName: { type: String },
-  phone: {type: Number},
+  phone: {type: String},
   email: {type: String},
   medicalConditions: { type: String },
   medications: { type: String },

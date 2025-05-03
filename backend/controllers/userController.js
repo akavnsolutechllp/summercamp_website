@@ -28,6 +28,10 @@ module.exports.completeRegistration = async (req, res, next) => {
         emergencyContactPhone,
         mediaRelease,
         signedDate,
+        invoice: {
+          invoiceid:"",
+          sent: false
+        }
       });
       
       await user.save();
