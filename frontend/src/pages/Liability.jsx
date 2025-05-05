@@ -46,7 +46,7 @@ const Liability = () => {
     };
 
     try {
-      const res = await fetch('http://72.167.227.169/api/user/complete-registration', {
+      const res = await fetch('http://localhost:5000/api/user/complete-registration', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fullForm)

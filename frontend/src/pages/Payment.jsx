@@ -19,7 +19,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
     useEffect(() => {
         const fetchClientSecret = async () => {
             const numericAmount = parseFloat(amount.replace("$", "")) * 100; // convert to cents
-            const { data } = await axios.post("http://72.167.227.169/api/payment/create-payment-intent", {
+            const { data } = await axios.post("http://localhost:5000/api/payment/create-payment-intent", {
                 amount: numericAmount,
             });
             setClientSecret(data.clientSecret);
@@ -63,7 +63,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
             try {
                 // 1. Download invoice
                 const res = await axios.post(
-                    "http://72.167.227.169/api/payment/generate-invoice",
+                    "http://localhost:5000/api/payment/generate-invoice",
                     payload,
                     { responseType: "blob" } // Expect PDF blob
                 );
@@ -131,7 +131,7 @@ const Payment = () => {
                 if(!userId){
                 // localStorage.setItem("payment", "false"); 
                 }
-                const res = await fetch(`http://72.167.227.169/api/user/getprofile/${userId}`);
+                const res = await fetch(`http://localhost:5000/api/user/getprofile/${userId}`);
                 const data = await res.json();
                 if (!data?.profile?.camp) throw new Error('Camp data is missing');
                 setUserData(data.profile);
