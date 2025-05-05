@@ -218,8 +218,8 @@ const Registration = () => {
                   })}
                 >
                   <option value="">Select Timing</option>
-                  <option value="morning">9AM - 12PM</option>
-                  <option value="afternoon">1PM - 4PM</option>
+                  <option value="09:00 AM - 12:00 PM">9AM - 12PM</option>
+                  <option value="01:00 PM - 04:00 PM">1PM - 4PM</option>
                 </select>
                 {errors.timings && (
                   <span className="text-red-600 text-sm">

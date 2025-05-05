@@ -104,7 +104,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Coding, Robotics, and Circuits
           </h3>
-          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Discover the world of coding and robotics! Learn to program robots and games.</h4>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -142,7 +142,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Environment & Sustainability
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Discover the wonders of nature! investigace ecosystems, sustainabi-lity, and more.</h4>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}

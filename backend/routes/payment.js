@@ -80,70 +80,70 @@ const generateInvoicePDF = (invoicePath, data) => {
 };
 
 
-router.post("/send-invoice", async (req, res) => {
-  const {
-    userId, firstName, lastName, email, phone,
-    campType, timing, location, amount,
-  } = req.body;
+// router.post("/send-invoice", async (req, res) => {
+//   const {
+//     userId, firstName, lastName, email, phone,
+//     campType, timing, location, amount,
+//   } = req.body;
 
-  if (!userId || !firstName || !lastName || !email || !phone || !campType || !location || !amount) {
-    return res.status(400).json({ error: "Missing required fields." });
-  }
+//   if (!userId || !firstName || !lastName || !email || !phone || !campType || !location || !amount) {
+//     return res.status(400).json({ error: "Missing required fields." });
+//   }
 
-  try {
-    // Generate invoice ID
-    let lastInvoiceNumber = 0;
-    const lastUserWithInvoice = await User.findOne({ "invoice.invoiceid": { $exists: true } }).sort({ createdAt: -1 });
-    if (lastUserWithInvoice?.invoice?.invoiceid) {
-      const match = lastUserWithInvoice.invoice.invoiceid.match(/SSA(\d+)/);
-      if (match) lastInvoiceNumber = parseInt(match[1]);
-    }
+//   try {
+//     // Generate invoice ID
+//     let lastInvoiceNumber = 0;
+//     const lastUserWithInvoice = await User.findOne({ "invoice.invoiceid": { $exists: true } }).sort({ createdAt: -1 });
+//     if (lastUserWithInvoice?.invoice?.invoiceid) {
+//       const match = lastUserWithInvoice.invoice.invoiceid.match(/SSA(\d+)/);
+//       if (match) lastInvoiceNumber = parseInt(match[1]);
+//     }
 
-    const invoiceId = `SSA${String(lastInvoiceNumber + 1).padStart(3, "0")}`;
-    const invoiceName = `${invoiceId}.pdf`;
-    const invoicePath = path.join(__dirname, `../invoices/${invoiceName}`);
-    fs.mkdirSync(path.dirname(invoicePath), { recursive: true });
+//     const invoiceId = `SSA${String(lastInvoiceNumber + 1).padStart(3, "0")}`;
+//     const invoiceName = `${invoiceId}.pdf`;
+//     const invoicePath = path.join(__dirname, `../invoices/${invoiceName}`);
+//     fs.mkdirSync(path.dirname(invoicePath), { recursive: true });
 
-    // ✅ Generate and write PDF safely
-    await generateInvoicePDF(invoicePath, {
-      invoiceId, firstName, lastName, email, phone, campType, timing, location, amount
-    });
+//     // ✅ Generate and write PDF safely
+//     await generateInvoicePDF(invoicePath, {
+//       invoiceId, firstName, lastName, email, phone, campType, timing, location, amount
+//     });
 
-    // ✉️ Send Email
-    const transporter = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+//     // ✉️ Send Email
+//     const transporter = nodemailer.createTransport({
+//       service: "Gmail",
+//       auth: {
+//         user: process.env.SMTP_USER,
+//         pass: process.env.SMTP_PASS,
+//       },
+//     });
 
-    await transporter.verify();
+//     await transporter.verify();
 
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: email,
-      subject: "Your Summer Camp Invoice",
-      text: `Thank you for your payment! Your Invoice ID is ${invoiceId}.`,
-      attachments: [{ filename: invoiceName, path: invoicePath }],
-    });
+//     await transporter.sendMail({
+//       from: process.env.SMTP_USER,
+//       to: email,
+//       subject: "Your Summer Camp Invoice",
+//       text: `Thank you for your payment! Your Invoice ID is ${invoiceId}.`,
+//       attachments: [{ filename: invoiceName, path: invoicePath }],
+//     });
 
-    // 💾 Save invoice reference
-    await User.findByIdAndUpdate(userId, {
-      invoice: {
-        invoiceid: invoiceId,
-        sent: true,
-      },
-    });
+//     // 💾 Save invoice reference
+//     await User.findByIdAndUpdate(userId, {
+//       invoice: {
+//         invoiceid: invoiceId,
+//         sent: true,
+//       },
+//     });
 
-    console.log("✅ Invoice email sent to", email);
-    res.status(200).json({ success: true });
+//     console.log("✅ Invoice email sent to", email);
+//     res.status(200).json({ success: true });
 
-  } catch (err) {
-    console.error("❌ Error sending invoice:", err);
-    res.status(500).json({ error: "Failed to send invoice.", details: err.message });
-  }
-});
+//   } catch (err) {
+//     console.error("❌ Error sending invoice:", err);
+//     res.status(500).json({ error: "Failed to send invoice.", details: err.message });
+//   }
+// });
 
 
 

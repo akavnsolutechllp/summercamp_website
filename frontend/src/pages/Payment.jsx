@@ -6,12 +6,10 @@ import axios from 'axios';
 const stripePromise = loadStripe("pk_test_51RHlofA5NifUX0tMnXjDo9j6WXtW3ZjCIiqFJKpb0VnWogATjF2EJ3e25y77RKfAgFrel03W3fxNnITW9YsNPobg001cPjcNnG");
 
 const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
-    
     const stripe = useStripe();
     const elements = useElements();
     const [clientSecret, setClientSecret] = useState(null);
     const [processing, setProcessing] = useState(false);
-
     const userId = localStorage.getItem("userId");
 
     useEffect(() => {
@@ -79,25 +77,22 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                 alert("Payment succeeded, but invoice download failed.");
             }
     
-            try {
-                // 2. Send invoice to email
-                const emailRes = await axios.post("http://localhost:5000/api/payment/send-invoice", payload);
-                if (emailRes.data.success) {
-                    alert("Invoice also sent to your email!");
-                } else {
-                    alert("Invoice email failed to send.");
-                }
-            } catch (err) {
-                console.error("Invoice email error:", err.response?.data || err.message || err);
-                alert("Payment succeeded, but sending invoice email failed.");
-            }
+            // try {
+            //     // 2. Send invoice to email
+            //     const emailRes = await axios.post("http://localhost:5000/api/payment/send-invoice", payload);
+            //     if (emailRes.data.success) {
+            //         alert("Invoice also sent to your email!");
+            //     } else {
+            //         alert("Invoice email failed to send.");
+            //     }
+            // } catch (err) {
+            //     console.error("Invoice email error:", err.response?.data || err.message || err);
+            //     alert("Payment succeeded, but sending invoice email failed.");
+            // }
         }
     
         setProcessing(false);
     };
-    
-    
-    
 
     return (
         <form onSubmit={handleSubmit} className='w-full flex flex-col items-center gap-4'>
@@ -118,7 +113,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
 const Payment = () => {
     const [userData, setUserData] = useState(null);
     const [amount, setAmount] = useState("420$");
-    const [selectedCamp, setSelectedCamp] = useState("full");
+    const [selectedCamp, setSelectedCamp] = useState("");
     const [selectedTiming, setSelectedTiming] = useState("");
 
     useEffect(() => {
@@ -130,6 +125,12 @@ const Payment = () => {
                 const data = await res.json();
                 if (!data?.profile?.camp) throw new Error('Camp data is missing');
                 setUserData(data.profile);
+                setSelectedCamp(data.profile.camp);
+
+                if (data.profile.timings) {
+                    setSelectedTiming(data.profile.timings);
+                }
+
             } catch (err) {
                 console.error(err.message);
             }
@@ -140,6 +141,10 @@ const Payment = () => {
     useEffect(() => {
         setAmount(selectedCamp === "half" ? "230$" : "420$");
     }, [selectedCamp]);
+
+    const handleTimingChange = (e) => {
+        setSelectedTiming(e.target.value);
+    };
 
     if (!userData) return <div className="text-red-600 p-10">Loading user data...</div>;
 
@@ -153,23 +158,12 @@ const Payment = () => {
                     <input type="email" value={userData.email} readOnly className='w-full p-3 border-b border-black/20' />
                     <input type="text" value={userData.phone} readOnly className='w-full p-3 border-b border-black/20' />
 
-                    <select value={selectedCamp} onChange={(e) => { setSelectedCamp(e.target.value); setSelectedTiming(""); }} className='w-full p-3 border border-black/20'>
-                        <option value="full">Full Day (9am - 12am AND 1pm - 4pm)</option>
-                        <option value="half">Half Day (9am - 12am OR 1pm - 4pm)</option>
-                    </select>
+                    <div className='text-xl flex flex-col gap-2 justify-between'>
+                        <span className='font-semibold'>Camp: {selectedCamp === "half" ? "Half Day" : "Full Day"}</span>
+                        <span className='font-semibold'>Timing: {selectedCamp === "full" ? "09:00 AM - 04:00 PM" : selectedTiming}
+</span>
 
-                    {selectedCamp === "half" && (
-                        <select value={selectedTiming} onChange={(e) => setSelectedTiming(e.target.value)} className='w-full p-3 border border-black/20'>
-                            <option value="">Select Timing</option>
-                            <option value="morning">Morning (9am - 12am)</option>
-                            <option value="afternoon">Afternoon (1pm - 4pm)</option>
-                        </select>
-                    )}
-
-                    <select value={userData.location} disabled className='w-full p-3 border border-black/20'>
-                        <option value="lawrenceville">Lawrenceville - Gwinnett School</option>
-                        <option value="suwanee">Suwanee / Sugar Hill - North Gwinnett</option>
-                    </select>
+                    </div>
 
                     <div className='text-xl flex justify-between'>
                         <span>Total:</span>
@@ -178,13 +172,12 @@ const Payment = () => {
                 </div>
 
                 <Elements stripe={stripePromise}>
-                <CheckoutForm
-                    userData={userData}
-                    amount={amount}
-                    selectedCamp={selectedCamp}
-                    selectedTiming={selectedTiming}
-                />
-
+                    <CheckoutForm
+                        userData={userData}
+                        amount={amount}
+                        selectedCamp={selectedCamp}
+                        selectedTiming={selectedTiming}
+                    />
                 </Elements>
             </div>
         </div>
