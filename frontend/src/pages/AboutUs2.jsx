@@ -8,12 +8,12 @@ const AboutUs2 = () => {
     <div className='w-full h-full flex flex-col justify-start items-center bg-[#16003E]'>
         <Navbar/>
         <Menu/>
-        <h2 className='font-gardion text-5xl 2xl:text-9xl text-[#EE5073] text-stroke drop-shadow-md drop-shadow-[#E31DB0] mt-8'>About Us</h2>
-        <div className='w-full min-h-screen flex flex-col 2xl:flex-row justify-start items-center '>
+        <h2 className='font-gardion text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl text-[#EE5073] text-stroke drop-shadow-md drop-shadow-[#E31DB0] mt-8'>About Us</h2>
+        <div className='w-full min-h-screen flex flex-col xl:flex-row 2xl:flex-row justify-start items-center '>
         <div className='w-full h-auto flex flex-col justify-center items-center my-2'>
             <img src={logo} alt="" className='w-1/2 bg-white rounded-full' />
         </div>
-        <div className='w-full h-auto flex flex-col justify-center items-center 2xl:items-start gap-3 p-2 2xl:px-4'>
+        <div className='w-full h-auto flex flex-col justify-center items-center 2xl:items-start gap-3 p-2 xl:px-6 2xl:px-4'>
         <p className='font-montserrat lg:text-lg xl:text-sm 2xl:text-base tracking-wide text-white font-bold'>Welcome to Spark STEM Academy!</p>
         <p className='font-montserrat text-sm font-light lg:text-lg xl:text-sm 2xl:text-base tracking-wide text-white text-justify md:w-[80%] lg:w-full' >At Spark STEM Academy, we’re on a mission to spark curiosity and inspire the next generation of innovators through hands-on experiences in Science, Technology, Engineering, and Math.</p>
         <p className='font-montserrat text-sm lg:text-lg xl:text-sm 2xl:text-base tracking-wide text-white text-justify md:w-[80%] lg:w-full' >Founded by <span className='font-bold'>Dhruchita Patel</span>, a seasoned engineer and educator with over 20 years of industry experience, and <span className='font-bold'>Tanay Patel</span>, a passionate young innovator and a senior at the Gwinnett School of Mathematics, Science, and Technology—our academy brings together real-world expertise and a student’s perspective on modern learning.</p>

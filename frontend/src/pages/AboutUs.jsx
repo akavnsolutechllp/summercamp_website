@@ -22,7 +22,7 @@ const About = () => {
   return (
     <div id='about' className='min-h-screen h-auto w-full bg-gradient-to-b from-[#16003E] via-[#16003E] to-[#283253] flex flex-col md:flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12 py-10 px-4 lg:mt-0 relative mb-0'>
       <div className='w-full flex justify-center items-center'>
-        <img src={logo} alt="" className='w-full xl:w-1/2 2xl:w-1/2 bg-white rounded-full' />
+        <img src={logo} alt="" className='w-full md:w-[40%] xl:w-1/2 2xl:w-1/2 bg-white rounded-full' />
       </div>
       <div className='h-auto w-full lg:text-xl flex flex-col justify-center items-start md:items-center lg:items-start xl:items-start gap-4 lg:px-8 z-20'>
       <h2 className='font-gardion w-full 2xl:w-auto text-center lg:text-start text-6xl md:text-7xl lg:text-9xl xl:text-7xl 2xl:text-9xl text-[#E31DB0] text-stroke drop-shadow-md drop-shadow-[#EE5073]'>About Us</h2>

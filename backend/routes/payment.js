@@ -8,6 +8,8 @@ const nodemailer = require("nodemailer");
 const fs = require("fs");
 const path = require("path");
 
+const generateInvoiceId = require("../utils/generateInvoiceId");
+
 
 
 
@@ -148,62 +150,122 @@ const generateInvoicePDF = (invoicePath, data) => {
 
 
 router.post("/generate-invoice", async (req, res) => {
-    try {
-      const {
-        userId,
-        firstName,
-        lastName,
-        email,
-        phone,
-        campType,
-        timing,
-        location,
-        amount,
-      } = req.body;
-  
-      // Create PDF document
-      const doc = new PDFDocument({ margin: 50 });
-  
-      let buffers = [];
-      doc.on("data", buffers.push.bind(buffers));
-      doc.on("end", () => {
-        const pdfData = Buffer.concat(buffers);
-        res
-          .status(200)
-          .set({
-            "Content-Type": "application/pdf",
-            "Content-Disposition": `attachment; filename=Invoice_${firstName}_${lastName}.pdf`,
-          })
-          .send(pdfData);
-      });
-  
-      // Header
-      doc.fontSize(20).text("Summer Camp Invoice", { align: "center" }).moveDown();
-  
-      // User Info
-      doc.fontSize(12).text(`Invoice For: ${firstName} ${lastName}`);
-      doc.text(`Email: ${email}`);
-      doc.text(`Phone: ${phone}`);
-      doc.text(`Location: ${location}`);
-      doc.moveDown();
-  
-      // Camp Details
-      doc.text(`Camp Type: ${campType === "half" ? "Half Day" : "Full Day"}`);
-      if (campType === "half") doc.text(`Timing: ${timing}`);
-      doc.moveDown();
-  
-      // Amount
-      doc.fontSize(14).text(`Total Amount: $${amount}`, { bold: true });
-  
-      // Footer
-      doc.moveDown(2);
-      doc.fontSize(10).text("Thank you for registering!", { align: "center" });
-  
-      doc.end();
-    } catch (err) {
-      console.error("Invoice generation error:", err);
-      res.status(500).json({ message: "Failed to generate invoice", error: err.message });
+  try {
+    const {
+      userId,
+      firstName,
+      lastName,
+      email,
+      phone,
+      campType,
+      timing,
+      location,
+      amount,
+    } = req.body;
+
+    // 1. Generate invoice ID
+    const invoiceId = await generateInvoiceId();
+
+    // 2. Save invoice ID to user in DB
+    const user = await User.findById(userId); // Note that here we use findById, which uses Mongo's _id
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
     }
+
+    // Update the invoice field with the generated invoiceId
+    user.invoice = { invoiceid: invoiceId, sent: true };
+
+    // Save the updated user
+    await user.save();
+
+    // 3. Create PDF
+    const doc = new PDFDocument({ margin: 50 });
+let buffers = [];
+
+doc.on('data', buffers.push.bind(buffers));
+doc.on('end', () => {
+  const pdfData = Buffer.concat(buffers);
+  res
+    .status(200)
+    .set({
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': `attachment; filename=Invoice_${firstName}_${lastName}.pdf`,
+    })
+    .send(pdfData);
+});
+
+// 🖼️ Add Logo
+const logoPath = path.join(__dirname, '../assets/logo.png');
+if (fs.existsSync(logoPath)) {
+  doc.image(logoPath, 50, 45, { width: 80 });
+}
+
+// 🧾 Title & Invoice ID (centered)
+doc
+  .fontSize(20)
+  .text('Summer Camp Invoice', { align: 'center' })
+  .moveDown(0.5);
+
+doc
+  .fontSize(12)
+  .text(`Invoice ID: ${invoiceId}`, { align: 'center' })
+  .moveDown();
+
+// ─────────────────────────────────────────────────────────────
+doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke();
+doc.moveDown(1);
+
+// 🙋 Camper Information
+doc
+  .fontSize(14)
+  .text('Camper Information', 50, doc.y, { width: 500, align: 'left', underline: true })
+  .moveDown(0.5);
+
+doc
+  .fontSize(12)
+  .text(`Name: ${firstName} ${lastName}`, 50, doc.y, { width: 500, align: 'left' })
+  .text(`Email: ${email}`, 50, doc.y, { width: 500, align: 'left' })
+  .text(`Phone: ${phone}`, 50, doc.y, { width: 500, align: 'left' })
+  .text(`Location: ${location}`, 50, doc.y, { width: 500, align: 'left' })
+  .moveDown(1);
+
+// 🏕️ Camp Details
+doc
+  .fontSize(14)
+  .text('Camp Details', 50, doc.y, { width: 500, align: 'left', underline: true })
+  .moveDown(0.5);
+
+doc
+  .fontSize(12)
+  .text(`Camp Type: ${campType === 'half' ? 'Half Day' : 'Full Day'}`, 50, doc.y, { width: 500, align: 'left' })
+  .text(`Timing: ${timing}`, 50, doc.y, { width: 500, align: 'left' })
+  .moveDown(1);
+
+// 💰 Payment Summary
+doc
+  .fontSize(14)
+  .text('Payment Summary', 50, doc.y, { width: 500, align: 'left', underline: true })
+  .moveDown(0.5);
+
+doc
+  .fontSize(12)
+  .text(`Total Amount: $${amount}`, 50, doc.y, { width: 500, align: 'left' })
+  .moveDown(2);
+
+// 🙏 Footer
+doc
+  .fontSize(10)
+  .text('Thank you for registering for our summer camp!', 50, doc.y, {
+    width: 500,
+    align: 'center',
+  });
+
+doc.end();
+
+  } catch (err) {
+    console.error("Invoice generation error:", err);
+    res.status(500).json({ message: "Failed to generate invoice", error: err.message });
+  }
 });
   
 

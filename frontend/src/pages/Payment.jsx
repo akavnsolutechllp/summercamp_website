@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -10,6 +11,9 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
     const elements = useElements();
     const [clientSecret, setClientSecret] = useState(null);
     const [processing, setProcessing] = useState(false);
+
+    const navigate = useNavigate();
+
     const userId = localStorage.getItem("userId");
 
     useEffect(() => {
@@ -71,6 +75,8 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                 document.body.appendChild(link);
                 link.click();
                 link.remove();
+                localStorage.setItem("payment", "true");
+                navigate('/success-payment');
     
             } catch (err) {
                 console.error("Invoice download error:", err.response?.data || err.message || err);
@@ -121,6 +127,10 @@ const Payment = () => {
             try {
                 const userId = localStorage.getItem('userId');
                 if (!userId) throw new Error('User ID is missing');
+                if (!userId) throw new Error('User ID is missing');
+                if(!userId){
+                // localStorage.setItem("payment", "false"); 
+                }
                 const res = await fetch(`http://localhost:5000/api/user/getprofile/${userId}`);
                 const data = await res.json();
                 if (!data?.profile?.camp) throw new Error('Camp data is missing');

@@ -169,7 +169,7 @@ const Programs = () => {
         <h2 className="font-gardion text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Locations
          </h2>
-            <div className='h-auto w-full xl:w-[74%] 2xl:w-[80%] flex flex-col xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-3  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>
+            <div className='h-auto w-full md:w-[60%] xl:w-[74%] 2xl:w-[80%] flex flex-col xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-3  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>
               
                 <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST </h1>
@@ -250,7 +250,7 @@ const Programs = () => {
 
             </div>
         </div>
-        <div className='h-auto w-[92%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
+        <div className='h-auto md:w-[60%] w-[92%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
             <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Timings</h2>
             <h4 className='font-montserrat text-xl bg-white w-full text-center rounded-2xl'>Monday - Thursday</h4>
             <div className='w-full h-auto flex justify-center items-center gap-2 relative'>
@@ -269,7 +269,7 @@ const Programs = () => {
             
         </div>
       
-        <div className='h-auto w-[92%] xl:w-[40%] flex flex-col justify-center items-center bg-[#FFB202] rounded-3xl px-4 py-2 overflow-hidden relative mt-4'>
+        <div className='h-auto w-[92%] md:w-[60%] xl:w-[40%] flex flex-col justify-center items-center bg-[#FFB202] rounded-3xl px-4 py-2 overflow-hidden relative mt-4'>
         <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Fees</h2>
         <div className='h-full w-full flex flex-col justify-center items-center gap-2 '>
             <div className='flex flex-col justify-center items-center w-full p-2 gap-4 text-'>

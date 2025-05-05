@@ -33,6 +33,10 @@ const Registration = () => {
 
   const onSubmit = (data) => {
       setFormData(data);
+      if (data.camp === "full" && !data.timings) {
+        data.timings = "9AM - 4PM";  // Static timing for Full Day camp
+      }
+    
       navigate("/liability");
   };
 
@@ -60,7 +64,7 @@ const Registration = () => {
               </label>
               <input
                 type="text"
-                className="border w-full p-3 border-black/20"
+                className="border w-full p-3 border-black/20 focus:outline-none"
                 {...register("studentFirstName", {
                   required: "First name is required",
                 })}
@@ -72,12 +76,12 @@ const Registration = () => {
               )}
             </div>
             <div className="w-full flex flex-col justify-center items-start">
-              <label className="font-montserrat text-lg text-black">
+              <label className="font-montserrat text-lg text-black focus:outline-none">
                 Student: Last Name
               </label>
               <input
                 type="text"
-                className="border w-full p-3 border-black/20"
+                className="border w-full p-3 border-black/20 focus:outline-none"
                 {...register("studentLastName", {
                   required: "Last name is required",
                 })}
@@ -98,7 +102,7 @@ const Registration = () => {
                 Grade
               </label>
               <select
-                className="border w-full p-3 border-black/20"
+                className="border w-full p-3 border-black/20 focus:outline-none"
                 {...register("grade", { required: "Grade is required" })}
               >
                 <option value="">Select Grade</option>
@@ -120,10 +124,17 @@ const Registration = () => {
             <div className="w-full  flex flex-col justify-center items-start">
               <label className="font-montserrat text-lg text-black">Age</label>
               <input
-                type="number"
-                className="border w-full p-3 border-black/20"
-                {...register("age", { required: "Age is required" })}
-              />
+  type="number"
+  className="border w-full p-3 border-black/20 focus:outline-none"
+  {...register("age", {
+    required: "Age is required",
+    max: {
+      value: 18,
+      message: "Age must be 18 or below",
+    },
+  })}
+/>
+
               {errors.age && (
                 <span className="text-red-600 text-sm">
                   {errors.age.message}
@@ -139,7 +150,7 @@ const Registration = () => {
                 T-shirt Size
               </label>
               <select
-                className="border w-full p-3 border-black/20"
+                className="border w-full p-3 border-black/20 focus:outline-none"
                 {...register("tshirtSize", {
                   required: "T-shirt size is required",
                 })}
@@ -160,7 +171,7 @@ const Registration = () => {
               <label className="font-montserrat text-lg text-black">
                 Gender
               </label>
-              <div className="w-full flex items-center gap-4 p-3 border border-black/20">
+              <div className="w-full flex items-center gap-4 p-3 border border-black/20 focus:outline-none">
                 <label className="flex items-center gap-2">
                   <input
                     type="radio"
@@ -190,7 +201,7 @@ const Registration = () => {
                 Select Camp
               </label>
               <select
-                className="border w-full p-3 border-black/20"
+                className="border w-full p-3 border-black/20 focus:outline-none"
                 {...register("camp", {
                   required: "Camp selection is required",
                 })}
@@ -212,7 +223,7 @@ const Registration = () => {
                   Half Day Timing
                 </label>
                 <select
-                  className="border w-full p-3 border-black/20"
+                  className="border w-full p-3 border-black/20 focus:outline-none"
                   {...register("timings", {
                     required: "Timing selection is required for Half Day camp",
                   })}

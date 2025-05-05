@@ -8,6 +8,9 @@ import Registration from './pages/Registration';
 import Liability from './pages/Liability';
 import About from './pages/AboutUs';
 import AboutUs2 from './pages/AboutUs2';
+import Success from './pages/SuccessPayment';
+import SuccessPayment from './pages/SuccessPayment';
+import PageNotFound from './pages/PageNotFound';
 
 
 const App = () => {
@@ -31,6 +34,8 @@ requestAnimationFrame(raf);
         <Route path='/programs' element={<Programs/>} />
         <Route path='/register' element={<Registration/>} />
         <Route path='/liability' element={<Liability/>} />
+        <Route path='/success-payment' element={<SuccessPayment/>} />
+        <Route path='/*' element={<PageNotFound/>} />
       </Routes>
     </Router>
   )
