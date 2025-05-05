@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173", // replace with frontend port
+  origin: "https://sparkstemacademy.com", // replace with frontend port
   methods: ["GET", "POST"],
   credentials: true
 }));
@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGODB_URI)
     console.log('✅ MongoDB connected successfully');
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
+      console.log(`🚀 Server running on http://72.167.227.169`);
     });
   })
   .catch((err) => {
