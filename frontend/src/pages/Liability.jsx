@@ -205,7 +205,7 @@ const Liability = () => {
           <button type="submit" className='mt-6 px-6 py-2 bg-[#FF0066] text-white rounded-lg xl:hover:cursor-pointer'>
             Submit & Proceed to Payment
           </button>
-          <p className='text-xs text-gray-500'>*Wait for few minutes to proceed*</p>
+          <p className='text-xs text-gray-500 mt-2'>*Wait for few minutes to proceed*</p>
         </form>
       </div>
 
