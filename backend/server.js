@@ -29,6 +29,11 @@ const paymentRoutes = require('./routes/payment');
 app.use('/api/user', userRoutes);
 app.use('/api/payment', paymentRoutes);
 
+// Home Route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Spark Stem Academy API!');
+});
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
