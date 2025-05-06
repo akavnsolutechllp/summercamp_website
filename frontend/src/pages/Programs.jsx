@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoLocationSharp } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 import { motion } from 'framer-motion'
 
@@ -22,6 +23,8 @@ import Menu from '../Components/Menu';
 
 const Programs = () => {
 
+  const navigate = useNavigate();
+
   const cardVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -40,11 +43,15 @@ const Programs = () => {
     })
   };
 
+  const handleRegister = () =>{
+    navigate('/register')
+  }
+
   return (
     <div className='min-h-screen h-auto w-full bg-[#16003E] flex flex-col justify-start items-center pb-2' >
       <Navbar/>
       <Menu/>
-      <h2 className="font-montserrat uppercase text-6xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+      <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Programs
       </h2>
       <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[84%] 2xl:w-[70%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 md:gap-8 lg:gap-6 xl:gap-8 gap-4 px-4 py-4 z-10">
@@ -166,7 +173,7 @@ const Programs = () => {
         </motion.div>
       </motion.div>
         <div className='h-auto w-full flex flex-col justify-center items-center gap-2 mt-4 2xl:mt-12' >
-        <h2 className="font-montserrat text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Locations
          </h2>
             <div className='h-auto w-full md:w-[60%] xl:w-[74%] 2xl:w-[80%] flex flex-col xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-3  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>
@@ -284,7 +291,7 @@ const Programs = () => {
             </div>
         </div>
         </div>
-        <a href='/register' className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-2'>Enroll Now</a>
+        <button onClick={handleRegister}  className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-2'>Enroll Now</button>
     </div>
   )
 }

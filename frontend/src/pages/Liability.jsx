@@ -202,9 +202,10 @@ const Liability = () => {
             {errors.signedDate && <span className="text-red-500">{errors.signedDate.message}</span>}
           </div>
 
-          <button type="submit" className='mt-6 px-6 py-2 bg-[#FF0066] text-white rounded-lg'>
+          <button type="submit" className='mt-6 px-6 py-2 bg-[#FF0066] text-white rounded-lg xl:hover:cursor-pointer'>
             Submit & Proceed to Payment
           </button>
+          <p>*Wait for few minutes to proceed*</p>
         </form>
       </div>
 

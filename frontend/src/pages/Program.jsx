@@ -45,10 +45,11 @@ const handleKnowmore = () =>{
       <img src={vect21} alt="" className="hidden xl:block xl:absolute 2xl:block xl:w-[16%] 2xl:w-[20%] 2xl:absolute 2xl:top-[60%] xl:top-[60%] xl:-left-[8%] 2xl:-left-[8%]" />
       <img src={vect22} alt="" className="hidden xl:block xl:absolute 2xl:block xl:w-[16%] 2xl:w-[20%] 2xl:absolute 2xl:top-[60%] xl:top-[60%] xl:-right-[8%] 2xl:-right-[8%]" />
 
-      <h2 className="font-montserrat uppercase text-6xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+      <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Programs
       </h2>
-      <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[84%] 2xl:w-[70%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 md:gap-8 lg:gap-6 xl:gap-8 gap-4 py-4 z-10">
+      
+      <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[84%] 2xl:w-[70%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 md:gap-8 lg:gap-6 xl:gap-8 gap-6 py-4 z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -165,7 +166,7 @@ const handleKnowmore = () =>{
       </motion.div>
       <button
       onClick={handleKnowmore}
-        className="bg-[#FF0066] font-montserrat rounded-full px-4 py-2 2xl:text-xl 2xl:mt-12 text-white z-20"
+        className="bg-[#FF0066] font-montserrat rounded-full px-4 py-2 mt-4 2xl:text-xl 2xl:mt-12 text-white z-20"
       >
         Know More
       </button>
