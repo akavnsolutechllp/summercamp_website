@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigin = 'https://sparkstemacademy.com'; 
+const allowedOrigin = 'https://sparkstemacademy.onrender.com/'; 
 
 app.use(cors({
   origin: allowedOrigin,
