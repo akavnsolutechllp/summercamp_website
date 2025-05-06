@@ -30,23 +30,24 @@ const SuccessPayment = () => {
   // Handler to download the invoice
 
   const handleDownloadInvoice = async () => {
+    const confirmDownload = window.confirm("Do you want to download the invoice?");
+    if (!confirmDownload) return;
+  
     try {
       const userId = localStorage.getItem("userId");
       if (!userId) {
         alert("User ID missing");
         return;
       }
-      // Fetch the user profile to build the invoice payload
+  
       const resProfile = await fetch(
         `https://summercamp-website.onrender.com/api/user/getprofile/${userId}`
       );
       const data = await resProfile.json();
       if (!data || !data.profile) throw new Error("Profile missing");
-
+  
       const profile = data.profile;
-
-      // Build payload for invoice generation. For a full-day camp, always show "09:00 AM - 04:00 PM".
-      // For half-day, use the saved timing.
+  
       const payload = {
         userId: userId,
         firstName: profile.studentFirstName,
@@ -57,16 +58,15 @@ const SuccessPayment = () => {
         timing:
           profile.camp === "half" ? profile.timings : "09:00 AM - 04:00 PM",
         location: profile.location,
-        amount: profile.camp === "half" ? "230" : "420", // Adjust as needed or pass it in from your profile
+        amount: profile.camp === "half" ? "230" : "420",
       };
-
-      // Call the invoice API endpoint; expect a PDF blob in response
+  
       const res = await axios.post(
         "https://summercamp-website.onrender.com/api/payment/generate-invoice",
         payload,
         { responseType: "blob" }
       );
-
+  
       const url = window.URL.createObjectURL(new Blob([res.data]));
       const link = document.createElement("a");
       link.href = url;
@@ -85,7 +85,7 @@ const SuccessPayment = () => {
       alert("Error downloading invoice.");
     }
   };
-
+  
   return (
     <div className="h-full w-full flex flex-col justify-center items-center bg-gradient-to-b  from-[#283353] via-[#16003E] to-[#16003E]">
       <Navbar />
