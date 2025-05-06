@@ -73,7 +73,7 @@ const Liability = () => {
 
           {/* Camper Info Fields */}
           <div className='w-full h-auto flex flex-col justify-center items-start mt-2'>
-            <label>Camper’s Full Name:</label>
+            <label className='font-montserrat'>Camper’s Full Name:</label>
             <input
               type='text'
               {...register('camperName', { required: 'Camper’s name is required' })}
@@ -81,7 +81,7 @@ const Liability = () => {
             />
             {errors.camperName && <span className="text-red-500">{errors.camperName.message}</span>}
 
-            <label className='mt-1'>Date of Birth:</label>
+            <label className='mt-1 font-montserrat'>Date of Birth:</label>
             <input
               type='date'
               {...register('dob', { required: 'Date of Birth is required' })}
@@ -205,7 +205,7 @@ const Liability = () => {
           <button type="submit" className='mt-6 px-6 py-2 bg-[#FF0066] text-white rounded-lg xl:hover:cursor-pointer'>
             Submit & Proceed to Payment
           </button>
-          <p className='text-xs text-gray-500 mt-2'>*Wait for few minutes to proceed*</p>
+          {/* <p className='text-xs text-gray-500 mt-2'>*Wait for few minutes to proceed*</p> */}
         </form>
       </div>
 
