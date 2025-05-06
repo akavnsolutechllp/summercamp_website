@@ -160,7 +160,7 @@ const Payment = () => {
 
     return (
         <div className='min-h-screen w-full  bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E] flex flex-col items-center gap-2 p-4'>
-            <h2 className='font-gardion text-5xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066]'>Checkout</h2>
+            <h2 className='font-montserrat uppercase text-5xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066]'>Checkout</h2>
             <div className='w-full md:w-[60%] xl:w-[40%] 2xl:w-[30%] bg-white p-6 rounded-xl shadow-lg'>
                 <div className='space-y-4'>
                     <input type="text" value={userData.studentFirstName} readOnly className='w-full p-3 border-b border-black/20' />
