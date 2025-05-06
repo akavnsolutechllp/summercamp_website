@@ -127,10 +127,9 @@ const Payment = () => {
             try {
                 const userId = localStorage.getItem('userId');
                 if (!userId) throw new Error('User ID is missing');
-                if (!userId) throw new Error('User ID is missing');
-                if(!userId){
-                // localStorage.setItem("payment", "false"); 
-                }
+                // if(!userId){
+                // // localStorage.setItem("payment", "false"); 
+                // }
                 const res = await fetch(`https://summercamp-website.onrender.com/api/user/getprofile/${userId}`);
                 const data = await res.json();
                 if (!data?.profile?.camp) throw new Error('Camp data is missing');
@@ -156,22 +155,22 @@ const Payment = () => {
         setSelectedTiming(e.target.value);
     };
 
-    if (!userData) return <div className="text-red-600 p-10">Loading user data...</div>;
+    if (!userData) return <div className="text-red-600 p-10 text-center font-montserrat uppercase">Loading user data...</div>;
 
     return (
         <div className='min-h-screen w-full  bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E] flex flex-col items-center gap-2 p-4'>
             <h2 className='font-montserrat uppercase text-5xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066]'>Checkout</h2>
             <div className='w-full md:w-[60%] xl:w-[40%] 2xl:w-[30%] bg-white p-6 rounded-xl shadow-lg'>
-                <div className='space-y-4'>
-                    <input type="text" value={userData.studentFirstName} readOnly className='w-full p-3 border-b border-black/20' />
-                    <input type="text" value={userData.studentLastName} readOnly className='w-full p-3 border-b border-black/20' />
-                    <input type="email" value={userData.email} readOnly className='w-full p-3 border-b border-black/20' />
-                    <input type="text" value={userData.phone} readOnly className='w-full p-3 border-b border-black/20' />
-                    <input type='text' value={userData.location}  readOnly className='w-full p-3 border-b border-black/20' />
-
+                <div className='space-y-4 font-montserrat'>
+                    <input type="text" value={userData.studentFirstName} readOnly className='w-full p-3 border-b border-black/20 focus:outline-none' />
+                    <input type="text" value={userData.studentLastName} readOnly className='w-full p-3 border-b border-black/20 focus:outline-none' />
+                    <input type="email" value={userData.email} readOnly className='w-full p-3 border-b border-black/20 focus:outline-none' />
+                    <input type="text" value={userData.phone} readOnly className='w-full p-3 border-b border-black/20 focus:outline-none' />
+                    
                     <div className='text-xl flex flex-col gap-2 justify-between'>
                         <span className='font-semibold'>Camp: {selectedCamp === "half" ? "Half Day" : "Full Day"}</span>
                         <span className='font-semibold'>Timing: {selectedCamp === "full" ? "09:00 AM - 04:00 PM" : selectedTiming}</span>
+                        <span className='font-semibold'>Location: {userData.location}</span>
                     </div>
 
                     <div className='text-xl flex justify-between'>
