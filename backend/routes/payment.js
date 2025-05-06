@@ -227,7 +227,7 @@ doc
   .text(`Name: ${firstName} ${lastName}`, 50, doc.y, { width: 500, align: 'left' })
   .text(`Email: ${email}`, 50, doc.y, { width: 500, align: 'left' })
   .text(`Phone: ${phone}`, 50, doc.y, { width: 500, align: 'left' })
-  .text(`Location: ${location}`, 50, doc.y, { width: 500, align: 'left' })
+  
   .moveDown(1);
 
 // 🏕️ Camp Details
@@ -240,6 +240,7 @@ doc
   .fontSize(12)
   .text(`Camp Type: ${campType === 'half' ? 'Half Day' : 'Full Day'}`, 50, doc.y, { width: 500, align: 'left' })
   .text(`Timing: ${timing}`, 50, doc.y, { width: 500, align: 'left' })
+  .text(`Location: ${location}`, 50, doc.y, { width: 500, align: 'left' })
   .moveDown(1);
 
 // 💰 Payment Summary
