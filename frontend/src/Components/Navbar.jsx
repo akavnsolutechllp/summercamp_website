@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import logo from '../assets/logo.png';
 
@@ -21,6 +22,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef(null);
 
+  const navigate  = useNavigate();
+
   const toggleSidebar = () => {
     if (isOpen) {
       gsap.to(sidebarRef.current, {
@@ -38,14 +41,31 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleHome = () =>{
+    navigate('/')
+  }
+
+  const handleProgram = () =>{
+    navigate('/programs')
+  }
+
+  const handleRegister = () =>{
+    navigate('/register')
+  }
+
+  const handleAbout = () =>{
+    navigate('/aboutus')
+  }
+
+
   return (
     <div className='w-full h-[12vh] xl:h-[32vh] flex justify-center items-center 2xl:justify-center items-center px-4 relative z-20 overflow-hidden xl:overflow-hidden'>
       <img src={banner} alt="" className='w-full absolute object-cover' />
       <div className="hidden xl:w-[100%] 2xl:w-[100%] md:flex justify-center gap-24 items-center ml-auto text-white font-semibold text-lg z-10 mt-72 xl:mt-44 2xl:mt-56 p-4">
-        <a href="/" className={`hover:text-gray-200 ${location.pathname === '/' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`} >Home</a>
-        <a href="/programs" className={`hover:text-gray-200 ${location.pathname === '/programs' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`}>Programs</a>
-        <a href="/register" className={`hover:text-gray-200 ${location.pathname === '/register' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`}>Register</a>
-        <a href="/aboutus" className={`hover:text-gray-200 ${location.pathname === '/aboutus' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`}>About Us</a>
+        <button onClick={handleHome}  className={`hover:text-gray-200 ${location.pathname === '/' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`} >Home</button>
+        <button onClick={handleProgram}  className={`hover:text-gray-200 ${location.pathname === '/programs' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`}>Programs</button>
+        <button onClick={handleRegister}  className={`hover:text-gray-200 ${location.pathname === '/register' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`}>Register</button>
+        <button onClick={handleAbout}  className={`hover:text-gray-200 ${location.pathname === '/aboutus' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full`}>About Us</button>
       </div>
     </div>
   );

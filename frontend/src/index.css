@@ -37,7 +37,7 @@
 
 @font-face {
   font-family: 'Gardion Demo';
-  src: url('Fonts/gardion.demo.ttf') format('truetype');
+  src: url('Fonts/gardion.demo.woff2') format('woff2');
 }
 
 .font-nabana{

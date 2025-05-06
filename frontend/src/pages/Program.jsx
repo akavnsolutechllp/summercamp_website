@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 
 import stem from '../assets/stem.jpg';
@@ -24,6 +25,13 @@ import mobile from '../assets/page2-mobile.jpg';
 
 
 const Program = () => {
+
+const navigate = useNavigate();
+
+const handleKnowmore = () =>{
+  navigate('/programs')
+}
+
   return (
     <div
       id="programs"
@@ -155,12 +163,12 @@ const Program = () => {
         
         </motion.div>
       </motion.div>
-      <a
-        href="/programs"
+      <button
+      onClick={handleKnowmore}
         className="bg-[#FF0066] font-montserrat rounded-full px-4 py-2 2xl:text-xl 2xl:mt-12 text-white z-20"
       >
         Know More
-      </a>
+      </button>
     </div>
   );
 };
