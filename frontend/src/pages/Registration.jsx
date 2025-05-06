@@ -50,7 +50,7 @@ const Registration = () => {
       <Navbar />
       <Menu />
       <div className="min-h-screen w-full flex flex-col justify-center items-center gap-4 p-4">
-        <h2 className="font-gardion text-5xl text-center tracking-wider md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        <h2 className="font-montserrat uppercase text-5xl text-center tracking-wider md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
           Register Now
         </h2>
         <form

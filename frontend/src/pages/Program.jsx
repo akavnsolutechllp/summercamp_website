@@ -45,7 +45,7 @@ const handleKnowmore = () =>{
       <img src={vect21} alt="" className="hidden xl:block xl:absolute 2xl:block xl:w-[16%] 2xl:w-[20%] 2xl:absolute 2xl:top-[60%] xl:top-[60%] xl:-left-[8%] 2xl:-left-[8%]" />
       <img src={vect22} alt="" className="hidden xl:block xl:absolute 2xl:block xl:w-[16%] 2xl:w-[20%] 2xl:absolute 2xl:top-[60%] xl:top-[60%] xl:-right-[8%] 2xl:-right-[8%]" />
 
-      <h2 className="font-gardion text-6xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+      <h2 className="font-montserrat uppercase text-6xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Programs
       </h2>
       <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[84%] 2xl:w-[70%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 md:gap-8 lg:gap-6 xl:gap-8 gap-4 py-4 z-10">
@@ -57,7 +57,7 @@ const handleKnowmore = () =>{
           whileHover={{scale:1.02}}
           className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
-          <h1 className="font-gardion text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+          <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             STEM Builders
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
@@ -76,7 +76,7 @@ const handleKnowmore = () =>{
           whileHover={{scale:1.02}}
           className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
-          <h1 className="font-gardion text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+          <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Inventor’s Workshop
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
@@ -95,7 +95,7 @@ const handleKnowmore = () =>{
           whileHover={{scale:1.02}}
           className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
-          <h1 className="font-gardion text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+          <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Robo Coding Camp
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
@@ -114,7 +114,7 @@ const handleKnowmore = () =>{
           whileHover={{scale:1.02}}
           className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
-          <h1 className="font-gardion text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+          <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Circuit Science
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
@@ -132,7 +132,7 @@ const handleKnowmore = () =>{
           whileHover={{scale:1.02}}
          className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
-          <h1 className="font-gardion text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+          <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Eco Explorers
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
@@ -151,7 +151,7 @@ const handleKnowmore = () =>{
           whileHover={{scale:1.02}}
           className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
-          <h1 className="font-gardion text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
+          <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Mini Makers
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">

@@ -74,7 +74,7 @@ const LandingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1, stiffness: 80, type: spring }}
-            className="font-gardion text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-7xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[8vw] 2xl:text-[6vw] text-center"
+            className="font-montserrat uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-7xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[8vw] 2xl:text-[6vw] text-center"
           >
             <p className="">Spark Stem</p>
             <p className="">Academy</p>
@@ -116,8 +116,8 @@ const LandingPage = () => {
         
       <motion.img style={{x:elem1X}} src={vect0} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:right-[24%]" />
       <motion.img style={{x:elem2X}} src={vect2} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:left-[24%]" />
-      <motion.img style={{x:elem3X}} src={vect9} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:left-[24%] 2xl:top-[24%]" />
-      <motion.img style={{x:elem4X}} src={vect4} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:right-[24%] 2xl:top-[24%]" />
+      <motion.img style={{x:elem3X}} src={vect9} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:left-[20%] 2xl:top-[24%]" />
+      <motion.img style={{x:elem4X}} src={vect4} alt="" className="hidden 2xl:block 2xl:w-[10%] absolute z-20 2xl:right-[20%] 2xl:top-[24%]" />
     </div>
   );
 };
