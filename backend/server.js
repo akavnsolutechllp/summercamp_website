@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:5173", // replace with frontend port
+  origin: "https://sparkstemacademy.onrender.com/", // replace with frontend port
   methods: ["GET", "POST"],
   credentials: true
 }));
