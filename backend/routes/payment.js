@@ -58,17 +58,18 @@ const generateInvoicePDF = (invoicePath, data) => {
       .text(`Camper Name: ${firstName} ${lastName}`)
       .text(`Email: ${email}`)
       .text(`Phone: ${phone}`)
-      .text(`Camp Location: ${location}`)
+      
       .moveDown();
 
     doc.fillColor('#f79824').text('Camp Details', { underline: true });
     doc.fillColor('black').moveDown(0.5)
-      .text(`Camp Type: ${campType === 'full' ? 'Full Day (9AM - 4PM)' : 'Half Day'}`);
-
+      .text(`Camp Location: ${location}`)
+      .text(`Camp Type: ${campType === 'full' ? 'Full Day (9AM - 4PM)' : 'Half Day'}`)
+    
     if (campType === 'half') {
       doc.text(`Timing: ${timing === 'morning' ? 'Morning (9AM - 12PM)' : 'Afternoon (1PM - 4PM)'}`);
     }
-
+    
     doc.moveDown();
     doc.fillColor('#f79824').text('Payment Summary', { underline: true });
     doc.fillColor('#EE5073').fontSize(16).moveDown(0.5)

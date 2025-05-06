@@ -208,7 +208,7 @@ const Liability = () => {
           {/* <p className='text-xs text-gray-500 mt-2'>*Wait for few minutes to proceed*</p> */}
         </form>
       </div>
-
+                  
       {/* Decorative images */}
       <motion.img ref={vect1Ref} style={{ x: vect1X }} src={vect1} alt="" className='hidden lg:block 2xl:block absolute w-1/4 left-4 -top-[12%] 2xl:top-[12%] opacity-90' />
       <motion.img ref={vect2Ref} style={{ x: vect2X }} src={vect2} alt="" className='hidden lg:block 2xl:block absolute w-1/4 right-4 top-[10%] 2xl:top-[24%] opacity-90' />

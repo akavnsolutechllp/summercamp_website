@@ -167,12 +167,11 @@ const Payment = () => {
                     <input type="text" value={userData.studentLastName} readOnly className='w-full p-3 border-b border-black/20' />
                     <input type="email" value={userData.email} readOnly className='w-full p-3 border-b border-black/20' />
                     <input type="text" value={userData.phone} readOnly className='w-full p-3 border-b border-black/20' />
+                    <input type='text' value={userData.location}  readOnly className='w-full p-3 border-b border-black/20' />
 
                     <div className='text-xl flex flex-col gap-2 justify-between'>
                         <span className='font-semibold'>Camp: {selectedCamp === "half" ? "Half Day" : "Full Day"}</span>
-                        <span className='font-semibold'>Timing: {selectedCamp === "full" ? "09:00 AM - 04:00 PM" : selectedTiming}
-</span>
-
+                        <span className='font-semibold'>Timing: {selectedCamp === "full" ? "09:00 AM - 04:00 PM" : selectedTiming}</span>
                     </div>
 
                     <div className='text-xl flex justify-between'>
