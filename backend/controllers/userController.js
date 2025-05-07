@@ -4,7 +4,7 @@ const User = require('../models/User');
 module.exports.completeRegistration = async (req, res, next) => {
     try {
       
-      const { studentFirstName, studentLastName, grade, age, tshirtSize, gender, camp, timings, location ,camperName,dob, phone, email, parentName, medicalConditions, medications, emergencyContactName, emergencyContactPhone, mediaRelease, signedDate,} = req.body;
+      const { studentFirstName, studentLastName, grade, age, tshirtSize, gender, camp, campSession, activity, camperName,dob, phone, email, parentName, medicalConditions, medications, emergencyContactName, emergencyContactPhone, mediaRelease, signedDate,} = req.body;
       
       // Example logic: Store data in the database (e.g., using Mongoose)
       const user = new User({
@@ -15,8 +15,8 @@ module.exports.completeRegistration = async (req, res, next) => {
         tshirtSize,
         gender,
         camp,
-        timings,
-        location,
+        campSession,
+        activity,
         camperName,
         dob,
         email,

@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigin = 'https://sparkstemacademy.com'; 
+const allowedOrigin = 'http://localhost:5173'; 
 
 app.use(cors({
   origin: allowedOrigin,
@@ -46,4 +46,3 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch((err) => {
     console.error('❌ MongoDB connection error:', err.message);
 });
-

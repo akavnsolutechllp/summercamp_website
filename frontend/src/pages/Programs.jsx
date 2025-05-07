@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { motion } from 'framer-motion'
 
-import smallrainbow from '../assets/small-rainbow2.png'
+
 import stem from '../assets/stem.jpg';
 import inventor from '../assets/inventors.jpg';
 import robo from '../assets/robot.jpg';
@@ -12,9 +12,7 @@ import circuit from '../assets/circuit.jpg';
 import eco from '../assets/eco_explorer.jpg';
 import mini from '../assets/mini_stem.jpg';
 
-import bg from '../assets/cards-bg.jpeg'
 
-import vect17 from '../assets/17.png';
 
 import map from '../assets/MAP.png';
 import location from '../assets/location.png';

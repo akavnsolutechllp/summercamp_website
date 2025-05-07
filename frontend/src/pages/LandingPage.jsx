@@ -16,10 +16,7 @@ import vect9 from "../assets/7.png";
 
 import { useNavigate } from "react-router-dom";
 
-import rainbow from "../assets/rainbow.jpg";
-import smallrainbow from "../assets/small-rainbow2.png";
 
-import mobile from '../assets/mobile-landing-bg.jpg'
 
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";

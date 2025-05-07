@@ -159,8 +159,9 @@ router.post("/generate-invoice", async (req, res) => {
       email,
       phone,
       campType,
+      campSession,
+      activity,
       timing,
-      location,
       amount,
     } = req.body;
 
@@ -240,7 +241,8 @@ doc
   .fontSize(12)
   .text(`Camp Type: ${campType === 'half' ? 'Half Day' : 'Full Day'}`, 50, doc.y, { width: 500, align: 'left' })
   .text(`Timing: ${timing}`, 50, doc.y, { width: 500, align: 'left' })
-  .text(`Location: ${location}`, 50, doc.y, { width: 500, align: 'left' })
+  .text(`Location: ${campSession}`, 50, doc.y, { width: 500, align: 'left' })
+  .text(`Activity: ${activity}`, 50, doc.y, { width: 500, align: 'left' })
   .moveDown(1);
 
 // 💰 Payment Summary

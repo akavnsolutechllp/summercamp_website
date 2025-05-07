@@ -16,8 +16,8 @@ const userSchema = new mongoose.Schema({
   tshirtSize: { type: String, required: true },
   gender: { type: String, required: true },
   camp: { type: String, required: true },
-  location: { type: String, required: true },
-  timings: { type: String }, // Only used if camp === 'half'
+  campSession: { type: String, required: true },
+  activity: { type: String, required: true },
 
   // Liability Form Data
   camperName: { type: String },

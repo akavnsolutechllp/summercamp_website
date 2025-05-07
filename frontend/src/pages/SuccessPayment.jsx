@@ -30,9 +30,6 @@ const SuccessPayment = () => {
   // Handler to download the invoice
 
   const handleDownloadInvoice = async () => {
-    const confirmDownload = window.confirm("Do you want to download the invoice?");
-    if (!confirmDownload) return;
-  
     try {
       const userId = localStorage.getItem("userId");
       if (!userId) {
@@ -41,7 +38,7 @@ const SuccessPayment = () => {
       }
   
       const resProfile = await fetch(
-        `https://summercamp-website.onrender.com/api/user/getprofile/${userId}`
+        `http://localhost:4000/api/user/getprofile/${userId}`
       );
       const data = await resProfile.json();
       if (!data || !data.profile) throw new Error("Profile missing");
@@ -55,19 +52,19 @@ const SuccessPayment = () => {
         email: profile.email,
         phone: profile.phone,
         campType: profile.camp,
-        timing:
-          profile.camp === "half" ? profile.timings : "09:00 AM - 04:00 PM",
-        location: profile.location,
+        campSession: profile.campSession,
+        activity: profile.activity,
         amount: profile.camp === "half" ? "230" : "420",
       };
   
       const res = await axios.post(
-        "https://summercamp-website.onrender.com/api/payment/generate-invoice",
+        "http://localhost:4000/api/payment/generate-invoice",
         payload,
         { responseType: "blob" }
       );
   
-      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const blob = new Blob([res.data], { type: "application/pdf" });
+      const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
       link.setAttribute(
@@ -85,6 +82,7 @@ const SuccessPayment = () => {
       alert("Error downloading invoice.");
     }
   };
+  
   
   return (
     <div className="h-full w-full flex flex-col justify-center items-center bg-gradient-to-b  from-[#283353] via-[#16003E] to-[#16003E]">

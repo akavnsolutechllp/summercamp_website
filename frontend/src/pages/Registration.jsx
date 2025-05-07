@@ -32,15 +32,67 @@ const Registration = () => {
   };
 
   const onSubmit = (data) => {
-      setFormData(data);
-      if (data.camp === "full" && !data.timings) {
-        data.timings = "9AM - 4PM";  // Static timing for Full Day camp
-      }
-    
-      navigate("/liability");
+    setFormData(data);
+    if (data.camp === "full" && !data.timings) {
+      data.timings = "9AM - 4PM"; // Static timing for Full Day camp
+    }
+
+    navigate("/liability");
   };
 
+  const campSchedules = [
+    {
+      location: "GSMST",
+      date: "June 2 - June 5",
+      morning: "Inventor’s Workshop",
+      afternoon: "Circuit Science",
+    },
+    {
+      location: "Northview High School",
+      date: "June 9 – June 12",
+      morning: "Inventor’s Workshop",
+      afternoon: "Circuit Science",
+    },
+    {
+      location: "North Gwinnett Middle School",
+      date: "June 16 – June 19",
+      morning: "Inventor’s Workshop",
+      afternoon: "Circuit Science",
+    },
+    {
+      location: "Alpharetta High School",
+      date: "June 23 – June 26",
+      morning: "Inventor’s Workshop",
+      afternoon: "Circuit Science",
+    },
+    {
+      location: "GSMST",
+      date: "June 30 – July 3",
+      morning: "STEM Builders",
+      afternoon: "Robo Coding Camp",
+    },
+    {
+      location: "Northview High School",
+      date: "July 7 – July 10",
+      morning: "STEM Builders",
+      afternoon: "Robo Coding Camp",
+    },
+    {
+      location: "North Gwinnett Middle School",
+      date: "July 14 – July 17",
+      morning: "STEM Builders",
+      afternoon: "Robo Coding Camp",
+    },
+  ];
+
   const campSelection = watch("camp"); // watch camp selection
+  const selectedSession = watch("campSession");
+  const selectedSchedule = campSchedules.find(
+    (camp) =>
+      selectedSession &&
+      selectedSession.includes(camp.location) &&
+      selectedSession.includes(camp.date)
+  );
 
   return (
     <div
@@ -124,16 +176,16 @@ const Registration = () => {
             <div className="w-full  flex flex-col justify-center items-start">
               <label className="font-montserrat text-lg text-black">Age</label>
               <input
-  type="number"
-  className="border w-full p-3 border-black/20 focus:outline-none"
-  {...register("age", {
-    required: "Age is required",
-    max: {
-      value: 18,
-      message: "Age must be 18 or below",
-    },
-  })}
-/>
+                type="number"
+                className="border w-full p-3 border-black/20 focus:outline-none"
+                {...register("age", {
+                  required: "Age is required",
+                  max: {
+                    value: 18,
+                    message: "Age must be 18 or below",
+                  },
+                })}
+              />
 
               {errors.age && (
                 <span className="text-red-600 text-sm">
@@ -217,50 +269,70 @@ const Registration = () => {
               )}
             </div>
 
-            {campSelection === "half" && (
-              <div className="w-full flex flex-col justify-center items-start">
-                <label className="font-montserrat text-lg text-black">
-                  Half Day Timing
-                </label>
-                <select
-                  className="border w-full p-3 border-black/20 focus:outline-none"
-                  {...register("timings", {
-                    required: "Timing selection is required for Half Day camp",
-                  })}
-                >
-                  <option value="">Select Timing</option>
-                  <option value="09:00 AM - 12:00 PM">9AM - 12PM</option>
-                  <option value="01:00 PM - 04:00 PM">1PM - 4PM</option>
-                </select>
-                {errors.timings && (
-                  <span className="text-red-600 text-sm">
-                    {errors.timings.message}
-                  </span>
-                )}
-              </div>
-            )}
-
             <div className="w-full flex flex-col justify-center items-start">
               <label className="font-montserrat text-lg text-black">
-                Location
+                Select Camp Location & Date
               </label>
               <select
-                className="border w-full p-3 border-black/20"
-                {...register("location", { required: "Location is required" })}
+                {...register("campSession", {
+                  required: "Please select a session",
+                })}
+                className="border w-full p-3 border-black/20 focus:outline-none"
               >
-                <option value="">Select Location</option>
-                <option value="lawrenceville">
-                  Lawrenceville - Gwinnett School of Mathematics, Scienece and
-                  Technology
-                </option>
-                <option value="suwanee">
-                  Suwanee / Sugar Hill - North Gwinnett Middle School
-                </option>
+                <option value="">-- Select a session --</option>
+                {campSchedules.map((camp, index) => (
+                  <option
+                    key={index}
+                    value={`${camp.location} | ${camp.date} | Morning: ${camp.morning}, Afternoon: ${camp.afternoon}`}
+                  >
+                    {camp.location} – {camp.date}
+                  </option>
+                ))}
               </select>
-              {errors.location && (
+              {errors.campSession && (
                 <span className="text-red-600 text-sm">
-                  {errors.location.message}
+                  {errors.campSession.message}
                 </span>
+              )}
+              {selectedSession && (
+                <div className="w-full flex flex-col justify-center items-start">
+                  <label className="font-montserrat text-lg text-black">
+                    Select Activity
+                  </label>
+                  <select
+                    {...register("activity", {
+                      required: "Please select an activity",
+                    })}
+                    className="border w-full p-3 border-black/20 focus:outline-none"
+                  >
+                    <option value="">-- Choose Activity --</option>
+                    {campSelection === "full" && selectedSchedule && (
+                      <>
+                        <option
+                          value={`09:00 AM - 12:00 PM: ${selectedSchedule.morning}, 01:00 PM - 04:00 PM: ${selectedSchedule.afternoon}`}
+                        >
+                          09:00 AM - 12:00 PM: {selectedSchedule.morning} &
+                          01:00PM - 04:00 PM: {selectedSchedule.afternoon}
+                        </option>
+                      </>
+                    )}
+                    {campSelection === "half" && selectedSchedule && (
+                      <>
+                        <option value={selectedSchedule.morning}>
+                          {selectedSchedule.morning} (09:00 AM - 12:00 PM){" "}
+                        </option>
+                        <option value={selectedSchedule.afternoon}>
+                          {selectedSchedule.afternoon} (01:00 PM - 04:00 PM){" "}
+                        </option>
+                      </>
+                    )}
+                  </select>
+                  {errors.activity && (
+                    <span className="text-red-600 text-sm">
+                      {errors.activity.message}
+                    </span>
+                  )}
+                </div>
               )}
             </div>
           </div>
@@ -273,6 +345,7 @@ const Registration = () => {
               Next
             </button>
           </div>
+          
         </form>
       </div>
     </div>

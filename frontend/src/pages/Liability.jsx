@@ -8,7 +8,6 @@ import vect4 from '../assets/17.png';
 import SignaturePad from './SignaturePad';
 import { useNavigate } from 'react-router-dom';
 
-import rainbow from '../assets/rainbow.jpg';
 
 import { easeInOut, motion, spring, useScroll, useTransform } from 'framer-motion';
 import Navbar from '../Components/Navbar';
@@ -46,7 +45,7 @@ const Liability = () => {
     };
 
     try {
-      const res = await fetch('https://summercamp-website.onrender.com/api/user/complete-registration', {
+      const res = await fetch('http://localhost:4000/api/user/complete-registration', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fullForm)
