@@ -45,7 +45,7 @@ const Liability = () => {
     };
 
     try {
-      const res = await fetch('http://localhost:4000/api/user/complete-registration', {
+      const res = await fetch('https://summercamp-website.onrender.com/api/user/complete-registration', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fullForm)

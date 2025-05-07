@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigin = 'http://localhost:5173'; 
+const allowedOrigin = 'https://sparkstemacademy.com'; 
 
 app.use(cors({
   origin: allowedOrigin,

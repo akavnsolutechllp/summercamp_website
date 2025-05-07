@@ -38,7 +38,7 @@ const SuccessPayment = () => {
       }
   
       const resProfile = await fetch(
-        `http://localhost:4000/api/user/getprofile/${userId}`
+        `https://summercamp-website.onrender.com/api/user/getprofile/${userId}`
       );
       const data = await resProfile.json();
       if (!data || !data.profile) throw new Error("Profile missing");
@@ -58,7 +58,7 @@ const SuccessPayment = () => {
       };
   
       const res = await axios.post(
-        "http://localhost:4000/api/payment/generate-invoice",
+        "https://summercamp-website.onrender.com/api/payment/generate-invoice",
         payload,
         { responseType: "blob" }
       );

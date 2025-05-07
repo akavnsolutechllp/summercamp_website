@@ -4,8 +4,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from 'axios';
 
-// const stripePromise = loadStripe("pk_live_51RHlofA5NifUX0tMYNOQcaTfuhETTC38zQeyyx855toElkKFYiWnBThn5RNPBpuRqpTA14EiX8APNufztZVcMWOt008B0SmAr6");
-const stripePromise = loadStripe("pk_test_51RHlofA5NifUX0tMnXjDo9j6WXtW3ZjCIiqFJKpb0VnWogATjF2EJ3e25y77RKfAgFrel03W3fxNnITW9YsNPobg001cPjcNnG");
+const stripePromise = loadStripe("pk_live_51RHlofA5NifUX0tMYNOQcaTfuhETTC38zQeyyx855toElkKFYiWnBThn5RNPBpuRqpTA14EiX8APNufztZVcMWOt008B0SmAr6");
+
 
 
 const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
@@ -21,7 +21,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
     useEffect(() => {
         const fetchClientSecret = async () => {
             const numericAmount = parseFloat(amount.replace("$", "")) * 100; // convert to cents
-            const { data } = await axios.post("http://localhost:4000/api/payment/create-payment-intent", {
+            const { data } = await axios.post("https://summercamp-website.onrender.com/api/payment/create-payment-intent", {
                 amount: numericAmount,
             });
             setClientSecret(data.clientSecret);
@@ -67,7 +67,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
             try {
                 // 1. Download invoice
                 const res = await axios.post(
-                    "http://localhost:4000/api/payment/generate-invoice",
+                    "https://summercamp-website.onrender.com/api/payment/generate-invoice",
                     payload,
                     { responseType: "blob" } // Expect PDF blob
                 );
@@ -134,7 +134,7 @@ const Payment = () => {
                 // if(!userId){
                 // // localStorage.setItem("payment", "false"); 
                 // }
-                const res = await fetch(`http://localhost:4000/api/user/getprofile/${userId}`);
+                const res = await fetch(`https://summercamp-website.onrender.com/api/user/getprofile/${userId}`);
                 const data = await res.json();
                 if (!data?.profile?.camp) throw new Error('Camp data is missing');
                 setUserData(data.profile);
