@@ -68,12 +68,12 @@ const Liability = () => {
       <Navbar />
       <Menu />
       <div className='min-h-screen w-full flex flex-col justify-center items-center p-4'>
-        <form onSubmit={handleSubmit(onSubmit)} className='w-full md:w-[70%] lg:w-[50%] 2xl:w-[40%] flex flex-col justify-center items-center bg-white drop-shadow-lg rounded-xl p-4'>
+        <form onSubmit={handleSubmit(onSubmit)} className='w-full md:w-[70%] lg:w-[50%] flex flex-col justify-center items-center bg-white drop-shadow-lg rounded-xl p-4'>
           <h4 className='w-full my-2 font-semibold'>Liability Waiver and Release Form</h4>
 
           {/* Camper Info Fields */}
           <div className='w-full h-auto flex flex-col justify-center items-start mt-2'>
-            <label>Camper’s Full Name:</label>
+            <label className='font-montserrat'>Camper’s Full Name:</label>
             <input
               type='text'
               {...register('camperName', { required: 'Camper’s name is required' })}
@@ -81,7 +81,7 @@ const Liability = () => {
             />
             {errors.camperName && <span className="text-red-500">{errors.camperName.message}</span>}
 
-            <label className='mt-1'>Date of Birth:</label>
+            <label className='mt-1 font-montserrat'>Date of Birth:</label>
             <input
               type='date'
               {...register('dob', { required: 'Date of Birth is required' })}
@@ -89,7 +89,7 @@ const Liability = () => {
             />
             {errors.dob && <span className="text-red-500">{errors.dob.message}</span>}
 
-            <label className='mt-1'>Parent/Guardian Name:</label>
+            <label className='mt-1 font-montserrat'>Parent/Guardian Name:</label>
             <input
               type='text'
               {...register('parentName', { required: 'Parent/Guardian name is required' })}
@@ -97,7 +97,7 @@ const Liability = () => {
             />
             {errors.parentName && <span className="text-red-500">{errors.parentName.message}</span>}
 
-            <label className='mt-1'>Contact Number:</label>
+            <label className='mt-1 font-montserrat'>Contact Number:</label>
             <input
               type='tel'
               {...register('phone', { required: 'Phone number is required' })}
@@ -105,7 +105,7 @@ const Liability = () => {
             />
             {errors.phone && <span className="text-red-500">{errors.phone.message}</span>}
 
-            <label className='mt-1'>Email Address:</label>
+            <label className='mt-1 font-montserrat'>Email Address:</label>
             <input
               type='email'
               {...register('email', {

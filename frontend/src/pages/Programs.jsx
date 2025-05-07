@@ -51,7 +51,7 @@ const Programs = () => {
     <div className='min-h-screen h-auto w-full bg-[#16003E] flex flex-col justify-start items-center pb-2' >
       <Navbar/>
       <Menu/>
-      <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+      <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-7xl  p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Programs
       </h2>
       <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[84%] 2xl:w-[70%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 md:gap-8 lg:gap-6 xl:gap-8 gap-4 px-4 py-4 z-10">
@@ -61,7 +61,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[56vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             STEM Builders
@@ -81,7 +81,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh]  lg:h-[56vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Inventor’s Workshop
@@ -100,7 +100,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh]  lg:h-[56vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Robo Coding Camp
@@ -119,7 +119,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh]  lg:h-[56vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Circuit Science
@@ -138,7 +138,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-         className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+         className="h-auto w-full min-h-[16vh]  lg:h-[56vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Eco Explorers
@@ -157,7 +157,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh]  lg:h-[56vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Mini Makers
@@ -173,7 +173,7 @@ const Programs = () => {
         </motion.div>
       </motion.div>
         <div className='h-auto w-full flex flex-col justify-center items-center gap-2 mt-4 2xl:mt-12' >
-        <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-7xl  p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Locations
          </h2>
             <div className='h-auto w-full md:w-[60%] xl:w-[74%] 2xl:w-[80%] flex flex-col xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-3  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>

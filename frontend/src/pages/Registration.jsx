@@ -50,12 +50,12 @@ const Registration = () => {
       <Navbar />
       <Menu />
       <div className="min-h-screen w-full flex flex-col justify-center items-center gap-4 p-4">
-        <h2 className="font-montserrat uppercase text-5xl text-center tracking-wider md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        <h2 className="font-montserrat uppercase text-5xl text-center tracking-wider md:text-7xl lg:text-7xl  p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
           Register Now
         </h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full md:w-[70%] lg:w-[50%] xl:w-[66%] 2xl:w-[50%] h-full flex flex-col justify-start items-center gap-2 bg-white drop-shadow-2xl p-4 rounded-xl"
+          className="w-full md:w-[70%] lg:w-[60%]  h-full flex flex-col justify-start items-center gap-2 bg-white drop-shadow-2xl p-4 rounded-xl"
         >
           <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-start gap-6">
             <div className="w-full flex flex-col justify-center items-start">

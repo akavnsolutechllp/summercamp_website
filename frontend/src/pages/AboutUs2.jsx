@@ -8,7 +8,7 @@ const AboutUs2 = () => {
     <div className='w-full h-full flex flex-col justify-start items-center bg-[#16003E]'>
         <Navbar/>
         <Menu/>
-        <h2 className='font-montserrat uppercase text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl text-[#EE5073] text-stroke drop-shadow-md drop-shadow-[#E31DB0] mt-8'>About Us</h2>
+        <h2 className='font-montserrat uppercase text-5xl md:text-7xl lg:text-7xl text-[#EE5073] text-stroke drop-shadow-md drop-shadow-[#E31DB0] mt-8'>About Us</h2>
         <div className='w-full min-h-screen flex flex-col xl:flex-row 2xl:flex-row justify-start items-center '>
         <div className='w-full h-auto flex flex-col justify-center items-center my-2'>
             <img src={logo} alt="" className='w-1/2 bg-white rounded-full' />
