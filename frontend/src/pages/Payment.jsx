@@ -5,8 +5,7 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 import axios from 'axios';
 
 const stripePromise = loadStripe("pk_live_51RHlofA5NifUX0tMYNOQcaTfuhETTC38zQeyyx855toElkKFYiWnBThn5RNPBpuRqpTA14EiX8APNufztZVcMWOt008B0SmAr6");
-
-
+// const stripePromise = loadStripe("pk_test_51RHlofA5NifUX0tMnXjDo9j6WXtW3ZjCIiqFJKpb0VnWogATjF2EJ3e25y77RKfAgFrel03W3fxNnITW9YsNPobg001cPjcNnG");
 
 const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
     const stripe = useStripe();
@@ -58,7 +57,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                 phone: userData.phone,
                 campType: selectedCamp,
                 campSession:userData.campSession,
-                activiy:userData.activity,
+                activity:userData.activity,
                 timing: selectedCamp === "half" ? selectedTiming : "full-day",
                 location: userData.location,
                 amount: amount.replace("$", ""),
@@ -71,7 +70,10 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                     payload,
                     { responseType: "blob" } // Expect PDF blob
                 );
-    
+            
+                // Check for content type to ensure the response is a PDF
+            
+                // Create download link and trigger download
                 const url = window.URL.createObjectURL(new Blob([res.data]));
                 const link = document.createElement("a");
                 link.href = url;
@@ -79,13 +81,16 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                 document.body.appendChild(link);
                 link.click();
                 link.remove();
+                
+                // Set payment flag and navigate
                 localStorage.setItem("payment", "true");
                 navigate('/success-payment');
-    
+            
             } catch (err) {
                 console.error("Invoice download error:", err.response?.data || err.message || err);
                 alert("Payment succeeded, but invoice download failed.");
             }
+            
     
             // try {
             //     // 2. Send invoice to email
@@ -173,8 +178,7 @@ const Payment = () => {
                     <input type="text" value={userData.phone} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     
                     <div className='text-xl flex flex-col gap-2 justify-between'>
-                        <span className='font-semibold'>Camp: {selectedCamp === "half" ? "Half Day" : "Full Day"}</span>
-                        <span className='font-semibold'>Timing: {selectedCamp === "full" ? "09:00 AM - 04:00 PM" : selectedTiming}</span>
+                        <span className='font-semibold'>Camp Type: {selectedCamp === "half" ? "Half Day" : "Full Day"}</span>
                         <span className='font-semibold'>Location:{userData.campSession}</span>
                         <span className='font-semibold'>Activity:{userData.activity}</span>
                     </div>

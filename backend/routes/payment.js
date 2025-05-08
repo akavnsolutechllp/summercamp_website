@@ -10,6 +10,8 @@ const path = require("path");
 
 const generateInvoiceId = require("../utils/generateInvoiceId");
 
+const { Resend } = require('resend');
+const resend = new Resend('re_EtPjd9Nq_3DQ82hrmJsu57NWysHtNKVjr');
 
 
 
@@ -161,119 +163,112 @@ router.post("/generate-invoice", async (req, res) => {
       campType,
       campSession,
       activity,
-      timing,
       amount,
     } = req.body;
+
+
 
     // 1. Generate invoice ID
     const invoiceId = await generateInvoiceId();
 
+    const currentDate = new Date().toLocaleDateString('en-US');
+
     // 2. Save invoice ID to user in DB
-    const user = await User.findById(userId); // Note that here we use findById, which uses Mongo's _id
+    const user = await User.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // Update the invoice field with the generated invoiceId
     user.invoice = { invoiceid: invoiceId, sent: true };
-
-    // Save the updated user
     await user.save();
 
     // 3. Create PDF
     const doc = new PDFDocument({ margin: 50 });
-let buffers = [];
+    let buffers = [];
 
-doc.on('data', buffers.push.bind(buffers));
-doc.on('end', () => {
-  const pdfData = Buffer.concat(buffers);
-  res
-    .status(200)
-    .set({
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment; filename=Invoice_${firstName}_${lastName}.pdf`,
-    })
-    .send(pdfData);
-});
+    doc.on('data', buffers.push.bind(buffers));
 
-// 🖼️ Add Logo
-const logoPath = path.join(__dirname, '../assets/logo.png');
-if (fs.existsSync(logoPath)) {
-  doc.image(logoPath, 50, 45, { width: 80 });
-}
+    doc.on('end', () => {
+      const pdfData = Buffer.concat(buffers);
+      res
+        .status(200)
+        .set({
+          'Content-Type': 'application/pdf',
+          'Content-Disposition': `attachment; filename=Invoice_${firstName}_${lastName}.pdf`,
+        })
+        .send(pdfData);
+    });
 
-// 🧾 Title & Invoice ID (centered)
-doc
-  .fontSize(20)
-  .text('Summer Camp Invoice', { align: 'center' })
-  .moveDown(0.5);
+    // Build PDF content
+    const logoPath = path.join(__dirname, '../assets/logo.png');
+    if (fs.existsSync(logoPath)) {
+      doc.image(logoPath, 50, 45, { width: 80 });
+    }
 
-doc
-  .fontSize(12)
-  .text(`Invoice ID: ${invoiceId}`, { align: 'center' })
-  .moveDown();
+    doc
+      .fontSize(20)
+      .text('Summer Camp Invoice', { align: 'center' })
+      .moveDown(0.5);
 
-// ─────────────────────────────────────────────────────────────
-doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke();
-doc.moveDown(1);
+    doc
+      .fontSize(12)
+      .text(`Invoice ID: ${invoiceId}`, { align: 'center' })
+      .text(`Date: ${currentDate}`, { align: 'center' })
+      .moveDown();
 
-// 🙋 Camper Information
-doc
-  .fontSize(14)
-  .text('Camper Information', 50, doc.y, { width: 500, align: 'left', underline: true })
-  .moveDown(0.5);
+    doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke().moveDown(1);
 
-doc
-  .fontSize(12)
-  .text(`Name: ${firstName} ${lastName}`, 50, doc.y, { width: 500, align: 'left' })
-  .text(`Email: ${email}`, 50, doc.y, { width: 500, align: 'left' })
-  .text(`Phone: ${phone}`, 50, doc.y, { width: 500, align: 'left' })
-  
-  .moveDown(1);
+    doc.fontSize(14).text('Personal Details', { underline: true }).moveDown(0.5);
+    doc.fontSize(12)
+      .text(`Name: ${firstName} ${lastName}`)
+      .text(`Email: ${email}`)
+      .text(`Phone: ${phone}`)
+      .moveDown(1);
 
-// 🏕️ Camp Details
-doc
-  .fontSize(14)
-  .text('Camp Details', 50, doc.y, { width: 500, align: 'left', underline: true })
-  .moveDown(0.5);
+    doc.fontSize(14).text('Camp Details', { underline: true }).moveDown(0.5);
+    doc.fontSize(12)
+      .text(`Camp Type: ${campType === 'half' ? 'Half Day' : 'Full Day'}`)
+      .text(`Location: ${campSession}`)
+      .text(`Activity: ${activity}`)
+      .moveDown(1);
 
-doc
-  .fontSize(12)
-  .text(`Camp Type: ${campType === 'half' ? 'Half Day' : 'Full Day'}`, 50, doc.y, { width: 500, align: 'left' })
-  .text(`Timing: ${timing}`, 50, doc.y, { width: 500, align: 'left' })
-  .text(`Location: ${campSession}`, 50, doc.y, { width: 500, align: 'left' })
-  .text(`Activity: ${activity}`, 50, doc.y, { width: 500, align: 'left' })
-  .moveDown(1);
+    doc.fontSize(14).text('Payment Summary', { underline: true }).moveDown(0.5);
+    doc.fontSize(12).text(`Total Amount: $${amount}`).moveDown(2);
 
-// 💰 Payment Summary
-doc
-  .fontSize(14)
-  .text('Payment Summary', 50, doc.y, { width: 500, align: 'left', underline: true })
-  .moveDown(0.5);
+    doc.fontSize(10)
+      .text('Thank you for registering for our summer camp!', { align: 'center' });
 
-doc
-  .fontSize(12)
-  .text(`Total Amount: $${amount}`, 50, doc.y, { width: 500, align: 'left' })
-  .moveDown(2);
-
-// 🙏 Footer
-doc
-  .fontSize(10)
-  .text('Thank you for registering for our summer camp!', 50, doc.y, {
-    width: 500,
-    align: 'center',
-  });
-
-doc.end();
+    doc.end(); // Triggers 'end' event
 
   } catch (err) {
     console.error("Invoice generation error:", err);
-    res.status(500).json({ message: "Failed to generate invoice", error: err.message });
+    if (!res.headersSent) {
+      res.status(500).json({ message: "Failed to generate invoice", error: err.message });
+    }
   }
 });
-  
 
 module.exports = router;
 
 
-
+// Send invoice email
+      // try {
+      //   const emailResponse = await resend.emails.send({
+      //     from: 'saparkstemacademy <noreply@sparkstemacademy.com>',
+      //     to: email,
+      //     subject: `Invoice - ${invoiceId}`,
+      //     text: 'Thanks for registering.',
+      //     attachments: [
+      //       {
+      //         filename: `Invoice_${firstName}_${lastName}.pdf`,
+      //         content: pdfData.toString('base64'),
+      //         type: 'application/pdf',
+      //         disposition: 'attachment',
+      //       },
+      //     ],
+      //   });
+      
+      //   console.log("✅ Email sent:", emailResponse);
+      // } catch (emailError) {
+      //   console.error('❌ Email sending failed:', emailError);
+      // }

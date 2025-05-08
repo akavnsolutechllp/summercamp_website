@@ -12,7 +12,7 @@ const SuccessPayment = () => {
     const hasPaid = localStorage.getItem("payment") === "true";
     if (!hasPaid) {
       alert("Please complete payment first!");
-      navigate("/checkout");
+      navigate("/");
       return;
     }
   

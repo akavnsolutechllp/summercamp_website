@@ -311,8 +311,7 @@ const Registration = () => {
                         <option
                           value={`09:00 AM - 12:00 PM: ${selectedSchedule.morning}, 01:00 PM - 04:00 PM: ${selectedSchedule.afternoon}`}
                         >
-                          09:00 AM - 12:00 PM: {selectedSchedule.morning} &
-                          01:00PM - 04:00 PM: {selectedSchedule.afternoon}
+                          09:00 AM - 12:00 PM: {selectedSchedule.morning} & 01:00PM - 04:00 PM: {selectedSchedule.afternoon}
                         </option>
                       </>
                     )}
