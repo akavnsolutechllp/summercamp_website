@@ -152,7 +152,7 @@ const generateInvoicePDF = (invoicePath, data) => {
 
 
 
-router.post("/generate-invoice", async (req, res) => {
+router.post("/send-invoice", async (req, res) => {
   try {
     const {
       userId,
@@ -173,6 +173,17 @@ router.post("/generate-invoice", async (req, res) => {
 
     const currentDate = new Date().toLocaleDateString('en-US');
 
+    const parts = campSession.split('|').map(p => p.trim());
+    const parts2 = activity.split('|').map(p => p.trim());
+
+    const campLocation = parts[0]; // "Northview High School"
+    const campDate = parts[1];     // "June 9 – June 12"
+
+    const onlyActivity = parts2[0];
+    const time = parts2[1];
+
+// Set campTime based on timing
+
     // 2. Save invoice ID to user in DB
     const user = await User.findById(userId);
     if (!user) {
@@ -188,15 +199,64 @@ router.post("/generate-invoice", async (req, res) => {
 
     doc.on('data', buffers.push.bind(buffers));
 
-    doc.on('end', () => {
+    doc.on('end', async () => {
       const pdfData = Buffer.concat(buffers);
-      res
-        .status(200)
-        .set({
-          'Content-Type': 'application/pdf',
-          'Content-Disposition': `attachment; filename=Invoice_${firstName}_${lastName}.pdf`,
-        })
-        .send(pdfData);
+      try {
+        const emailResponse = await resend.emails.send({
+          from: 'registrations@sparkstemacademy.com',
+          to: email,
+          subject: `Camp Registration Confirmation – ${firstName}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; line-height: 1.6; text-align: justify; color: #000;">
+              <p>Dear ${firstName} and Parent/Guardian,</p>
+        
+              <p>Thank you for registering for our upcoming camp! We’re excited to have you join us.</p>
+        
+              <p><strong>Here are the details of your registration:</strong></p>
+        
+              <ul>
+                <li><strong>Student Name:</strong> ${firstName} ${lastName}</li>
+                <li><strong>Camp Type:</strong> ${campType === 'half' ? 'Half Day' : 'Full Day'}</li>
+                <li><strong>Date:</strong> ${campDate}</li>
+                <li><strong>Time:</strong> ${time}</li>
+                <li><strong>Location:</strong> ${campLocation}</li>
+                <li><strong>Camp:</strong> ${onlyActivity}</li>
+              </ul>
+        
+              <p>
+                ${
+                  campType === 'half'
+                    ? 'Please bring a water bottle and snacks.'
+                    : 'Please bring a water bottle, lunch, and snacks.'
+                }
+              </p>
+        
+              <p>If you have any questions or need further assistance, feel free to contact us at <a href='tel:(678) 888-1484'>(678) 888-1484</a>.</p>
+        
+              <p>We look forward to seeing you at camp!</p>
+
+              <p>For more information, visit <a href="https://sparkstemacademy.com" target="_blank" >Spark Stem Academy</a></p>
+        
+              <p>Best regards,<br><strong>Spark Stem Academy</strong></p>
+            </div>
+          `,
+          attachments: [
+            {
+              filename: `Invoice_${firstName}_${lastName}.pdf`,
+              content: pdfData.toString('base64'),
+              type: 'application/pdf',
+              disposition: 'attachment',
+            },
+          ],
+        });
+      
+        return res.status(200).json({ success: true, message: "Invoice sent successfully." });
+        
+      } catch (emailErr) {
+        console.error("Email send error:", emailErr);
+        return res.status(500).json({ success: false, message: "Invoice created, but email failed." });
+      }
+      
     });
 
     // Build PDF content
@@ -218,22 +278,26 @@ router.post("/generate-invoice", async (req, res) => {
 
     doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke().moveDown(1);
 
-    doc.fontSize(14).text('Personal Details', { underline: true }).moveDown(0.5);
+    doc.fontSize(16).text(`Student: ${firstName} ${lastName}`).moveDown(0.5);
+
+    doc.fontSize(14).text(`Contact Details`, {underline:true}).moveDown(0.5);
     doc.fontSize(12)
-      .text(`Name: ${firstName} ${lastName}`)
-      .text(`Email: ${email}`)
-      .text(`Phone: ${phone}`)
+      .text(`Name: ${firstName} ${lastName}`).moveDown(0.2)
+      .text(`Phone: ${phone}`).moveDown(0.2)
+      .text(`Email: ${email}`).moveDown(0.2)
       .moveDown(1);
 
     doc.fontSize(14).text('Camp Details', { underline: true }).moveDown(0.5);
     doc.fontSize(12)
-      .text(`Camp Type: ${campType === 'half' ? 'Half Day' : 'Full Day'}`)
-      .text(`Location: ${campSession}`)
-      .text(`Activity: ${activity}`)
+    .text(`Camp Type: ${campType}`).moveDown(0.2)
+    .text(`Date: ${campDate}`).moveDown(0.2)
+      .text(`Time: ${campType === 'half' ? `${time}` : '09:00 AM - 04:00 PM'}`).moveDown(0.2)
+      .text(`Location: ${campLocation}`).moveDown(0.2)
+      .text(`Camp: ${onlyActivity}`).moveDown(0.2)
       .moveDown(1);
 
     doc.fontSize(14).text('Payment Summary', { underline: true }).moveDown(0.5);
-    doc.fontSize(12).text(`Total Amount: $${amount}`).moveDown(2);
+    doc.fontSize(12).text(`Paid Amount: $${amount}`).moveDown(2);
 
     doc.fontSize(10)
       .text('Thank you for registering for our summer camp!', { align: 'center' });

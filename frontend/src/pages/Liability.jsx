@@ -36,32 +36,35 @@ const Liability = () => {
   const [signature, setSignature] = useState('');
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
+
+
   const onSubmit = async (waiverData) => {
-    console.log("FormData from context:", formData);
+    setLoading(true);
     const fullForm = {
       ...formData,
       ...waiverData,
       signature
     };
-
+  
     try {
       const res = await fetch('https://summercamp-website.onrender.com/api/user/complete-registration', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fullForm)
       });
-
+  
       if (!res.ok) throw new Error('Failed to submit');
       const result = await res.json();
-      console.log('Success:', result);
       localStorage.setItem('userId', result.userId);
       navigate('/payment');
-
     } catch (err) {
       console.error('Submission error:', err);
+    } finally {
+      setLoading(false);
     }
   };
-
+  
   return (
     <div id='liability' className='h-full w-full flex flex-col justify-center items-center bg-gradient-to-b from-[#283253] via-[#283253] to-[#16003E] relative'>
       <Navbar />
@@ -201,9 +204,16 @@ const Liability = () => {
             {errors.signedDate && <span className="text-red-500">{errors.signedDate.message}</span>}
           </div>
 
-          <button type="submit" className='mt-6 px-6 py-2 bg-[#FF0066] text-white rounded-lg xl:hover:cursor-pointer'>
-            Submit & Proceed to Payment
-          </button>
+          <button
+  type="submit"
+  disabled={loading}
+  className={`mt-6 px-6 py-2 text-white rounded-lg xl:hover:cursor-pointer transition duration-200 ${
+    loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#FF0066]'
+  }`}
+>
+  {loading ? 'Submitting...' : 'Submit & Proceed to Payment'}
+</button>
+
           {/* <p className='text-xs text-gray-500 mt-2'>*Wait for few minutes to proceed*</p> */}
         </form>
       </div>

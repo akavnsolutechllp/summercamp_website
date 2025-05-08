@@ -44,44 +44,44 @@ const Registration = () => {
     {
       location: "GSMST",
       date: "June 2 - June 5",
-      morning: "Inventor’s Workshop",
-      afternoon: "Circuit Science",
+      morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
+      afternoon: "Circuit Science | 01:00PM - 04:00PM",
     },
     {
       location: "Northview High School",
       date: "June 9 – June 12",
-      morning: "Inventor’s Workshop",
-      afternoon: "Circuit Science",
+      morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
+      afternoon: "Circuit Science | 01:00PM - 04:00PM",
     },
     {
       location: "North Gwinnett Middle School",
       date: "June 16 – June 19",
-      morning: "Inventor’s Workshop",
-      afternoon: "Circuit Science",
+      morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
+      afternoon: "Circuit Science | 01:00PM - 04:00PM",
     },
     {
       location: "Alpharetta High School",
       date: "June 23 – June 26",
-      morning: "Inventor’s Workshop",
-      afternoon: "Circuit Science",
+      morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
+      afternoon: "Circuit Science | 01:00PM - 04:00PM",
     },
     {
       location: "GSMST",
       date: "June 30 – July 3",
-      morning: "STEM Builders",
-      afternoon: "Robo Coding Camp",
+      morning: "STEM Builders | 09:00AM - 12:00PM",
+      afternoon: "Mini Makers | 01:00PM - 04:00PM",
     },
     {
       location: "Northview High School",
       date: "July 7 – July 10",
-      morning: "STEM Builders",
-      afternoon: "Robo Coding Camp",
+      morning: "STEM Builders | 09:00AM - 12:00PM",
+      afternoon: "Mini Makers | 01:00PM - 04:00PM",
     },
     {
       location: "North Gwinnett Middle School",
       date: "July 14 – July 17",
-      morning: "STEM Builders",
-      afternoon: "Robo Coding Camp",
+      morning: "STEM Builders | 09:00AM - 12:00PM",
+      afternoon: "Mini Makers | 01:00PM - 04:00PM",
     },
   ];
 
@@ -309,19 +309,19 @@ const Registration = () => {
                     {campSelection === "full" && selectedSchedule && (
                       <>
                         <option
-                          value={`09:00 AM - 12:00 PM: ${selectedSchedule.morning}, 01:00 PM - 04:00 PM: ${selectedSchedule.afternoon}`}
+                          value={`${selectedSchedule.morning}, ${selectedSchedule.afternoon}`}
                         >
-                          09:00 AM - 12:00 PM: {selectedSchedule.morning} & 01:00PM - 04:00 PM: {selectedSchedule.afternoon}
+                          {selectedSchedule.morning} & {selectedSchedule.afternoon}
                         </option>
                       </>
                     )}
                     {campSelection === "half" && selectedSchedule && (
                       <>
                         <option value={selectedSchedule.morning}>
-                          {selectedSchedule.morning} (09:00 AM - 12:00 PM){" "}
+                          {selectedSchedule.morning} 
                         </option>
                         <option value={selectedSchedule.afternoon}>
-                          {selectedSchedule.afternoon} (01:00 PM - 04:00 PM){" "}
+                          {selectedSchedule.afternoon} 
                         </option>
                       </>
                     )}

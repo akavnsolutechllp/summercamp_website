@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoLocationSharp } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { GrLocationPin } from "react-icons/gr";
 
 import { motion } from 'framer-motion'
 
@@ -179,87 +180,115 @@ const Programs = () => {
                 <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST </h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 2 - June 5</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-3'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>Inventor’s Workshop</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Circuit Science</h4>
+                  </div>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School </h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 9 – June 12</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>Inventor’s Workshop</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Circuit Science</h4>
+                  </div>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-lg mb-3 text-black 2xl:text-white'>📍North Gwinnett Middle School </h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 16 – June 19</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>Inventor’s Workshop</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Circuit Science</h4>
+                  </div>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Alpharetta High School</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 23 – June 26</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Inventor’s Workshop</h4>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Circuit Science</h4>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw]  xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>Inventor’s Workshop</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Circuit Science</h4>
+                  </div>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 30 – July 3</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>STEM Builders</h4>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Robo Coding Camp</h4>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>STEM Buildersp</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Mini Makers</h4>
+                  </div>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>July 7 – July 10</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>STEM Builders</h4>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Robo Coding Camp</h4>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>STEM Builders</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Mini Makers</h4>
+                  </div>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-lg mb-3 text-black 2xl:text-white'>📍North Gwinnett Middle School</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>July 14 – July 17</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg'>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg'>Morning Camp (9AM - 12PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>STEM Builders</h4>
-                  <h3 className='text-lg bg-[#FF0066] text-white p-1 rounded-lg mt-4'>Afternoon Camp (1PM – 4PM)</h3>
-                  <h4 className='text-xl p-1 text-white'>Robo Coding Camp</h4>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>STEM Builders</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Mini Makers</h4>
+                  </div>
                 </div>
                 </div>
 
             </div>
         </div>
         <div className='h-auto md:w-[60%] w-[92%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
-            <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Timings</h2>
+            <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>When</h2>
             <h4 className='font-montserrat text-xl bg-white w-full text-center rounded-2xl'>Monday - Thursday</h4>
             <div className='w-full h-auto flex justify-center items-center gap-2 relative'>
-                  <div className='min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex flex-col justify-center items-center font-montserrat text-lg font-medium' >
+                  <div className='min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex  justify-center items-center font-montserrat text-lg font-medium' >
                     <h1>Morning</h1>
                     <h4>09:00 - 12:00</h4>
                   </div>
@@ -268,9 +297,20 @@ const Programs = () => {
                   <h4>01:00 - 04:00</h4>
                   </div>
             </div>
-            <div>
-
+            
+            
+        </div>
+        <div className='h-auto md:w-[60%] w-[92%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
+            <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Where</h2>
+            
+            <div className='w-full bg-[#16003E] h-auto flex flex-col justify-center items-center xl:items-start p-4 rounded-xl border border-white gap-4 xl:gap-8 font-montserrat xl:text-lg'>
+              <p className=" w-full text-white flex items-center gap-2 border-b border-white pb-2"><span className="text-xl"><GrLocationPin /></span><span>GSMST: 970 McElvaney Ln NW, Lawrenceville, GA 30044</span></p>
+              <p className=" w-full text-white flex items-center gap-2 border-b border-white pb-2"><span className="text-xl"><GrLocationPin /></span><span>Northview High School: 10625 Parsons Rd, Johns Creek, GA 30097</span></p>
+              <p className=" w-full text-white flex items-center gap-2 border-b border-white pb-2"><span className="text-xl"><GrLocationPin /></span><span>North Gwinnett Middle School: 170 Peachtree Industrial Blvd, Sugar Hill, GA 30518</span></p>
+              <p className=" w-full text-white flex items-center gap-2"><span className="text-xl"><GrLocationPin /></span><span>Alpharetta High School: 3595 Webb Bridge Rd, Alpharetta, GA 30005</span></p>
             </div>
+
+            
             
         </div>
       
@@ -295,6 +335,13 @@ const Programs = () => {
 }
 
 export default Programs;
+
+
+
+
+
+
+
 
 {/* <div className='w-full min-h-screen h-auto flex flex-col justify-start items-center gap-4 p-4 relative'>
       <h2 className='font-milky text-5xl text-[#FF0066]'>Programs</h2>

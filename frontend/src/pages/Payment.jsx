@@ -64,46 +64,21 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
             };
     
             try {
-                // 1. Download invoice
-                const res = await axios.post(
-                    "https://summercamp-website.onrender.com/api/payment/generate-invoice",
-                    payload,
-                    { responseType: "blob" } // Expect PDF blob
-                );
+                const res = await axios.post("https://summercamp-website.onrender.com/api/payment/send-invoice", payload);
             
-                // Check for content type to ensure the response is a PDF
-            
-                // Create download link and trigger download
-                const url = window.URL.createObjectURL(new Blob([res.data]));
-                const link = document.createElement("a");
-                link.href = url;
-                link.setAttribute("download", `Invoice_${userData.studentFirstName}_${userData.studentLastName}.pdf`);
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
-                
-                // Set payment flag and navigate
-                localStorage.setItem("payment", "true");
-                navigate('/success-payment');
-            
+                if (res.status === 200 && res.data.success) {
+                    localStorage.setItem("payment", "true");
+                    navigate('/success-payment');
+                } else {
+                    console.error("Invoice generation failed:", res.data);
+                    alert("Payment succeeded, but invoice generation failed.");
+                }
             } catch (err) {
-                console.error("Invoice download error:", err.response?.data || err.message || err);
-                alert("Payment succeeded, but invoice download failed.");
+                console.error("Invoice generation error:", err.response?.data || err.message || err);
+                alert("Payment succeeded, but invoice generation request failed.");
             }
             
-    
-            // try {
-            //     // 2. Send invoice to email
-            //     const emailRes = await axios.post("http://localhost:5000/api/payment/send-invoice", payload);
-            //     if (emailRes.data.success) {
-            //         alert("Invoice also sent to your email!");
-            //     } else {
-            //         alert("Invoice email failed to send.");
-            //     }
-            // } catch (err) {
-            //     console.error("Invoice email error:", err.response?.data || err.message || err);
-            //     alert("Payment succeeded, but sending invoice email failed.");
-            // }
+
         }
     
         setProcessing(false);
@@ -130,6 +105,8 @@ const Payment = () => {
     const [amount, setAmount] = useState("420$");
     const [selectedCamp, setSelectedCamp] = useState("");
     const [selectedTiming, setSelectedTiming] = useState("");
+
+ 
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -166,9 +143,39 @@ const Payment = () => {
 
     if (!userData) return <div className="text-red-600 p-10 text-center font-montserrat uppercase">Loading user data...</div>;
 
+
+ 
+        const part1 = userData?.campSession?.split('|').map(p => p.trim()) || [];
+        const part2 = userData?.activity?.split(',').map(p => p.trim()) || [];
+    
+    
+        
+        const location = part1[0] || '';
+        const date = part1[1] || '';
+        
+        const activity1 = part2[0] || '';
+        const activity2 = part2[1] || '';
+        
+        const fpart1 = activity1?.split('|').map(p => p.trim()) || [];
+        const fpart2 = activity2?.split('|').map(p => p.trim()) || [];
+        
+        const factivity1 = fpart1[0] || '';
+        const factivity2 = fpart2[0] || '';
+
+        const hpart1 = userData?.activity?.split('|').map(p => p.trim()) || [];
+        const hactivity = hpart1[0];
+        
+        
+    
+        const time = selectedCamp === "half" ? `${hpart1[1]}` : "09:00 AM - 04:00 PM";
+    
+
+  
+  
+    
     return (
-        <div className='min-h-screen w-full  bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E] flex flex-col items-center gap-2 p-4'>
-            <h2 className='font-montserrat uppercase text-5xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066]'>Checkout</h2>
+        <div className='min-h-screen w-full  bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E] flex flex-col justify-center items-center gap-2 p-4'>
+            <h2 className='font-montserrat uppercase text-5xl 2xl:text-7xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] -mt-4'>Checkout</h2>
             <div className='w-full md:w-[60%] xl:w-[40%] 2xl:w-[30%] bg-white p-6 rounded-xl shadow-lg'>
                 
                 <div className='space-y-4'>
@@ -177,9 +184,26 @@ const Payment = () => {
                     <input type="email" value={userData.email} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     <input type="text" value={userData.phone} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     <div className='text-xl flex flex-col gap-2 justify-between'>
-                        <span className='font-semibold'>Camp Type: {selectedCamp === "half" ? "Half Day" : "Full Day"}</span>
-                        <span className='font-semibold'>Location:{userData.campSession}</span>
-                        <span className='font-semibold'>Activity:{userData.activity}</span>
+                        <span >Camp Type: <span className='font-semibold'>{selectedCamp === "half" ? "Half Day" : "Full Day"}</span></span>
+                        <span >Date: <span className='font-semibold'>{date}</span></span>
+                        <span>Time: <span className='font-semibold'>{time}</span></span>
+                        <span >Location: <span className='font-semibold'>{location}</span> </span>
+                        <span >Camp:</span>
+                        {
+                            selectedCamp === "half" ? (
+                                <div>
+                                <ul className='w-full flex flex-col gap-2 list-disc px-6'>
+                                <li className='font-semibold'> {hactivity}</li>
+                              
+                              </ul>    
+                                </div>
+                            ) : (
+                                <ul className='w-full flex flex-col gap-2 list-disc px-6'>
+                                <li className='font-semibold'>{factivity1}</li>
+                                <li className='font-semibold'>{factivity2}</li>
+                              </ul>    
+                            )
+                        }
                     </div>
 
                     <div className='text-xl flex justify-between'>
