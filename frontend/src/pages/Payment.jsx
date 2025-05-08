@@ -176,7 +176,6 @@ const Payment = () => {
                     <input type="text" value={userData.studentLastName} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     <input type="email" value={userData.email} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     <input type="text" value={userData.phone} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
-                    
                     <div className='text-xl flex flex-col gap-2 justify-between'>
                         <span className='font-semibold'>Camp Type: {selectedCamp === "half" ? "Half Day" : "Full Day"}</span>
                         <span className='font-semibold'>Location:{userData.campSession}</span>
