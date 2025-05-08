@@ -288,7 +288,7 @@ const Programs = () => {
             <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>When</h2>
             <h4 className='font-montserrat text-xl bg-white w-full text-center rounded-2xl'>Monday - Thursday</h4>
             <div className='w-full h-auto flex justify-center items-center gap-2 relative'>
-                  <div className='min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex  justify-center items-center font-montserrat text-lg font-medium' >
+                  <div className='min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex  flex-col justify-center items-center font-montserrat text-lg font-medium' >
                     <h1>Morning</h1>
                     <h4>09:00 - 12:00</h4>
                   </div>
