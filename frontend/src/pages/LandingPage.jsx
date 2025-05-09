@@ -71,7 +71,7 @@ const LandingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1, stiffness: 80, type: spring }}
-            className="font-gardion uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-5xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[6vw] 2xl:text-[6vw] text-center"
+            className="font-montserrat uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-5xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[6vw] 2xl:text-[6vw] text-center"
           >
             <p className="">Spark Stem</p>
             <p className="">Academy</p>

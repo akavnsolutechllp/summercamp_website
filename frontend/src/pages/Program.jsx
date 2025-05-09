@@ -88,6 +88,7 @@ const handleKnowmore = () =>{
           </h3>
           
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -107,6 +108,7 @@ const handleKnowmore = () =>{
           </h3>
          
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,6 +127,7 @@ const handleKnowmore = () =>{
             Electricity & Circuits
           </h3>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,6 +147,7 @@ const handleKnowmore = () =>{
           </h3>
           
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,6 +167,7 @@ const handleKnowmore = () =>{
           </h3>
         
         </motion.div>
+        
       </motion.div>
       <button
       onClick={handleKnowmore}
