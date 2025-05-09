@@ -5,15 +5,12 @@ import { GrLocationPin } from "react-icons/gr";
 
 import { motion } from 'framer-motion'
 
-
 import stem from '../assets/stem.jpg';
 import inventor from '../assets/inventors.jpg';
 import robo from '../assets/robot.jpg';
 import circuit from '../assets/circuit.jpg';
 import eco from '../assets/eco_explorer.jpg';
 import mini from '../assets/mini_stem.jpg';
-
-
 
 import map from '../assets/MAP.png';
 import location from '../assets/location.png';
@@ -47,7 +44,7 @@ const Programs = () => {
   }
 
   return (
-    <div className='min-h-screen h-auto w-full bg-[#16003E] flex flex-col justify-start items-center pb-2' >
+    <div className='min-h-screen h-auto w-full bg-[#16003E] flex flex-col justify-start items-center pb-6' >
       <Navbar/>
       <Menu/>
       <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
@@ -60,13 +57,13 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             STEM Builders
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
-            <img src={stem} alt="" className='w-[80%] lg:w-[66%] 2xl:w-[50%]' />
+            <img src={stem} alt="" className='w-[80%] lg:w-[66%] xl:w-[60%] 2xl:w-[50%]' />
           </div>
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base 2xl:text-lg font-montserrat  w-full z-20">
             Engineering & Structures
@@ -80,13 +77,13 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Inventor’s Workshop
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
-            <img src={inventor} alt="" className='w-[80%] lg:w-[63%] 2xl:w-[50%]' />
+            <img src={inventor} alt="" className='w-[80%] lg:w-[66%] xl:w-[60%] 2xl:w-[50%]' />
           </div>
           <h3 className="text-white bg-[#E31DB0] py-1 px-8 xl:px-12 2xl:px-2 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Design Thinking & Problem-Solving
@@ -99,13 +96,13 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Robo Coding Camp
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
-            <img src={robo} alt=""  className='w-[80%] lg:w-[63%] 2xl:w-[50%]' />
+            <img src={robo} alt=""  className='w-[80%] lg:w-[66%] xl:w-[60%] 2xl:w-[50%]' />
           </div>
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Coding, Robotics, and Circuits
@@ -118,13 +115,13 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Circuit Science
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
-            <img src={circuit} alt="" className='w-[80%] lg:w-[66%] 2xl:w-[70%]' />
+            <img src={circuit} alt="" className='w-[80%] lg:w-[66%] xl:w-[65%] 2xl:w-[70%]' />
           </div>
           <h3 className="text-white bg-[#E31DB0] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Electricity & Circuits
@@ -137,13 +134,13 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-         className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+         className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824]   flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Eco Explorers
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
-            <img src={eco} alt="" className='w-[80%] lg:w-[66%] 2xl:w-[70%]' />
+            <img src={eco} alt="" className='w-[80%] lg:w-[66%] xl:w-[70%] 2xl:w-[70%]' />
           </div>
           <h3 className="text-white bg-[#F79824] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Environment & Sustainability
@@ -156,13 +153,13 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[52vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Mini Makers
           </h1>
           <div className="h-[40%] w-full flex justify-center items-center z-20">
-            <img src={mini} alt="" className='w-[80%] lg:w-[68%] 2xl:w-[70%]' />
+            <img src={mini} alt="" className='w-[80%] lg:w-[68%] xl:w-[70%] 2xl:w-[70%]' />
           </div>
           <h3 className="text-white bg-[#E31DB0] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Science + Art (STEAM)
@@ -303,15 +300,48 @@ const Programs = () => {
         <div className='h-auto md:w-[60%] w-[92%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
             <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Where</h2>
             
-            <div className='w-full bg-[#16003E] h-auto flex flex-col justify-center items-center xl:items-start p-4 rounded-xl border border-white gap-4 xl:gap-8 font-montserrat xl:text-lg'>
-              <p className=" w-full text-white flex items-center gap-2 border-b border-white pb-2"><span className="text-xl"><GrLocationPin /></span><span>GSMST: 970 McElvaney Ln NW, Lawrenceville, GA 30044</span></p>
-              <p className=" w-full text-white flex items-center gap-2 border-b border-white pb-2"><span className="text-xl"><GrLocationPin /></span><span>Northview High School: 10625 Parsons Rd, Johns Creek, GA 30097</span></p>
-              <p className=" w-full text-white flex items-center gap-2 border-b border-white pb-2"><span className="text-xl"><GrLocationPin /></span><span>North Gwinnett Middle School: 170 Peachtree Industrial Blvd, Sugar Hill, GA 30518</span></p>
-              <p className=" w-full text-white flex items-center gap-2"><span className="text-xl"><GrLocationPin /></span><span>Alpharetta High School: 3595 Webb Bridge Rd, Alpharetta, GA 30005</span></p>
+            <div className='w-full bg-[#16003E] h-auto flex flex-col justify-center items-center xl:items-start px-2 py-4 rounded-xl border border-white gap-4 xl:gap-8 font-montserrat xl:text-lg'>
+              <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
+              <div className='text-xl'>
+              <GrLocationPin />
+              </div>
+              <div className='w-full flex flex-col justify-center items-start -mt-1'>
+                  <p>Gwinnett School of Mathematics, Science and Technology</p>
+                  <p>970 McElvaney Ln NW</p>
+                  <p>Lawrenceville, GA 30044</p>
+              </div>
+              </div>
+              <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
+              <div className='text-xl'>
+              <GrLocationPin />
+              </div>
+              <div className='w-full flex flex-col justify-center items-start -mt-1'>
+                  <p>Northview High School</p>
+                  <p>10625 Parsons Rd, </p>
+                  <p>Johns Creek GA 30097</p>
+              </div>
+              </div>
+              <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
+              <div className='text-xl'>
+              <GrLocationPin />
+              </div>
+              <div className='w-full flex flex-col justify-center items-start -mt-1'>
+                  <p>North Gwinnett Middle School</p>
+                  <p>170 Peachtree Industrial Blvd,</p>
+                  <p>Sugar Hill, GA 30518</p>
+              </div>
+              </div>
+              <div className='w-full flex justify-center items-start gap-2 text-white '>
+              <div className='text-xl'>
+              <GrLocationPin />
+              </div>
+              <div className='w-full flex flex-col justify-center items-start -mt-1'>
+                  <p>Alpharetta High School</p>
+                  <p>3595 Webb Bridge Rd,</p>
+                  <p>Alpharetta, GA 30005</p>
+              </div>
+              </div>
             </div>
-
-            
-            
         </div>
       
         <div className='h-auto w-[92%] md:w-[60%] xl:w-[40%] flex flex-col justify-center items-center bg-[#FFB202] rounded-3xl px-4 py-2 overflow-hidden relative mt-4'>
@@ -329,7 +359,7 @@ const Programs = () => {
             </div>
         </div>
         </div>
-        <button onClick={handleRegister}  className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-2'>Enroll Now</button>
+        <button onClick={handleRegister}  className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-4'>Enroll Now</button>
     </div>
   )
 }

@@ -56,7 +56,7 @@ const handleKnowmore = () =>{
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[60vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             STEM Builders
@@ -75,7 +75,7 @@ const handleKnowmore = () =>{
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[60vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Inventor’s Workshop
@@ -94,7 +94,7 @@ const handleKnowmore = () =>{
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[60vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Robo Coding Camp
@@ -113,7 +113,7 @@ const handleKnowmore = () =>{
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[60vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Circuit Science
@@ -131,7 +131,7 @@ const handleKnowmore = () =>{
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-         className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+         className="h-auto w-full min-h-[16vh] xl:h-[60vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#F79824] shadow-lg shadow-[#F79824]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Eco Explorers
@@ -150,7 +150,7 @@ const handleKnowmore = () =>{
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[44vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[60vh] 2xl:h-[40vh] bg-white/5 border-2 border-[#E31DB0] shadow-lg shadow-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-center text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Mini Makers

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const path = require('path');
+
 
 const PORT = process.env.PORT || 4000;
 
@@ -33,6 +33,7 @@ app.use('/api/payment', paymentRoutes);
 app.get('/', (req, res) => {
   res.send('Welcome to the Spark Stem Academy API!');
 });
+
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)

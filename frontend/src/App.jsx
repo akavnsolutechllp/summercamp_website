@@ -11,6 +11,7 @@ import AboutUs2 from './pages/AboutUs2';
 import Success from './pages/SuccessPayment';
 import SuccessPayment from './pages/SuccessPayment';
 import PageNotFound from './pages/PageNotFound';
+import FailedPayment from './pages/FailedPayment';
 
 
 const App = () => {
@@ -35,6 +36,7 @@ requestAnimationFrame(raf);
         <Route path='/register' element={<Registration/>} />
         <Route path='/liability' element={<Liability/>} />
         <Route path='/success-payment' element={<SuccessPayment/>} />
+        <Route path='/failed-payment' element={<FailedPayment/>} />
         <Route path='/*' element={<PageNotFound/>} />
       </Routes>
     </Router>
@@ -42,3 +44,7 @@ requestAnimationFrame(raf);
 }
 
 export default App;
+
+
+// [1:51 PM, 5/9/2025] Akavn Office: "At Shraddha Multicare Hospital, we believe in more than just healing – we believe in caring for you like no one else can. 🌟 Your well-being is our top priority! 🏥💖 #ShraddhaMulticare #CareBeyondHealing #HealthWithHeart #CompassionateCare #MedicalExcellence #HealingHands #PatientCentric #WellnessFirst #TrustedCare
+// [1:51 PM, 5/9/2025] Akavn Office: Meet Dr. Shraddha – With 10 years of experience and a commitment to traditional care, your health is in expert hands at Shraddha Multicare Hospital! 🩺✨ #DrShraddha #ExperienceMatters #TraditionalCare #ShraddhaMulticare #HealthExperts #MedicalCare #PatientFirst #HealthcareProfessionals #10YearsOfCare

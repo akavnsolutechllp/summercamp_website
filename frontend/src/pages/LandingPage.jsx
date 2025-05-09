@@ -62,7 +62,7 @@ const LandingPage = () => {
       id="home"
       className="min-h-screen h-auto bg-gradient-to-b  from-[#283353] via-[#16003E] to-[#16003E] w-full flex flex-col justify-center items-center relative py-4 overflow-hidden"
     >
-      <img src={Logo} alt="" className="hidden bg-white drop-shadow-lg rounded-full xl:block xl:absolute xl:top-10 xl:left-4 2xl:top-24 2xl:left-2 xl:w-1/8 2xl:w-[10%]" />
+      <img src={Logo} alt="" className="hidden bg-white drop-shadow-lg rounded-full xl:block xl:absolute xl:top-10 xl:left-4 2xl:top-24 2xl:left-2 xl:w-[10%] 2xl:w-[10%]" />
       
       <div className="h-auto w-full flex flex-col justify-center items-center p-2">
         {/* <img src={smallrainbow} alt="" className='absolute w-full h-full top-36 opacity-25 xl:hidden' /> */}
@@ -71,7 +71,7 @@ const LandingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1, stiffness: 80, type: spring }}
-            className="font-montserrat uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-5xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[8vw] 2xl:text-[6vw] text-center"
+            className="font-gardion uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-5xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[6vw] 2xl:text-[6vw] text-center"
           >
             <p className="">Spark Stem</p>
             <p className="">Academy</p>
@@ -85,7 +85,7 @@ const LandingPage = () => {
               stiffness: 80,
               type: spring,
             }}
-            className="font-montserrat text-white text-justify tracking-tight xl:tracking-normal xl:text-center xl:text-lg text-base 2xl:text-center 2xl:tracking-tight p-2 lg:mt-0 md:w-[80%] lg:w-[60%] xl:w-[80%]"
+            className="font-montserrat text-white text-justify tracking-tight xl:tracking-normal xl:text-center  text-base 2xl:text-center 2xl:tracking-tight p-2 lg:mt-0 md:w-[80%] lg:w-[60%] xl:w-[90%] 2xl:w-[80%]"
           >
             Join our exciting STEM Summer Camps where curiosity meets innovation!
             Packed with hands-on science experiments, tech challenges, and

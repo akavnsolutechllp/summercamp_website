@@ -43,6 +43,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
         if (error) {
             alert(`Payment failed: ${error.message}`);
             setProcessing(false);
+            navigate('/failed-payment');
             return;
         }
     
@@ -70,6 +71,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                     localStorage.setItem("payment", "true");
                     navigate('/success-payment');
                 } else {
+                
                     console.error("Invoice generation failed:", res.data);
                     alert("Payment succeeded, but invoice generation failed.");
                 }
