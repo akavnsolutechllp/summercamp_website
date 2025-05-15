@@ -172,7 +172,7 @@ const Programs = () => {
         <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Locations
          </h2>
-            <div className='h-auto w-full md:w-[60%] xl:w-[74%] 2xl:w-[80%] flex flex-col xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-3  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>
+            <div className='h-auto w-full md:w-[60%] xl:w-[74%] 2xl:w-[70%] flex flex-col xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-2  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>
               
                 <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST </h1>
@@ -359,7 +359,7 @@ const Programs = () => {
             </div>
         </div>
         </div>
-        <button onClick={handleRegister}  className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-4'>Enroll Now</button>
+        <button onClick={handleRegister}  className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-4 xl:cursor-pointer'>Enroll Now</button>
     </div>
   )
 }

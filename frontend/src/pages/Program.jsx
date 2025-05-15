@@ -171,7 +171,7 @@ const handleKnowmore = () =>{
       </motion.div>
       <button
       onClick={handleKnowmore}
-        className="bg-[#FF0066] font-montserrat rounded-full px-4 py-2 mt-4 2xl:text-xl 2xl:mt-12 text-white z-20"
+        className="bg-[#FF0066] font-montserrat rounded-full px-4 py-2 mt-4 xl:cursor-pointer 2xl:text-xl 2xl:mt-12 text-white z-20"
       >
         Know More
       </button>
