@@ -10,10 +10,10 @@ const PageNotFound = () => {
         <Navbar/>
         <Menu/>
         <div className='min-h-[80vh] w-full flex flex-col justify-center items-center gap-4 bg-gradient-to-b  from-[#283353] via-[#16003E] to-[#16003E] p-4'>
-            <h1 className='font-gardion text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke'>PAGE NOT FOUND</h1>
+            <h1 className='font-montserrat text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke'>PAGE NOT FOUND</h1>
             <img src={pagenotfound} alt="" className='md:w-[50%] xl:w-[30%] 2xl:w-[30%]' />
             <h4 className='text-white font-montserrat'>The URL you are request for doesn't exist</h4>
-            <h4 className='text-white font-montserrat'>check in typo's for url</h4>
+            <h4 className='text-white font-montserrat'>check for typo's in url</h4>
         </div>
     </div>
   )
