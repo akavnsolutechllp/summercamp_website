@@ -189,8 +189,23 @@ const Programs = () => {
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
+                {/* <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School </h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 9 – June 12</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>Inventor’s Workshop</h4>
+                  </div>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
+                  <h4 className=' p-1 text-white'>Circuit Science</h4>
+                  </div>
+                </div>
+                </div> */}
+
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
+                <h1 className='text-xl mb-3 text-black 2xl:text-white'>📍North Gwinnett High School</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 9 – June 12</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
                   <div className=" h-auto flex justify-center items-center">
@@ -204,22 +219,7 @@ const Programs = () => {
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
-                <h1 className='text-lg mb-3 text-black 2xl:text-white'>📍North Gwinnett Middle School </h1>
-                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 16 – June 19</h3>
-                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
-                  <div className=" h-auto flex justify-center items-center">
-                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
-                  <h4 className=' p-1 text-white'>Inventor’s Workshop</h4>
-                  </div>
-                  <div className=" h-auto flex justify-center items-center">
-                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
-                  <h4 className=' p-1 text-white'>Circuit Science</h4>
-                  </div>
-                </div>
-                </div>
-
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
+                {/* <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Alpharetta High School</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 23 – June 26</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
@@ -232,24 +232,24 @@ const Programs = () => {
                   <h4 className=' p-1 text-white'>Circuit Science</h4>
                   </div>
                 </div>
-                </div>
+                </div> */}
 
                 <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST</h1>
-                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 30 – July 3</h3>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 23 – July 26</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
                   <div className=" h-auto flex justify-center items-center">
                   <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
-                  <h4 className=' p-1 text-white'>STEM Buildersp</h4>
+                  <h4 className=' p-1 text-white'>Inventor’s Workshop</h4>
                   </div>
                   <div className=" h-auto flex justify-center items-center">
                   <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>1PM – 4PM</h3>
-                  <h4 className=' p-1 text-white'>Mini Makers</h4>
+                  <h4 className=' p-1 text-white'>Circuit Science</h4>
                   </div>
                 </div>
                 </div>
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
+                {/* <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>July 7 – July 10</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
@@ -262,10 +262,10 @@ const Programs = () => {
                   <h4 className=' p-1 text-white'>Mini Makers</h4>
                   </div>
                 </div>
-                </div>
+                </div> */}
 
                 <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
-                <h1 className='text-lg mb-3 text-black 2xl:text-white'>📍North Gwinnett Middle School</h1>
+                <h1 className='text-xl mb-3 text-black 2xl:text-white'>📍North Gwinnett High School</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>July 14 – July 17</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
                   <div className=" h-auto flex justify-center items-center">
@@ -311,7 +311,7 @@ const Programs = () => {
                   <p>Lawrenceville, GA 30044</p>
               </div>
               </div>
-              <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
+              {/* <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
               <div className='text-xl'>
               <GrLocationPin />
               </div>
@@ -320,18 +320,18 @@ const Programs = () => {
                   <p>10625 Parsons Rd, </p>
                   <p>Johns Creek GA 30097</p>
               </div>
-              </div>
-              <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
+              </div> */}
+              <div className='w-full flex justify-center items-start gap-2 text-white  pb-3'>
               <div className='text-xl'>
               <GrLocationPin />
               </div>
               <div className='w-full flex flex-col justify-center items-start -mt-1'>
-                  <p>North Gwinnett Middle School</p>
-                  <p>170 Peachtree Industrial Blvd,</p>
-                  <p>Sugar Hill, GA 30518</p>
+                  <p>North Gwinnett High School</p>
+                  <p>20 Level Creek Rd,</p>
+                  <p>Suwanee, GA 30024</p>
               </div>
               </div>
-              <div className='w-full flex justify-center items-start gap-2 text-white '>
+              {/* <div className='w-full flex justify-center items-start gap-2 text-white '>
               <div className='text-xl'>
               <GrLocationPin />
               </div>
@@ -340,7 +340,7 @@ const Programs = () => {
                   <p>3595 Webb Bridge Rd,</p>
                   <p>Alpharetta, GA 30005</p>
               </div>
-              </div>
+              </div> */}
             </div>
         </div>
       
