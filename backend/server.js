@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-
 const PORT = process.env.PORT || 4000;
 
 dotenv.config();
