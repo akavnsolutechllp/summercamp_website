@@ -265,7 +265,7 @@ const Programs = () => {
                 </div> */}
                 <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-xl mb-3 text-black 2xl:text-white'>📍Sharon Forks Library</h1>
-                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 30-July 3</h3>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 30 - July 3</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
                   <div className=" h-auto flex justify-center items-center">
                   <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>

@@ -74,7 +74,7 @@ const Registration = () => {
     {
       location: "Sharon Forks Library ",
       date: "June 30 - July 3",
-      morning: "Circuit Science | 09:00AM - 12:00PM"
+      morning: "Circuit Science | 09:00AM - 12:00PM",
     },
     // {
     //   location: "Northview High School",
