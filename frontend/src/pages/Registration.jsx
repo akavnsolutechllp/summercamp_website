@@ -44,8 +44,8 @@ const Registration = () => {
     {
       location: "GSMST",
       date: "June 2 - June 5",
-      morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
-      afternoon: "Circuit Science | 01:00PM - 04:00PM",
+      morning: "Inventor’s Workshop | 9am - 12pm",
+      afternoon: "Circuit Science | 1pm - 4pm",
     },
     // {
     //   location: "Northview High School",
@@ -56,8 +56,8 @@ const Registration = () => {
     {
       location: "North Gwinnett High School",
       date: "June 9 – June 12",
-      morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
-      afternoon: "Circuit Science | 01:00PM - 04:00PM",
+      morning: "Inventor’s Workshop | 9am - 12pm",
+      afternoon: "Circuit Science | 1pm - 4pm",
     },
     // {
     //   location: "Alpharetta High School",
@@ -68,13 +68,13 @@ const Registration = () => {
     {
       location: "GSMST",
       date: "June 23 – June 26",
-      morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
-      afternoon: "Circuit Science | 01:00PM - 04:00PM",
+      morning: "Inventor’s Workshop | 9am - 12pm",
+      afternoon: "Circuit Science | 1pm - 4pm",
     },
     {
       location: "Sharon Forks Library ",
       date: "June 30 - July 3",
-      morning: "Circuit Science | 09:00AM - 12:00PM",
+      morning: "Circuit Science | 9am - 12pm",
     },
     // {
     //   location: "Northview High School",
@@ -85,8 +85,8 @@ const Registration = () => {
     {
       location: "North Gwinnett High School",
       date: "July 14 – July 17",
-      morning: "STEM Builders | 09:00AM - 12:00PM",
-      afternoon: "Mini Makers | 01:00PM - 04:00PM",
+      morning: "STEM Builders | 9am - 12pm",
+      afternoon: "Mini Makers | 1pm - 4pm",
     },
   ];
 
@@ -106,7 +106,7 @@ const Registration = () => {
   selectedSession &&
   selectedSession.includes("Sharon Forks Library") &&
   selectedSession.includes("June 30 - July 3") &&
-  selectedSession.includes("Morning: Circuit Science | 09:00AM - 12:00PM");
+  selectedSession.includes("Morning: Circuit Science | 9am - 12pm");
 
   return (
     <div
@@ -262,40 +262,10 @@ const Registration = () => {
           {/* Camp & Location */}
           {/* Camp & Location */}
           <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-start gap-6">
-          <div className="w-full flex flex-col justify-center items-start">
-  <label className="font-montserrat text-lg text-black">
-    Select Camp
-  </label>
-  <select
-    className="border w-full p-3 border-black/20 focus:outline-none"
-    {...register("camp", {
-      required: "Camp selection is required",
-    })}
-  >
-    <option value="">Select Camp</option>
-
-    {/* Show only Half Day for that session */}
-    {isHalfDayOnly ? (
-      <option value="half">Half Day (9AM - 12PM)</option>
-    ) : (
-      <>
-        <option value="full">Full Day (9AM - 4PM)</option>
-        <option value="half">Half Day (9AM - 12PM OR 1PM - 4PM)</option>
-      </>
-    )}
-  </select>
-
-  {errors.camp && (
-    <span className="text-red-600 text-sm">
-      {errors.camp.message}
-    </span>
-  )}
-</div>
-
-
+          
             <div className="w-full flex flex-col justify-center items-start">
               <label className="font-montserrat text-lg text-black">
-                Select Camp Location & Date
+                Location & Date
               </label>
               <select
                 {...register("campSession", {
@@ -318,10 +288,44 @@ const Registration = () => {
                   {errors.campSession.message}
                 </span>
               )}
-              {selectedSession && (
+              
+              
+            </div>
+            <div className="w-full flex flex-col justify-center items-start">
+  <label className="font-montserrat text-lg text-black">
+    Time
+  </label>
+  <select
+    className="border w-full p-3 border-black/20 focus:outline-none"
+    {...register("camp", {
+      required: "Camp selection is required",
+    })}
+  >
+    <option value="">Select Time</option>
+
+    {/* Show only Half Day for that session */}
+    {isHalfDayOnly ? (
+      <option value="half">Half Day (9am - 12pm)</option>
+    ) : (
+      <>
+        <option value="full">Full Day (9am - 4pm)</option>
+        <option value="half">Half Day (9am - 12pm OR 1pm - 4pm)</option>
+      </>
+    )}
+  </select>
+
+  {errors.camp && (
+    <span className="text-red-600 text-sm">
+      {errors.camp.message}
+    </span>
+  )}
+          </div>
+   
+          </div>
+          {selectedSession && (
   <div className="w-full flex flex-col justify-center items-start">
     <label className="font-montserrat text-lg text-black">
-      Select Activity
+       Activity
     </label>
     <select
       {...register("activity", {
@@ -370,9 +374,6 @@ const Registration = () => {
     )}
   </div>
 )}
-
-            </div>
-          </div>
 
           <div className="w-full flex justify-center items-center gap-2 mt-4">
             <button
