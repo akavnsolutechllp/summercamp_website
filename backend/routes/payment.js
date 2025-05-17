@@ -182,6 +182,8 @@ router.post("/send-invoice", async (req, res) => {
     const onlyActivity = parts2[0];
     const time = parts2[1];
 
+    const ftime = "09:00AM - 04:00PM "
+
 // Set campTime based on timing
 
     // 2. Save invoice ID to user in DB
@@ -218,9 +220,9 @@ router.post("/send-invoice", async (req, res) => {
                 <li><strong>Student Name:</strong> ${firstName} ${lastName}</li>
                 <li><strong>Camp Type:</strong> ${campType === 'half' ? 'Half Day' : 'Full Day'}</li>
                 <li><strong>Date:</strong> ${campDate}</li>
-                <li><strong>Time:</strong> ${time}</li>
+                <li><strong>Time:</strong> ${campType === 'half' ? time : ftime}</li>
                 <li><strong>Location:</strong> ${campLocation}</li>
-                <li><strong>Camp:</strong> ${onlyActivity}</li>
+                <li><strong>Camp:</strong> ${campType === 'half' ? onlyActivity: activity}</li>
               </ul>
         
               <p>

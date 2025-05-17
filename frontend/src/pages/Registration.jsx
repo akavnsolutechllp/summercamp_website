@@ -90,6 +90,8 @@ const Registration = () => {
     },
   ];
 
+ 
+
 
   const campSelection = watch("camp"); // watch camp selection
   const selectedSession = watch("campSession");
@@ -99,6 +101,12 @@ const Registration = () => {
       selectedSession.includes(camp.location) &&
       selectedSession.includes(camp.date)
   );
+
+  const isHalfDayOnly =
+  selectedSession &&
+  selectedSession.includes("Sharon Forks Library") &&
+  selectedSession.includes("June 30 - July 3") &&
+  selectedSession.includes("Morning: Circuit Science | 09:00AM - 12:00PM");
 
   return (
     <div
@@ -254,26 +262,36 @@ const Registration = () => {
           {/* Camp & Location */}
           {/* Camp & Location */}
           <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-start gap-6">
-            <div className="w-full flex flex-col justify-center items-start">
-              <label className="font-montserrat text-lg text-black">
-                Select Camp
-              </label>
-              <select
-                className="border w-full p-3 border-black/20 focus:outline-none"
-                {...register("camp", {
-                  required: "Camp selection is required",
-                })}
-              >
-                <option value="">Select Camp</option>
-                <option value="full">Full Day (9AM - 4PM)</option>
-                <option value="half">Half Day (9AM - 12PM OR 1PM - 4PM)</option>
-              </select>
-              {errors.camp && (
-                <span className="text-red-600 text-sm">
-                  {errors.camp.message}
-                </span>
-              )}
-            </div>
+          <div className="w-full flex flex-col justify-center items-start">
+  <label className="font-montserrat text-lg text-black">
+    Select Camp
+  </label>
+  <select
+    className="border w-full p-3 border-black/20 focus:outline-none"
+    {...register("camp", {
+      required: "Camp selection is required",
+    })}
+  >
+    <option value="">Select Camp</option>
+
+    {/* Show only Half Day for that session */}
+    {isHalfDayOnly ? (
+      <option value="half">Half Day (9AM - 12PM)</option>
+    ) : (
+      <>
+        <option value="full">Full Day (9AM - 4PM)</option>
+        <option value="half">Half Day (9AM - 12PM OR 1PM - 4PM)</option>
+      </>
+    )}
+  </select>
+
+  {errors.camp && (
+    <span className="text-red-600 text-sm">
+      {errors.camp.message}
+    </span>
+  )}
+</div>
+
 
             <div className="w-full flex flex-col justify-center items-start">
               <label className="font-montserrat text-lg text-black">
@@ -301,44 +319,58 @@ const Registration = () => {
                 </span>
               )}
               {selectedSession && (
-                <div className="w-full flex flex-col justify-center items-start">
-                  <label className="font-montserrat text-lg text-black">
-                    Select Activity
-                  </label>
-                  <select
-                    {...register("activity", {
-                      required: "Please select an activity",
-                    })}
-                    className="border w-full p-3 border-black/20 focus:outline-none"
-                  >
-                    <option value="">-- Choose Activity --</option>
-                    {campSelection === "full" && selectedSchedule && (
-                      <>
-                        <option
-                          value={`${selectedSchedule.morning}, ${selectedSchedule.afternoon}`}
-                        >
-                          {selectedSchedule.morning} & {selectedSchedule.afternoon}
-                        </option>
-                      </>
-                    )}
-                    {campSelection === "half" && selectedSchedule && (
-                      <>
-                        <option value={selectedSchedule.morning}>
-                          {selectedSchedule.morning} 
-                        </option>
-                        <option value={selectedSchedule.afternoon}>
-                          {selectedSchedule.afternoon} 
-                        </option>
-                      </>
-                    )}
-                  </select>
-                  {errors.activity && (
-                    <span className="text-red-600 text-sm">
-                      {errors.activity.message}
-                    </span>
-                  )}
-                </div>
+  <div className="w-full flex flex-col justify-center items-start">
+    <label className="font-montserrat text-lg text-black">
+      Select Activity
+    </label>
+    <select
+      {...register("activity", {
+        required: "Please select an activity",
+      })}
+      className="border w-full p-3 border-black/20 focus:outline-none"
+    >
+      <option value="">-- Choose Activity --</option>
+
+      {/* FULL DAY: Show both morning and afternoon */}
+      {campSelection === "full" && selectedSchedule && (
+        <option
+          value={`${selectedSchedule.morning}, ${selectedSchedule.afternoon}`}
+        >
+          {selectedSchedule.morning} & {selectedSchedule.afternoon}
+        </option>
+      )}
+
+      {/* HALF DAY: Special condition - only show morning for this specific session */}
+      {campSelection === "half" && selectedSchedule && (
+        <>
+          {isHalfDayOnly ? (
+            <option value={selectedSchedule.morning}>
+              {selectedSchedule.morning}
+            </option>
+          ) : (
+            <>
+              {selectedSchedule.morning && (
+                <option value={selectedSchedule.morning}>
+                  {selectedSchedule.morning}
+                </option>
               )}
+              {selectedSchedule.afternoon && (
+                <option value={selectedSchedule.afternoon}>
+                  {selectedSchedule.afternoon}
+                </option>
+              )}
+            </>
+          )}
+        </>
+      )}
+    </select>
+
+    {errors.activity && (
+      <span className="text-red-600 text-sm">{errors.activity.message}</span>
+    )}
+  </div>
+)}
+
             </div>
           </div>
 
