@@ -263,6 +263,16 @@ const Programs = () => {
                   </div>
                 </div>
                 </div> */}
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
+                <h1 className='text-xl mb-3 text-black 2xl:text-white'>📍Sharon Forks Library</h1>
+                <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 30-July 3</h3>
+                <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>
+                  <div className=" h-auto flex justify-center items-center">
+                  <h3 className=' bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]'>9AM - 12PM</h3>
+                  <h4 className=' p-1 text-white'>Circuit Science</h4>
+                  </div>
+                </div>
+                </div>
 
                 <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                 <h1 className='text-xl mb-3 text-black 2xl:text-white'>📍North Gwinnett High School</h1>
@@ -278,6 +288,8 @@ const Programs = () => {
                   </div>
                 </div>
                 </div>
+
+                
 
             </div>
         </div>
@@ -321,7 +333,7 @@ const Programs = () => {
                   <p>Johns Creek GA 30097</p>
               </div>
               </div> */}
-              <div className='w-full flex justify-center items-start gap-2 text-white  pb-3'>
+              <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
               <div className='text-xl'>
               <GrLocationPin />
               </div>
@@ -329,6 +341,16 @@ const Programs = () => {
                   <p>North Gwinnett High School</p>
                   <p>20 Level Creek Rd,</p>
                   <p>Suwanee, GA 30024</p>
+              </div>
+              </div>
+              <div className='w-full flex justify-center items-start gap-2 text-white  pb-3'>
+              <div className='text-xl'>
+              <GrLocationPin />
+              </div>
+              <div className='w-full flex flex-col justify-center items-start -mt-1'>
+                  <p>Sharon Forks Library</p>
+                  <p>2820 Old Atlanta Road,</p>
+                  <p>Cumming, GA, 30041.</p>
               </div>
               </div>
               {/* <div className='w-full flex justify-center items-start gap-2 text-white '>
