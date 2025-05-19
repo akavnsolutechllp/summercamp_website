@@ -75,7 +75,7 @@ const Liability = () => {
 
           {/* Camper Info Fields */}
           <div className='w-full h-auto flex flex-col justify-center items-start mt-2'>
-            <label className='font-montserrat'>Camper’s Full Name:</label>
+            <label className='font-montserrat'>Student Full Name:</label>
             <input
               type='text'
               {...register('camperName', { required: 'Camper’s name is required' })}

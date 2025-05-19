@@ -51,6 +51,7 @@ const Programs = () => {
         Programs
       </h2>
       <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[84%] 2xl:w-[70%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-3 md:gap-8 lg:gap-6 xl:gap-8 gap-4 px-4 py-4 z-10">
+        
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +69,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base 2xl:text-lg font-montserrat  w-full z-20">
             Engineering & Structures
           </h3>
-          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Put your engineering skills-to the text as you desig and build towers, bridges, and more!</h4>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Put your engineering skills to the text as you design and build towers, bridges, and more!</h4>
         </motion.div>
 
         <motion.div
@@ -88,8 +89,9 @@ const Programs = () => {
           <h3 className="text-white bg-[#E31DB0] py-1 px-8 xl:px-12 2xl:px-2 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Design Thinking & Problem-Solving
           </h3>
-          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Bring your ideas to life! Solve problems by inve-riting prototypes of your own creations.</h4>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Bring your ideas to life! Solve problems by inventing prototypes of your own creations.</h4>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -109,6 +111,7 @@ const Programs = () => {
           </h3>
           <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Discover the world of coding and robotics! Learn to program robots and games.</h4>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,6 +131,7 @@ const Programs = () => {
           </h3>
           <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -145,15 +149,16 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Environment & Sustainability
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Discover the wonders of nature! investigace ecosystems, sustainabi-lity, and more.</h4>
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Discover the wonders of nature! Investigate ecosystems, sustainability, and more.</h4>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[46vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] xl:h-[68vh] 2xl:h-[46vh] bg-white/5 border-2 border-[#E31DB0] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-7xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Mini Makers
@@ -164,9 +169,9 @@ const Programs = () => {
           <h3 className="text-white bg-[#E31DB0] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Science + Art (STEAM)
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Combine science and art as you create wear-able art, scribbibung machines, and more!</h4>
-        
+          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Combine science and art as you create wearable art, scribbling machines, and more!</h4>
         </motion.div>
+
       </motion.div>
         <div className='h-auto w-full flex flex-col justify-center items-center gap-2 mt-4 2xl:mt-12' >
         <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-9xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
