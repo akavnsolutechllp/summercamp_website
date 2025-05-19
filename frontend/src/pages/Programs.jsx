@@ -69,7 +69,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base 2xl:text-lg font-montserrat  w-full z-20">
             Engineering & Structures
           </h3>
-          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Put your engineering skills to the text as you design and build towers, bridges, and more!</h4>
+          <h4 className='bg-white text-black  p-1 border rounded-lg text-center  text-sm'>Put your engineering skills to the test as you design and build towers, bridges, and more!</h4>
         </motion.div>
 
         <motion.div
