@@ -54,7 +54,7 @@ const SuccessPayment = () => {
       <Navbar />
       <Menu />
       <div className="min-h-[90vh] w-[96%] 2xl:w-[40%] flex flex-col justify-center items-center gap-4 text-center p-4 rounded-lg m-2">
-        <h1 className="text-5xl 2xl:text-7xl font-montserrat uppercase text-[#FFB202]">
+        <h1 className="text-5xl 2xl:text-7xl font-montserrat uppercase text-[#02ff56]">
           Payment Successful
         </h1>
         <p className="mt-4 text-lg font-montserrat text-white">

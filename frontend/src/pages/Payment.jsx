@@ -19,7 +19,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
 
     useEffect(() => {
         const fetchClientSecret = async () => {
-            const numericAmount = parseFloat(amount.replace("$", "")) * 100; // convert to cents
+            const numericAmount = Math.round(parseFloat(amount.replace("$", "")) * 100); 
             const { data } = await axios.post("https://summercamp-website.onrender.com/api/payment/create-payment-intent", {
                 amount: numericAmount,
             });
@@ -104,6 +104,7 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
 
 const Payment = () => {
     const [userData, setUserData] = useState(null);
+    const [baseAmount, setBaseAmount] = useState(420); // numeric base amount in dollars
     const [amount, setAmount] = useState("420$");
     const [selectedCamp, setSelectedCamp] = useState("");
     const [selectedTiming, setSelectedTiming] = useState("");
@@ -136,8 +137,12 @@ const Payment = () => {
     }, []);
 
     useEffect(() => {
-        setAmount(selectedCamp === "half" ? "230$" : "420$");
+        const newBase = selectedCamp === "half" ? 230 : 430;
+        const totalWithFee = Math.round(newBase * 1.03); // Add 3% fee
+        setBaseAmount(newBase);
+        setAmount(`${totalWithFee}$`);
     }, [selectedCamp]);
+    
 
     const handleTimingChange = (e) => {
         setSelectedTiming(e.target.value);
@@ -208,7 +213,7 @@ const Payment = () => {
                         }
                     </div>
 
-                    <div className='text-xl flex justify-between'>
+                    <div className='text-xl flex justify-between font-montserrat'>
                         <span>Total:</span>
                         <span>{amount}</span>
                     </div>

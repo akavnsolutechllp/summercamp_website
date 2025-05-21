@@ -188,15 +188,19 @@ const Registration = () => {
 
             {/* Age */}
             <div className="w-full  flex flex-col justify-center items-start">
-              <label className="font-montserrat text-lg text-black">Age</label>
+              <label className="font-montserrat text-lg text-black">Age (7 - 13) </label>
               <input
                 type="number"
                 className="border w-full p-3 border-black/20 focus:outline-none"
                 {...register("age", {
                   required: "Age is required",
+                  min:{
+                    value:7,
+                    message:"Age must be 7 or above"
+                  },
                   max: {
-                    value: 18,
-                    message: "Age must be 18 or below",
+                    value: 13,
+                    message: "Age must be 13 or below",
                   },
                 })}
               />
