@@ -71,7 +71,7 @@ const LandingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1, stiffness: 80, type: spring }}
-            className="font-montserrat uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-5xl  tracking-wide mb-3 md:text-[16vw] lg:text-[12vw] xl:text-[6vw] 2xl:text-[6vw] text-center"
+            className="font-montserrat uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-5xl  tracking-wide mb-3 md:text-[16vw] lg:text-[6vw] xl:text-[6vw] 2xl:text-[6vw] text-center"
           >
             <p className="">Spark Stem</p>
             <p className="">Academy</p>
@@ -85,7 +85,7 @@ const LandingPage = () => {
               stiffness: 80,
               type: spring,
             }}
-            className="font-montserrat text-white text-justify tracking-tight xl:tracking-normal xl:text-center  text-base 2xl:text-center 2xl:tracking-tight p-2 lg:mt-0 md:w-[80%] lg:w-[60%] xl:w-[90%] 2xl:w-[80%]"
+            className="font-montserrat text-white text-justify tracking-tight xl:tracking-normal xl:text-center lg:text-center  text-base 2xl:text-center 2xl:tracking-tight p-2 lg:mt-0 md:w-[80%] lg:w-[70%] xl:w-[90%] 2xl:w-[80%]"
           >
             Join our exciting STEM Summer Camps where curiosity meets innovation!
             Packed with hands-on science experiments, tech challenges, and
