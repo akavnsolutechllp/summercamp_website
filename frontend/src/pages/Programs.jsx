@@ -58,7 +58,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] lg:h-[96vh] xl:h-[74vh] 2xl:h-[54vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             STEM Builders
@@ -69,7 +69,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base 2xl:text-lg font-montserrat  w-full z-20">
             Engineering & Structures
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Put your engineering skills to the test as you design and build towers, bridges, and more!</h4>
+          
           <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Calling all future engineers! In STEM Builders, campers will explore real world structural engineering concepts. From earthquake-safe towers to marble ramps and bridge-building contests, each day brings a new challenge.</h4>
         </motion.div>
 
@@ -79,7 +79,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] lg:h-[96vh] xl:h-[74vh] 2xl:h-[54vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Inventor’s Workshop
@@ -90,7 +90,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#E31DB0] py-1 px-8 xl:px-12 2xl:px-2 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Design Thinking & Problem-Solving
           </h3>
-        <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Bring your ideas to life! Solve problems by inventing prototypes of your own creations.</h4>
+       
           <h4 className=' bg-white text-black p-1 border rounded-lg text-center  text-sm'> Young inventors dive into real-world problem solving as they design, build, and pitch their own creations! From crash-test cars to custom inventions, campers learn mechanical engineering and creativity through hands-on prototyping.</h4>
         </motion.div>
 
@@ -102,7 +102,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] lg:h-[92vh] xl:h-[74vh] 2xl:h-[54vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Circuit Science
@@ -113,7 +113,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#E31DB0] p-1 border text-center rounded-lg text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Electricity & Circuits
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Explore the science of electricity! Experiment with circuits, lights, and switches.</h4>
+         
           <h4 className=' bg-white text-black p-1 border rounded-lg text-center  text-sm'>Turn curiosity into circuitry! Campers will learn the basics of electricity by building light-up signs, touch-activated devices, and buzzer games — all using safe, hands-on materials. Every child takes home their own buzzing creation!</h4>
         </motion.div>
 
@@ -125,7 +125,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{scale:1.02}}
-          className="h-auto w-full min-h-[16vh] lg:h-[92vh] xl:h-[74vh] 2xl:h-[54vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Mini Makers
@@ -136,7 +136,7 @@ const Programs = () => {
           <h3 className="text-white bg-[#F79824] p-1 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
             Science + Art (STEAM)
           </h3>
-          <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Combine science and art as you create wearable art, scribbling machines, and more!</h4>
+          
           <h4 className='bg-white text-black p-1 border rounded-lg text-center  text-sm'>Where creativity meets engineering! Campers build scribble bots, race balloon-powered cars, and design musical machines — all while learning about motion, sound, and science. Every project goes home, and every child leaves as a proud Maker.</h4>
         </motion.div>
 
