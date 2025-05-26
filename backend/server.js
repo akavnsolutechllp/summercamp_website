@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 
 const PORT = process.env.PORT || 4000;
 
 dotenv.config();
 
 const app = express();
+app.use(compression());
 
 // Middleware
 const allowedOrigin = 'https://sparkstemacademy.com'; 

@@ -94,8 +94,6 @@ const Programs = () => {
           <h4 className=' bg-white text-black p-1 border rounded-lg text-center  text-sm'> Young inventors dive into real-world problem solving as they design, build, and pitch their own creations! From crash-test cars to custom inventions, campers learn mechanical engineering and creativity through hands-on prototyping.</h4>
         </motion.div>
 
-    
-
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,8 +114,6 @@ const Programs = () => {
          
           <h4 className=' bg-white text-black p-1 border rounded-lg text-center  text-sm'>Turn curiosity into circuitry! Campers will learn the basics of electricity by building light-up signs, touch-activated devices, and buzzer games — all using safe, hands-on materials. Every child takes home their own buzzing creation!</h4>
         </motion.div>
-
-
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
