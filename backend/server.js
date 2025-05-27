@@ -13,7 +13,7 @@ const app = express();
 app.use(compression());
 
 // Middleware
-const allowedOrigin = 'https://sparkstemacademy.com/'; 
+const allowedOrigin = 'https://sparkstemacademy.com'; 
 
 app.use(cors({
   origin: allowedOrigin,

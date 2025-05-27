@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Admin = require('../models/Admin');
+const verifyAdmin = require('../middlewares/auth');
+const User = require('../models/User');
 
 // Register Admin (TEMPORARY)
 router.post('/register', async (req, res) => {
@@ -41,5 +43,15 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+router.get('/registrations', verifyAdmin, async (req, res) => {
+  try {
+    const registrations = await User.find().sort({ createdAt: -1 });
+    res.json(registrations);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch registrations' });
+  }
+});
+
 
 module.exports = router;
