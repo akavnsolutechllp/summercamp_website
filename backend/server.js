@@ -13,7 +13,7 @@ const app = express();
 app.use(compression());
 
 // Middleware
-const allowedOrigin = 'https://sparkstemacademy.com'; 
+const allowedOrigin = 'https://sparkstemacademy.com/'; 
 
 app.use(cors({
   origin: allowedOrigin,
@@ -26,9 +26,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes
 const userRoutes = require('./routes/userRoutes');
 const paymentRoutes = require('./routes/payment');
+const adminRoutes = require('./routes/admin');
 
 app.use('/api/user', userRoutes);
 app.use('/api/payment', paymentRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Home Route
 app.get('/', (req, res) => {

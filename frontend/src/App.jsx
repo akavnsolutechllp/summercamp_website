@@ -12,6 +12,9 @@ import Success from './pages/SuccessPayment';
 import SuccessPayment from './pages/SuccessPayment';
 import PageNotFound from './pages/PageNotFound';
 import FailedPayment from './pages/FailedPayment';
+import AdminLogin from './pages/AdminLogin';
+import AdminRegister from './pages/AdminRegister';
+import AdminDashboard from './pages/AdminDashboard';
 
 
 const App = () => {
@@ -37,6 +40,9 @@ requestAnimationFrame(raf);
         <Route path='/liability' element={<Liability/>} />
         <Route path='/success-payment' element={<SuccessPayment/>} />
         <Route path='/failed-payment' element={<FailedPayment/>} />
+        <Route path='/admin-login' element={<AdminLogin/>} />
+        <Route path='/admin-register' element={<AdminRegister/>} />
+        <Route path='/admin-dashboard' element={<AdminDashboard/>} />
         <Route path='/*' element={<PageNotFound/>} />
       </Routes>
     </Router>
