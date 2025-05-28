@@ -52,7 +52,7 @@ const AdminLogin = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="w-full bg-[#f79824] text-white p-2 rounded font-montserrat cursor-pointer">
+        <button type="submit" className="w-full bg-[#f79824] text-white p-2 rounded font-montserrat">
           Login
         </button>
       </form>
