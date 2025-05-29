@@ -143,7 +143,8 @@ const Programs = () => {
          </h2>
             <div className='h-auto w-full md:w-[60%] lg:w-[80%] xl:w-[74%] 2xl:w-[70%] flex flex-col lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-2  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8'>
               
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl relative'>
+                <h2 className='bg-red-500 text-white px-4 py-2 absolute right-2 top-4'>Sold Out</h2>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST </h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 2 - June 5</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-3'>
@@ -203,7 +204,8 @@ const Programs = () => {
                 </div>
                 </div> */}
 
-                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
+                <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative'>
+                <h2 className='bg-red-500 text-white px-4 py-2 absolute right-2 top-4'>Sold Out</h2>
                 <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍GSMST</h1>
                 <h3 className='text-2xl font-light px-2 2xl:text-[#FFB202]'>June 23 – June 26</h3>
                 <div className='mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2'>

@@ -108,6 +108,10 @@ const Registration = () => {
   selectedSession.includes("June 30 - July 3") &&
   selectedSession.includes("Morning: Circuit Science | 9am - 12pm");
 
+
+const selectedLocation = selectedSession?.split(" | ")[0]?.trim();
+const isGSMST = selectedLocation === "GSMST";
+
   return (
     <div
       id="Registration"
@@ -267,34 +271,39 @@ const Registration = () => {
           {/* Camp & Location */}
           <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-start gap-6">
           
-            <div className="w-full flex flex-col justify-center items-start">
-              <label className="font-montserrat text-lg text-black">
-                Location & Date
-              </label>
-              <select
-                {...register("campSession", {
-                  required: "Please select a session",
-                })}
-                className="border w-full p-3 border-black/20 focus:outline-none"
-              >
-                <option value="">-- Select a session --</option>
-                {campSchedules.map((camp, index) => (
-                  <option
-                    key={index}
-                    value={`${camp.location} | ${camp.date} | Morning: ${camp.morning}, Afternoon: ${camp.afternoon}`}
-                  >
-                    {camp.location} – {camp.date}
-                  </option>
-                ))}
-              </select>
-              {errors.campSession && (
-                <span className="text-red-600 text-sm">
-                  {errors.campSession.message}
-                </span>
-              )}
-              
-              
-            </div>
+          <div className="w-full flex flex-col justify-center items-start">
+  <label className="font-montserrat text-lg text-black">
+    Location & Date
+  </label>
+  <select
+    {...register("campSession", {
+      required: "Please select a session",
+    })}
+    className="border w-full p-3 border-black/20 focus:outline-none"
+  >
+    <option value="">-- Select a session --</option>
+    {campSchedules.map((camp, index) => {
+      const isGSMST = camp.location.trim().toLowerCase() === "gsmst";
+      return (
+        <option
+          key={index}
+          value={`${camp.location} | ${camp.date} | Morning: ${camp.morning}, Afternoon: ${camp.afternoon || "N/A"}`}
+          disabled={isGSMST}
+          className="text-sm"
+        >
+          {camp.location} – {camp.date} {isGSMST ? "(Sold Out)" : ""}
+        </option>
+      );
+    })}
+  </select>
+
+  {errors.campSession && (
+    <span className="text-red-600 text-sm">
+      {errors.campSession.message}
+    </span>
+  )}
+</div>
+
             <div className="w-full flex flex-col justify-center items-start">
   <label className="font-montserrat text-lg text-black">
     Time
