@@ -15,7 +15,7 @@ import FailedPayment from './pages/FailedPayment';
 import AdminLogin from './pages/AdminLogin';
 import AdminRegister from './pages/AdminRegister';
 import AdminDashboard from './pages/AdminDashboard';
-
+import Gallery from './pages/Gallery';
 
 const App = () => {
   // Initialize Lenis
@@ -38,6 +38,7 @@ requestAnimationFrame(raf);
         <Route path='/programs' element={<Programs/>} />
         <Route path='/register' element={<Registration/>} />
         <Route path='/liability' element={<Liability/>} />
+        <Route path='/gallery' element={<Gallery/>} />
         <Route path='/success-payment' element={<SuccessPayment/>} />
         <Route path='/failed-payment' element={<FailedPayment/>} />
         <Route path='/admin-login' element={<AdminLogin/>} />

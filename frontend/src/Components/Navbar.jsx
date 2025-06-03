@@ -52,6 +52,10 @@ const Navbar = () => {
     navigate('/aboutus')
   }
 
+  const handleGallery = () =>{
+    navigate('/gallery')
+  }
+
 
   return (
     <div className='w-full h-[12vh] lg:h-[36vh] xl:h-[44vh] 2xl:h-[32vh] flex justify-center items-center 2xl:justify-center items-center px-4 relative z-20 overflow-hidden xl:overflow-hidden'>
@@ -61,6 +65,7 @@ const Navbar = () => {
         <button onClick={handleProgram}  className={` ${location.pathname === '/programs' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full xl:hover:scale-105 xl:hover:cursor-pointer ease-in-out`}>Programs</button>
         <button onClick={handleRegister}  className={` ${location.pathname === '/register' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full xl:hover:scale-105 xl:hover:cursor-pointer ease-in-out`}>Register</button>
         <button onClick={handleAbout}  className={`${location.pathname === '/aboutus' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full xl:hover:scale-105 xl:hover:cursor-pointer ease-in-out`}>About Us</button>
+        <button onClick={handleGallery}  className={`${location.pathname === '/gallery' ? 'bg-white text-[#FF0066] border-[#FF0066]' : 'bg-[#FF0066] text-white border-white' } border-2 px-4 py-2 rounded-full xl:hover:scale-105 xl:hover:cursor-pointer ease-in-out`}>Gallery</button>
       </div>
     </div>
   );

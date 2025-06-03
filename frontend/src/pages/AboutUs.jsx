@@ -8,6 +8,7 @@ import vect3 from '../assets/18.png';
 
 const About = () => {
   const { scrollYProgress } = useScroll();
+  
 
   // Animation values for first box
   const firstBoxOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
@@ -33,6 +34,12 @@ const About = () => {
         <p className='font-montserrat lg:text-lg xl:text-sm tracking-wide text-white text-justify md:w-[80%] lg:w-full' >At Spark STEM Academy, students don’t just memorize science—they experience it. Whether they’re building bridges, designing circuits, or playing with light and illusion, we help them connect with the science that surrounds them every day.</p>
         <p className='font-montserrat lg:text-lg xl:text-sm tracking-wide text-white text-justify md:w-[80%] lg:w-full' >We’re here to make science and technology come alive one project, one spark of curiosity at a time.</p>
       </div>
+      <a
+      href='/gallery'
+        className="bg-[#FF0066] font-montserrat rounded-full px-4 py-2 mt-4 lg:hidden text-white z-20"
+      >
+       View Gallery 
+      </a>
       <img src={vect1} alt="" className='hidden xl:block xl:w-[14%] 2xl:w-[10%]  absolute opacity-90 left-[2%] top-[12%]'  />
       <img src={vect2} alt="" className='hidden xl:block xl:w-[14%] 2xl:w-[10%]  absolute opacity-90 top-[60%] left-[36%]'  />
       <img src={vect3} alt="" className='hidden xl:block xl:w-[14%] 2xl:w-[10%]  absolute opacity-90 top-[10%] left-[30%] top-8'  />

@@ -79,8 +79,6 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
                 console.error("Invoice generation error:", err.response?.data || err.message || err);
                 alert("Payment succeeded, but invoice generation request failed.");
             }
-            
-
         }
     
         setProcessing(false);
@@ -110,14 +108,14 @@ const Payment = () => {
     const [selectedTiming, setSelectedTiming] = useState("");
 
  
-
     useEffect(() => {
         const fetchUserData = async () => {
             try {
                 const userId = localStorage.getItem('userId');
                 if (!userId) throw new Error('User ID is missing');
                 // if(!userId){
-                // // localStorage.setItem("payment", "false"); 
+                // localStorage.setItem("payment", "false"); 
+                // navigate('/register');
                 // }
                 const res = await fetch(`https://summercamp-website.onrender.com/api/user/getprofile/${userId}`);
                 const data = await res.json();
@@ -150,13 +148,9 @@ const Payment = () => {
 
     if (!userData) return <div className="text-red-600 p-10 text-center font-montserrat uppercase">Loading user data...</div>;
 
-
- 
         const part1 = userData?.campSession?.split('|').map(p => p.trim()) || [];
         const part2 = userData?.activity?.split(',').map(p => p.trim()) || [];
     
-    
-        
         const location = part1[0] || '';
         const date = part1[1] || '';
         
@@ -168,17 +162,11 @@ const Payment = () => {
         
         const factivity1 = fpart1[0] || '';
         const factivity2 = fpart2[0] || '';
-
+    
         const hpart1 = userData?.activity?.split('|').map(p => p.trim()) || [];
         const hactivity = hpart1[0];
-        
-        
     
         const time = selectedCamp === "half" ? `${hpart1[1]}` : "09:00 AM - 04:00 PM";
-    
-
-  
-  
     
     return (
         <div className='min-h-screen w-full bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E] flex flex-col justify-center items-center gap-2 p-4'>
@@ -201,7 +189,6 @@ const Payment = () => {
                                 <div>
                                 <ul className='w-full flex flex-col gap-2 list-disc px-6'>
                                 <li className='font-semibold'> {hactivity}</li>
-                              
                               </ul>    
                                 </div>
                             ) : (
