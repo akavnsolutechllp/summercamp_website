@@ -178,7 +178,7 @@ const video = [
     id:"video6",
     src:video6
   }
-]
+];
 
   return (
     <div className='h-auto flex flex-col justify-center items-center'>
@@ -204,7 +204,6 @@ const video = [
             ))
             }
           </div>
-         
         </div>
     </div>
   )

@@ -87,7 +87,7 @@ const Programs = () => {
           <div className="h-[40%] w-full flex justify-center items-center z-20">
             <img src={inventor} alt="" className='w-[80%] lg:w-[62%] xl:w-[52%] 2xl:w-[40%]' />
           </div>
-          <h3 className="text-white bg-[#E31DB0] py-1 px-8 xl:px-12 2xl:px-2 border rounded-lg text-center text-lg xl:text-base  2xl:text-lg font-montserrat w-full z-20">
+          <h3 className="text-white bg-[#E31DB0] py-1 px-8 xl:px-12 2xl:px-2 border rounded-lg text-center text-lg xl:text-base 2xl:text-lg font-montserrat w-full z-20">
             Design Thinking & Problem-Solving
           </h3>
        
@@ -260,10 +260,10 @@ const Programs = () => {
                 </div>
                 </div>
 
-                
 
             </div>
         </div>
+
         <div className='h-auto md:w-[60%] w-[92%] lg:w-[50%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
             <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>When</h2>
             <h4 className='font-montserrat text-xl bg-white w-full text-center rounded-2xl'>Monday - Thursday</h4>
@@ -277,9 +277,8 @@ const Programs = () => {
                   <h4>01:00 - 04:00</h4>
                   </div>
             </div>
-            
-            
         </div>
+
         <div className='h-auto md:w-[60%] w-[92%] lg:w-[50%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4'>
             <h2 className='font-montserrat font-bold text-3xl text-[#16003E]'>Where</h2>
             
@@ -352,7 +351,9 @@ const Programs = () => {
             </div>
         </div>
         </div>
+
         <button onClick={handleRegister}  className='bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-4 xl:cursor-pointer'>Enroll Now</button>
+        
     </div>
   )
 }

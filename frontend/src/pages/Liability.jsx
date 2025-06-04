@@ -39,7 +39,7 @@ const Liability = () => {
 
   const [loading, setLoading] = useState(false);
 
-
+  
   const onSubmit = async (waiverData) => {
     setLoading(true);
     const fullForm = {
@@ -47,7 +47,7 @@ const Liability = () => {
       ...waiverData,
       signature
     };
-  
+    
     try {
       const res = await fetch('https://summercamp-website.onrender.com/api/user/complete-registration', {
         method: 'POST',
@@ -177,6 +177,7 @@ const Liability = () => {
               during the camp.
             </p>
           </div>
+          
           <div className="w-full h-auto flex flex-col justify-center items-start gap-2 my-2">
             <h1 className="font-bold font-montserrat">2. Medical Release</h1>
             <p>

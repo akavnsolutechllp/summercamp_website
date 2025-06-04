@@ -30,9 +30,7 @@ const AdminLogin = () => {
   return (
     <div className='bg-[#16003E] min-h-screen h-auto w-full flex flex-col justify-center items-center relative overflow-hidden'>
       <img src={logo} alt="" className=' absolute  bg-white rounded-full z-10 opacity-20'/>
-      <h2 className="font-montserrat uppercase text-3xl text-center tracking-wider md:text-7xl lg:text-4xl xl:text-5xl 2xl:text-6xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
-        Admin Login
-      </h2>
+      <h2 className="font-montserrat uppercase text-3xl text-center tracking-wider md:text-7xl lg:text-4xl xl:text-5xl 2xl:text-6xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke"> Admin Login </h2>
       {message && <p className="text-green-600 mb-2">{message}</p>}
       {error && <p className="text-red-600 mb-2">{error}</p>}
       <form onSubmit={handleLogin} className='bg-white p-2 w-[90%] lg:w-[50%] xl:w-[30%] 2xl:w-[20%] rounded-lg z-20'>

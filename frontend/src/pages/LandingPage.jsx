@@ -73,8 +73,8 @@ const LandingPage = () => {
             transition={{ duration: 1, delay: 1, stiffness: 80, type: spring }}
             className="font-montserrat uppercase text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] text-stroke p-1 rounded-2xl flex flex-col justify-center items-center text-5xl  tracking-wide mb-3 md:text-[16vw] lg:text-[6vw] xl:text-[6vw] 2xl:text-[6vw] text-center"
           >
-            <p className="">Spark Stem</p>
-            <p className="">Academy</p>
+            <p>Spark Stem</p>
+            <p>Academy</p>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -104,7 +104,7 @@ const LandingPage = () => {
               type: "spring",
               stiffness: 80,
             }}
-            className="bg-[#f79824] text-white border-2 font-montserrat text-xl py-3 px-6 mt-4 rounded-full shadow-md hover:shadow-[#FF0066] xl:hover:cursor-pointer transition-all duration-300"
+            className="bg-[#f79824]  text-white border-2 font-montserrat text-xl py-3 px-6 mt-4 rounded-full shadow-md hover:shadow-[#FF0066] xl:hover:cursor-pointer transition-all duration-300"
           >
             Enroll Now
           </motion.button>

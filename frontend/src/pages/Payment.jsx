@@ -172,7 +172,7 @@ const Payment = () => {
         <div className='min-h-screen w-full bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E] flex flex-col justify-center items-center gap-2 p-4'>
             <h2 className='font-montserrat uppercase text-5xl lg:text-6xl 2xl:text-7xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] -mt-4'>Checkout</h2>
             <div className='w-full md:w-[60%] xl:w-[40%] 2xl:w-[30%] bg-white p-6 rounded-xl shadow-lg'>
-                
+
                 <div className='space-y-4'>
                     <input type="text" value={userData.studentFirstName} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     <input type="text" value={userData.studentLastName} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
@@ -189,7 +189,7 @@ const Payment = () => {
                                 <div>
                                 <ul className='w-full flex flex-col gap-2 list-disc px-6'>
                                 <li className='font-semibold'> {hactivity}</li>
-                              </ul>    
+                                </ul>    
                                 </div>
                             ) : (
                                 <ul className='w-full flex flex-col gap-2 list-disc px-6'>

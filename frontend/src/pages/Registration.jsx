@@ -192,15 +192,17 @@ const isGSMST = selectedLocation === "GSMST";
 
             {/* Age */}
             <div className="w-full  flex flex-col justify-center items-start">
-              <label className="font-montserrat text-lg text-black">Age (7 - 13) </label>
+              <label className="font-montserrat text-lg text-black">
+                Age (7 - 13){" "}
+              </label>
               <input
                 type="number"
                 className="border w-full p-3 border-black/20 focus:outline-none"
                 {...register("age", {
                   required: "Age is required",
-                  min:{
-                    value:7,
-                    message:"Age must be 7 or above"
+                  min: {
+                    value: 7,
+                    message: "Age must be 7 or above",
                   },
                   max: {
                     value: 13,
@@ -270,123 +272,127 @@ const isGSMST = selectedLocation === "GSMST";
           {/* Camp & Location */}
           {/* Camp & Location */}
           <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-start gap-6">
-          
-          <div className="w-full flex flex-col justify-center items-start">
-  <label className="font-montserrat text-lg text-black">
-    Location & Date
-  </label>
-  <select
-    {...register("campSession", {
-      required: "Please select a session",
-    })}
-    className="border w-full p-3 border-black/20 focus:outline-none"
-  >
-    <option value="">-- Select a session --</option>
-    {campSchedules.map((camp, index) => {
-      const isGSMST = camp.location.trim().toLowerCase() === "gsmst";
-      return (
-        <option
-          key={index}
-          value={`${camp.location} | ${camp.date} | Morning: ${camp.morning}, Afternoon: ${camp.afternoon || "N/A"}`}
-          disabled={isGSMST}
-          className="text-sm"
-        >
-          {camp.location} – {camp.date} {isGSMST ? "(Sold Out)" : ""}
-        </option>
-      );
-    })}
-  </select>
+            <div className="w-full flex flex-col justify-center items-start">
+              <label className="font-montserrat text-lg text-black">
+                Location & Date
+              </label>
+              <select
+                {...register("campSession", {
+                  required: "Please select a session",
+                })}
+                className="border w-full p-3 border-black/20 focus:outline-none"
+              >
+                <option value="">-- Select a session --</option>
+                {campSchedules.map((camp, index) => {
+                  const isGSMST =
+                    camp.location.trim().toLowerCase() === "gsmst";
+                  return (
+                    <option
+                      key={index}
+                      value={`${camp.location} | ${camp.date} | Morning: ${
+                        camp.morning
+                      }, Afternoon: ${camp.afternoon || "N/A"}`}
+                      disabled={isGSMST}
+                      className="text-sm"
+                    >
+                      {camp.location} – {camp.date}{" "}
+                      {isGSMST ? "(Sold Out)" : ""}
+                    </option>
+                  );
+                })}
+              </select>
 
-  {errors.campSession && (
-    <span className="text-red-600 text-sm">
-      {errors.campSession.message}
-    </span>
-  )}
-</div>
+              {errors.campSession && (
+                <span className="text-red-600 text-sm">
+                  {errors.campSession.message}
+                </span>
+              )}
+            </div>
 
             <div className="w-full flex flex-col justify-center items-start">
-  <label className="font-montserrat text-lg text-black">
-    Time
-  </label>
-  <select
-    className="border w-full p-3 border-black/20 focus:outline-none"
-    {...register("camp", {
-      required: "Camp selection is required",
-    })}
-  >
-    <option value="">Select Time</option>
+              <label className="font-montserrat text-lg text-black">Time</label>
+              <select
+                className="border w-full p-3 border-black/20 focus:outline-none"
+                {...register("camp", {
+                  required: "Camp selection is required",
+                })}
+              >
+                <option value="">Select Time</option>
 
-    {/* Show only Half Day for that session */}
-    {isHalfDayOnly ? (
-      <option value="half">Half Day (9am - 12pm)</option>
-    ) : (
-      <>
-        <option value="full">Full Day (9am - 4pm)</option>
-        <option value="half">Half Day (9am - 12pm OR 1pm - 4pm)</option>
-      </>
-    )}
-  </select>
+                {/* Show only Half Day for that session */}
+                {isHalfDayOnly ? (
+                  <option value="half">Half Day (9am - 12pm)</option>
+                ) : (
+                  <>
+                    <option value="full">Full Day (9am - 4pm)</option>
+                    <option value="half">
+                      Half Day (9am - 12pm OR 1pm - 4pm)
+                    </option>
+                  </>
+                )}
+              </select>
 
-  {errors.camp && (
-    <span className="text-red-600 text-sm">
-      {errors.camp.message}
-    </span>
-  )}
-          </div>
-   
+              {errors.camp && (
+                <span className="text-red-600 text-sm">
+                  {errors.camp.message}
+                </span>
+              )}
+            </div>
           </div>
           {selectedSession && (
-  <div className="w-full flex flex-col justify-center items-start">
-    <label className="font-montserrat text-lg text-black">
-       Activity
-    </label>
-    <select
-      {...register("activity", {
-        required: "Please select an activity",
-      })}
-      className="border w-full p-3 border-black/20 focus:outline-none"
-    >
-      <option value="">-- Choose Activity --</option>
+            <div className="w-full flex flex-col justify-center items-start">
+              <label className="font-montserrat text-lg text-black">
+                Activity
+              </label>
+              <select
+                {...register("activity", {
+                  required: "Please select an activity",
+                })}
+                className="border w-full p-3 border-black/20 focus:outline-none"
+              >
+                <option value="">-- Choose Activity --</option>
 
-      {/* FULL DAY: Show both morning and afternoon */}
-      {campSelection === "full" && selectedSchedule && (
-        <option
-          value={`${selectedSchedule.morning}, ${selectedSchedule.afternoon}`}
-        >
-          {selectedSchedule.morning} & {selectedSchedule.afternoon}
-        </option>
-      )}
+                {/* FULL DAY: Show both morning and afternoon */}
+                {campSelection === "full" && selectedSchedule && (
+                  <option
+                    value={`${selectedSchedule.morning}, ${selectedSchedule.afternoon}`}
+                  >
+                    {selectedSchedule.morning} & {selectedSchedule.afternoon}
+                  </option>
+                )}
 
-      {/* HALF DAY: Special condition - only show morning for this specific session */}
-      {campSelection === "half" && selectedSchedule && (
-        <>
-          {isHalfDayOnly ? (
-            <option value={selectedSchedule.morning}>
-              {selectedSchedule.morning}
-            </option>
-          ) : (
-            <>
-              {selectedSchedule.morning && (
-                <option value={selectedSchedule.morning}>
-                  {selectedSchedule.morning}
-                </option>
+                {/* HALF DAY: Special condition - only show morning for this specific session */}
+                {campSelection === "half" && selectedSchedule && (
+                  <>
+                    {isHalfDayOnly ? (
+                      <option value={selectedSchedule.morning}>
+                        {selectedSchedule.morning}
+                      </option>
+                    ) : (
+                      <>
+                        {selectedSchedule.morning && (
+                          <option value={selectedSchedule.morning}>
+                            {selectedSchedule.morning}
+                          </option>
+                        )}
+                        {selectedSchedule.afternoon && (
+                          <option value={selectedSchedule.afternoon}>
+                            {selectedSchedule.afternoon}
+                          </option>
+                        )}
+                      </>
+                    )}
+                  </>
+                )}
+              </select>
+
+              {errors.activity && (
+                <span className="text-red-600 text-sm">
+                  {errors.activity.message}
+                </span>
               )}
-              {selectedSchedule.afternoon && (
-                <option value={selectedSchedule.afternoon}>
-                  {selectedSchedule.afternoon}
-                </option>
-              )}
-            </>
+            </div>
           )}
-        </>
-      )}
-    </select>
-
-    {errors.activity && (
-      <span className="text-red-600 text-sm">{errors.activity.message}</span>
-    )}
-  </div>
-)}
 
           <div className="w-full flex justify-center items-center gap-2 mt-4">
             <button
@@ -396,7 +402,6 @@ const isGSMST = selectedLocation === "GSMST";
               Next
             </button>
           </div>
-          
         </form>
       </div>
     </div>

@@ -105,7 +105,6 @@ const AdminDashboard = () => {
     setTimeout(() => setIsExporting(false), 500);
   };
   
-
   const filteredRegistrations = registrations.filter((r) =>
     [
       r.camperName,
