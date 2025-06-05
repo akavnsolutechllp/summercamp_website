@@ -90,27 +90,23 @@ const Registration = () => {
     },
   ];
 
- 
-
-
   const campSelection = watch("camp"); // watch camp selection
   const selectedSession = watch("campSession");
   const selectedSchedule = campSchedules.find(
     (camp) =>
       selectedSession &&
       selectedSession.includes(camp.location) &&
-      selectedSession.includes(camp.date)
+      selectedSession.includes(camp.date),
   );
 
   const isHalfDayOnly =
-  selectedSession &&
-  selectedSession.includes("Sharon Forks Library") &&
-  selectedSession.includes("June 30 - July 3") &&
-  selectedSession.includes("Morning: Circuit Science | 9am - 12pm");
+    selectedSession &&
+    selectedSession.includes("Sharon Forks Library") &&
+    selectedSession.includes("June 30 - July 3") &&
+    selectedSession.includes("Morning: Circuit Science | 9am - 12pm");
 
-
-const selectedLocation = selectedSession?.split(" | ")[0]?.trim();
-const isGSMST = selectedLocation === "GSMST";
+  const selectedLocation = selectedSession?.split(" | ")[0]?.trim();
+  const isGSMST = selectedLocation === "GSMST";
 
   return (
     <div
@@ -139,6 +135,7 @@ const isGSMST = selectedLocation === "GSMST";
                   required: "First name is required",
                 })}
               />
+
               {errors.studentFirstName && (
                 <span className="text-red-600 text-sm">
                   {errors.studentFirstName.message}
@@ -156,6 +153,7 @@ const isGSMST = selectedLocation === "GSMST";
                   required: "Last name is required",
                 })}
               />
+
               {errors.studentLastName && (
                 <span className="text-red-600 text-sm">
                   {errors.studentLastName.message}
@@ -254,10 +252,12 @@ const isGSMST = selectedLocation === "GSMST";
                     value="boy"
                     {...register("gender", { required: "Gender is required" })}
                   />
+
                   <span className="font-montserrat">Boy</span>
                 </label>
                 <label className="flex items-center gap-2">
                   <input type="radio" value="girl" {...register("gender")} />
+
                   <span className="font-montserrat">Girl</span>
                 </label>
               </div>

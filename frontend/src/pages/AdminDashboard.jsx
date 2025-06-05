@@ -20,9 +20,12 @@ const AdminDashboard = () => {
     }
 
     try {
-      const res = await axios.get("https://summercamp-website.onrender.com/api/admin/registrations", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        "https://summercamp-website.onrender.com/api/admin/registrations",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
       setRegistrations(res.data);
     } catch (err) {
       console.error(err);
@@ -47,10 +50,10 @@ const AdminDashboard = () => {
 
   const total = registrations.filter((r) => r.invoice?.invoiceid).length;
   const boys = registrations.filter(
-    (r) => r.gender === "boy" && r.invoice?.invoiceid
+    (r) => r.gender === "boy" && r.invoice?.invoiceid,
   ).length;
   const girls = registrations.filter(
-    (r) => r.gender === "girl" && r.invoice?.invoiceid
+    (r) => r.gender === "girl" && r.invoice?.invoiceid,
   ).length;
 
   const locationCounts = registrations.reduce((acc, r) => {
@@ -75,7 +78,7 @@ const AdminDashboard = () => {
       "Activity",
       "Payment",
     ];
-  
+
     const rows = filteredRegistrations.map((r) => [
       r.camperName,
       r.email,
@@ -89,11 +92,14 @@ const AdminDashboard = () => {
       r.activity,
       r.invoice?.invoiceid ? "Success" : "Not Paid",
     ]);
-  
+
     const csvContent =
       "data:text/csv;charset=utf-8," +
-      [headers.join(","), ...rows.map((row) => row.map((cell) => `"${cell}"`).join(","))].join("\n");
-  
+      [
+        headers.join(","),
+        ...rows.map((row) => row.map((cell) => `"${cell}"`).join(",")),
+      ].join("\n");
+
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
@@ -101,10 +107,10 @@ const AdminDashboard = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  
+
     setTimeout(() => setIsExporting(false), 500);
   };
-  
+
   const filteredRegistrations = registrations.filter((r) =>
     [
       r.camperName,
@@ -120,7 +126,7 @@ const AdminDashboard = () => {
     ]
       .join(" ")
       .toLowerCase()
-      .includes(searchTerm.toLowerCase())
+      .includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -166,12 +172,12 @@ const AdminDashboard = () => {
       {/* Stat Cards */}
       <div className="w-full lg:w-[70%] flex flex-col lg:flex-row justify-center items-center gap-4 my-6">
         <StatCard title="Total Registrations" count={total} />
+
         <StatCard title="Total Boys" count={boys} />
         <StatCard title="Total Girls" count={girls} />
       </div>
 
       {/* Summary Sections */}
-      
 
       {/* Search */}
       <div className="w-full lg:w-[70%] mt-4">
@@ -203,42 +209,41 @@ const AdminDashboard = () => {
             </tr>
           </thead>
           <tbody>
-  {filteredRegistrations.length === 0 ? (
-    <tr>
-      <td colSpan="11" className="text-center text-white py-4">
-        No data available.
-      </td>
-    </tr>
-  ) : (
-    filteredRegistrations.map((r, i) => (
-      <tr
-        key={i}
-        className={`border-t border-white/30 text-xs ${
-          !r.invoice?.invoiceid ? "bg-white/10" : ""
-        }`}
-      >
-        <td className="p-2">{r.camperName}</td>
-        <td className="p-2">{r.email}</td>
-        <td className="p-2">{r.invoice?.invoiceid}</td>
-        <td className="p-2">{r.phone}</td>
-        <td className="p-2">{r.gender}</td>
-        <td className="p-2">{r.age}</td>
-        <td className="p-2">{r.camp}</td>
-        <td className="p-2">{r.campSession?.split(" | ")[0]}</td>
-        <td className="p-2">{r.campSession?.split(" | ")[1]}</td>
-        <td className="p-2">{r.activity}</td>
-        <td className="p-2">
-          {r.invoice?.invoiceid ? (
-            <span className="text-green-400 font-bold">Success</span>
-          ) : (
-            <span className="text-red-400 font-bold">Not Paid</span>
-          )}
-        </td>
-      </tr>
-    ))
-  )}
-</tbody>
-
+            {filteredRegistrations.length === 0 ? (
+              <tr>
+                <td colSpan="11" className="text-center text-white py-4">
+                  No data available.
+                </td>
+              </tr>
+            ) : (
+              filteredRegistrations.map((r, i) => (
+                <tr
+                  key={i}
+                  className={`border-t border-white/30 text-xs ${
+                    !r.invoice?.invoiceid ? "bg-white/10" : ""
+                  }`}
+                >
+                  <td className="p-2">{r.camperName}</td>
+                  <td className="p-2">{r.email}</td>
+                  <td className="p-2">{r.invoice?.invoiceid}</td>
+                  <td className="p-2">{r.phone}</td>
+                  <td className="p-2">{r.gender}</td>
+                  <td className="p-2">{r.age}</td>
+                  <td className="p-2">{r.camp}</td>
+                  <td className="p-2">{r.campSession?.split(" | ")[0]}</td>
+                  <td className="p-2">{r.campSession?.split(" | ")[1]}</td>
+                  <td className="p-2">{r.activity}</td>
+                  <td className="p-2">
+                    {r.invoice?.invoiceid ? (
+                      <span className="text-green-400 font-bold">Success</span>
+                    ) : (
+                      <span className="text-red-400 font-bold">Not Paid</span>
+                    )}
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
         </table>
       </div>
     </div>

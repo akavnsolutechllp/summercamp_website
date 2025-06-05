@@ -14,7 +14,7 @@ const SuccessPayment = () => {
 
     if (!paymentStatus) {
       alert("Please complete payment first!");
-     // Redirect to homepage if not paid
+      // Redirect to homepage if not paid
     } else {
       // Set a 3-minute (180000 ms) timer to reset payment status and redirect
       const timeout = setTimeout(() => {
@@ -61,7 +61,8 @@ const SuccessPayment = () => {
           Thank you for registering.
         </p>
         <p className="text-white font-montserrat">
-          A confirmation email with your invoice has been sent to your email address.
+          A confirmation email with your invoice has been sent to your email
+          address.
         </p>
         <button
           className="bg-[#FF0066] p-3 rounded-full text-white font-montserrat mt-4 xl:cursor-pointer xl:hover:scale-105 transition-transform ease-in-out"

@@ -1,42 +1,48 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AdminRegister = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/admin/register', { email, password });
+      const res = await axios.post("http://localhost:4000/api/admin/register", {
+        email,
+        password,
+      });
       setMessage(res.data.message);
-      setError('');
+      setError("");
 
       // Optionally: save token if backend returns one
       // localStorage.setItem("token", res.data.token);
 
       // Navigate to dashboard
       setTimeout(() => {
-        navigate('/admin-dashboard');
+        navigate("/admin-dashboard");
       }, 1000);
     } catch (err) {
-      setMessage('');
-      setError(err.response?.data?.message || 'Registration failed');
+      setMessage("");
+      setError(err.response?.data?.message || "Registration failed");
     }
   };
 
   return (
-    <div className='bg-gradient-to-b from-[#283353] via-[#283353] to-[#16003E] min-h-screen h-auto w-full flex flex-col justify-center items-center overflow-hidden'>
+    <div className="bg-gradient-to-b from-[#283353] via-[#283353] to-[#16003E] min-h-screen h-auto w-full flex flex-col justify-center items-center overflow-hidden">
       <h2 className="font-montserrat uppercase text-5xl text-center tracking-wider md:text-7xl lg:text-4xl xl:text-5xl 2xl:text-6xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Admin
       </h2>
       {message && <p className="text-green-600 mb-2">{message}</p>}
       {error && <p className="text-red-600 mb-2">{error}</p>}
-      <form onSubmit={handleRegister} className='bg-white p-2 w-[90%] lg:w-[50%] xl:w-[30%] 2xl:w-[20%] rounded-lg'>
+      <form
+        onSubmit={handleRegister}
+        className="bg-white p-2 w-[90%] lg:w-[50%] xl:w-[30%] 2xl:w-[20%] rounded-lg"
+      >
         <input
           type="email"
           placeholder="Email"
@@ -45,6 +51,7 @@ const AdminRegister = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+
         <input
           type="password"
           placeholder="Password"
@@ -53,7 +60,11 @@ const AdminRegister = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="w-full bg-[#f79824] text-white p-2 rounded font-montserrat">
+
+        <button
+          type="submit"
+          className="w-full bg-[#f79824] text-white p-2 rounded font-montserrat"
+        >
           Register
         </button>
       </form>

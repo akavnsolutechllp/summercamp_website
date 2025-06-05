@@ -6,8 +6,6 @@ import Menu from "../Components/Menu";
 const FailedPayment = () => {
   const navigate = useNavigate();
 
-  
-
   return (
     <div className="h-full w-full flex flex-col justify-center items-center bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E]">
       <Navbar />
@@ -19,7 +17,7 @@ const FailedPayment = () => {
         <p className="mt-4 text-lg font-montserrat text-white">
           Try Again for Registration.
         </p>
-        
+
         <button
           className="bg-[#FF0066] p-3 rounded-full text-white font-montserrat mt-4 xl:cursor-pointer xl:hover:scale-105 transition-transform ease-in-out"
           onClick={() => navigate("/")}
