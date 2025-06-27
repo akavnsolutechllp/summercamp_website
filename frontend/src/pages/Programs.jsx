@@ -217,7 +217,10 @@ const Programs = () => {
                  </div>
                  </div> */}
 
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl">
+          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+          <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
+              Sold Out
+            </h2>
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
               📍North Gwinnett High School
             </h1>
@@ -293,7 +296,10 @@ const Programs = () => {
                   </div>
                  </div>
                  </div> */}
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl">
+          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+          <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
+              Sold Out
+            </h2>
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
               📍Sharon Forks Library
             </h1>
@@ -310,7 +316,10 @@ const Programs = () => {
             </div>
           </div>
 
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl">
+          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+          <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
+              Sold Out
+            </h2>
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
               📍North Gwinnett High School
             </h1>
@@ -322,13 +331,13 @@ const Programs = () => {
                 <h3 className=" bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]">
                   9AM - 12PM
                 </h3>
-                <h4 className=" p-1 text-white">STEM Builders</h4>
+                <h4 className=" p-1 text-white">Inventor’s Workshop</h4>
               </div>
               <div className=" h-auto flex justify-center items-center">
                 <h3 className=" bg-[#FF0066] text-white p-1 rounded min-w-[30vw] md:min-w-[14vw] xl:min-w-[10vw] 2xl:min-w-[6vw]">
                   1PM – 4PM
                 </h3>
-                <h4 className=" p-1 text-white">Mini Makers</h4>
+                <h4 className=" p-1 text-white">Circuit Science</h4>
               </div>
             </div>
           </div>

@@ -292,11 +292,11 @@ const Registration = () => {
                       value={`${camp.location} | ${camp.date} | Morning: ${
                         camp.morning
                       }, Afternoon: ${camp.afternoon || "N/A"}`}
-                      disabled={isGSMST}
+                      disabled
                       className="text-sm"
                     >
                       {camp.location} – {camp.date}{" "}
-                      {isGSMST ? "(Sold Out)" : ""}
+                      {"(Sold Out)"}
                     </option>
                   );
                 })}

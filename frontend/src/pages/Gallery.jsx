@@ -208,7 +208,7 @@ const Gallery = () => {
               key={item.id}
               className="relative min-h-[50vh] 2xl:min-h-[44vh] w-full rounded-lg overflow-hidden "
             >
-              <Zoom>
+              <Zoom classDialog="">
                 <video
                   src={item.src}
                   alt={item.id}
