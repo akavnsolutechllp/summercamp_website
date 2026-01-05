@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import logo from '../assets/logo.png';
@@ -23,10 +24,10 @@ const About = () => {
   return (
     <div id='about' className='min-h-screen h-auto w-full bg-gradient-to-b from-[#16003E] via-[#16003E] to-[#283253] flex flex-col md:flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12 py-10 px-4 lg:mt-0 relative mb-0'>
       <div className='w-full lg:w-[30%] xl:w-full flex justify-center items-center'>
-        <img src={logo} alt="" className='w-full md:w-[40% lg:w-[60%] xl:w-1/2 2xl:w-1/2 bg-white rounded-full' />
+        <img src={logo} alt="sparkstemlogo" fetchPriority='high' className='w-full md:w-[40%] lg:w-[30%]  bg-white rounded-full' />
       </div>
       <div className='h-auto w-full lg:w-[70%] xl:w-full lg:text-xl flex flex-col justify-center items-start md:items-center lg:items-start xl:items-start gap-4 lg:px-8 z-20'>
-      <h2 className='font-montserrat uppercase w-full 2xl:w-auto text-center lg:text-start text-5xl md:text-7xl lg:text-7xl xl:text-7xl 2xl:text-9xl text-[#E31DB0] text-stroke drop-shadow-md drop-shadow-[#EE5073]'>About Us</h2>
+      <h2 className='font-montserrat uppercase w-full 2xl:w-auto text-center lg:text-start text-5xl md:text-7xl lg:text-7xl text-[#E31DB0] text-stroke drop-shadow-md drop-shadow-[#EE5073]'>About Us</h2>
         <p className='font-montserrat lg:text-lg xl:text-sm tracking-wide text-white font-bold'>Welcome to Spark STEM Academy!</p>
         <p className='font-montserrat font-light lg:text-lg xl:text-sm tracking-wide text-white text-justify md:w-[80%] lg:w-full' >At Spark STEM Academy, we’re on a mission to spark curiosity and inspire the next generation of innovators through hands on experiences in Science, Technology, Engineering, and Math.</p>
         <p className='font-montserrat lg:text-lg xl:text-sm tracking-wide text-white text-justify md:w-[80%] lg:w-full' >Founded by <span className='font-bold'>Dhruchita Patel</span>, a seasoned engineer and educator with over 20 years of industry experience, and <span className='font-bold'>Tanay Patel</span>, a passionate young innovator and a senior at the Gwinnett School of Mathematics, Science, and Technology—our academy brings together real world expertise and a student’s perspective on modern learning.</p>
@@ -42,7 +43,7 @@ const About = () => {
       </a>
       <img src={vect1} alt="" className='hidden xl:block xl:w-[14%] 2xl:w-[10%]  absolute opacity-90 left-[2%] top-[12%]'  />
       <img src={vect2} alt="" className='hidden xl:block xl:w-[14%] 2xl:w-[10%]  absolute opacity-90 top-[60%] left-[36%]'  />
-      <img src={vect3} alt="" className='hidden xl:block xl:w-[14%] 2xl:w-[10%]  absolute opacity-90 top-[10%] left-[30%] top-8'  />
+      <img src={vect3} alt="" className='hidden xl:block xl:w-[14%] 2xl:w-[10%]  absolute opacity-90 top-[10%] left-[30%]'  />
     </div>
   )
 }
