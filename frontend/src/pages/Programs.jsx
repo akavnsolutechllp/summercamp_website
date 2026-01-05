@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
@@ -46,7 +47,7 @@ const Programs = () => {
     <div className="min-h-screen h-auto w-full bg-[#16003E] flex flex-col justify-start items-center pb-6">
       <Navbar />
       <Menu />
-      <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+      <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-7xl p-2 rounded-lg text-[#E31DB0] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
         Programs
       </h2>
       <motion.div className="w-full md:w-[60%] lg:w-[80%] xl:w-[76%] 2xl:w-[62%] h-auto flex flex-col justify-start items-center md:grid md:grid-cols-1 lg:grid lg:grid-cols-2 md:gap-8 lg:gap-6 xl:gap-8 gap-4 px-4 py-4 z-10">
@@ -56,7 +57,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
-          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[60vh]  bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             STEM Builders
@@ -86,7 +87,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
-          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[60vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Inventor’s Workshop
@@ -117,7 +118,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
-          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[60vh] bg-white/5 border-2 border-[#E31DB0]  flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Circuit Science
@@ -147,7 +148,7 @@ const Programs = () => {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
-          className="h-auto w-full min-h-[16vh] lg:h-[86vh] xl:h-[66vh] 2xl:h-[50vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
+          className="h-auto w-full min-h-[16vh] lg:h-[60vh] bg-white/5 border-2 border-[#F79824] flex flex-col justify-around items-center rounded-2xl gap-3 p-4 md:p-4 relative overflow-hidden"
         >
           <h1 className="font-montserrat text-2xl md:text-6xl lg:text-3xl xl:text-2xl 2xl:text-3xl text-white w-full z-20">
             Mini Makers
@@ -172,11 +173,13 @@ const Programs = () => {
         </motion.div>
       </motion.div>
       <div className="h-auto w-full flex flex-col justify-center items-center gap-2 mt-4 2xl:mt-12">
-        <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        <h2 className="font-montserrat uppercase text-5xl md:text-7xl lg:text-7xl  p-2 rounded-lg text-white drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
           Locations
         </h2>
+        
         <div className="h-auto w-full md:w-[60%] lg:w-[80%] xl:w-[74%] 2xl:w-[70%] flex flex-col lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-2 2xl:grid 2xl:grid-cols-2  justify-center items-start font-montserrat p-4 rounded-lg z-10 gap-8">
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl relative">
+          {/* location 1 */}
+          {/* <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-2 rounded-xl relative">
             <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
               Sold Out
             </h2>
@@ -200,7 +203,7 @@ const Programs = () => {
                 <h4 className=" p-1 text-white">Circuit Science</h4>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                  <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School </h1>
@@ -217,7 +220,8 @@ const Programs = () => {
                  </div>
                  </div> */}
 
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+            {/* Location 2 */}
+          {/* <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
           <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
               Sold Out
             </h2>
@@ -241,7 +245,7 @@ const Programs = () => {
                 <h4 className=" p-1 text-white">Circuit Science</h4>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                  <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Alpharetta High School</h1>
@@ -258,7 +262,8 @@ const Programs = () => {
                  </div>
                  </div> */}
 
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+            {/* location 3 */}
+          {/* <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
             <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
               Sold Out
             </h2>
@@ -280,7 +285,7 @@ const Programs = () => {
                 <h4 className=" p-1 text-white">Circuit Science</h4>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className='w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl'>
                  <h1 className='text-2xl mb-3 text-black 2xl:text-white'>📍Northview High School</h1>
@@ -296,7 +301,9 @@ const Programs = () => {
                   </div>
                  </div>
                  </div> */}
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+
+          {/* location 4 */}
+          {/* <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
           <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
               Sold Out
             </h2>
@@ -314,9 +321,10 @@ const Programs = () => {
                 <h4 className=" p-1 text-white">Circuit Science</h4>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+            {/* location 5 */}
+          {/* <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
           <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
               Sold Out
             </h2>
@@ -340,22 +348,67 @@ const Programs = () => {
                 <h4 className=" p-1 text-white">Circuit Science</h4>
               </div>
             </div>
+          </div> */}
+
+          {/* new location 1 */}
+          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+          {/* <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
+              Sold Out
+            </h2> */}
+            <h1 className="text-xl mb-3 text-black 2xl:text-white">
+              📍Sharon Forks Library
+            </h1>
+            <h3 className="text-2xl font-light px-2 2xl:text-[#FFB202]">
+              17th January
+            </h3>
+            <div className="mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2">
+              <div className=" h-auto flex justify-center items-center gap-2">
+                <h3 className=" bg-[#FF0066] text-white p-1 rounded min-w-[34vw] md:min-w-[14vw] lg:min-w-[8vw] text-center">
+                  1PM - 4PM
+                </h3>
+                <h4 className=" p-1 text-white">STEM Workshop</h4>
+              </div>
+            </div>
+          </div>
+          {/* new Location 2 */}
+          <div className="w-full h-auto flex flex-col justify-center items-start bg-white 2xl:bg-[#16003E] border border-white p-2 gap-3 rounded-xl relative">
+          {/* <h2 className="bg-red-500 text-white px-4 py-2 absolute right-2 top-4">
+              Sold Out
+            </h2> */}
+            <h1 className="text-xl mb-3 text-black 2xl:text-white">
+              📍Suwanee Library, Suwanee
+            </h1>
+            <h3 className="text-2xl font-light px-2 2xl:text-[#FFB202]">
+              24th January
+            </h3>
+            <div className="mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2">
+              <div className=" h-auto flex justify-center items-center gap-2">
+                <h3 className=" bg-[#FF0066] text-white p-1 rounded min-w-[34vw] md:min-w-[14vw] lg:min-w-[8vw] text-center">
+                  1PM - 4PM
+                </h3>
+                <h4 className=" p-1 text-white">STEM Workshop</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
+      
+      {/* when div */}
       <div className="h-auto md:w-[60%] w-[92%] lg:w-[50%] xl:w-[40%] flex flex-col justify-start items-center bg-[#FFB202] rounded-3xl px-4 py-2 gap-2 relative mt-4 mb-4">
         <h2 className="font-montserrat font-bold text-3xl text-[#16003E]">
           When
         </h2>
-        <h4 className="font-montserrat text-xl bg-white w-full text-center rounded-2xl">
+        {/* <h4 className="font-montserrat text-xl bg-white w-full text-center rounded-2xl">
           Monday - Thursday
+        </h4> */}
+        <h4 className="font-montserrat text-xl bg-white w-full text-center rounded-2xl">
+          January 17th & 24th
         </h4>
         <div className="w-full h-auto flex justify-center items-center gap-2 relative">
-          <div className="min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex  flex-col justify-center items-center font-montserrat text-lg font-medium">
+          {/* <div className="min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex  flex-col justify-center items-center font-montserrat text-lg font-medium">
             <h1>Morning</h1>
             <h4>09:00 - 12:00</h4>
-          </div>
+          </div> */}
           <div className="min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex flex-col justify-center items-center font-montserrat text-lg font-medium">
             <h1>Afternoon</h1>
             <h4>01:00 - 04:00</h4>
@@ -369,7 +422,8 @@ const Programs = () => {
         </h2>
 
         <div className="w-full bg-[#16003E] h-auto flex flex-col justify-center items-center xl:items-start px-2 py-4 rounded-xl border border-white gap-4 xl:gap-8 font-montserrat xl:text-lg">
-          <div className="w-full flex justify-center items-start gap-2 text-white border-b pb-3">
+          {/* location 1 */}
+          {/* <div className="w-full flex justify-center items-start gap-2 text-white border-b pb-3">
             <div className="text-xl">
               <GrLocationPin />
             </div>
@@ -378,7 +432,7 @@ const Programs = () => {
               <p>970 McElvaney Ln NW</p>
               <p>Lawrenceville, GA 30044</p>
             </div>
-          </div>
+          </div> */}
           {/* <div className='w-full flex justify-center items-start gap-2 text-white border-b pb-3'>
                  <div className='text-xl'>
                  <GrLocationPin />
@@ -389,7 +443,8 @@ const Programs = () => {
                     <p>Johns Creek GA 30097</p>
                  </div>
                  </div> */}
-          <div className="w-full flex justify-center items-start gap-2 text-white border-b pb-3">
+          {/* location2 */}
+          {/* <div className="w-full flex justify-center items-start gap-2 text-white border-b pb-3">
             <div className="text-xl">
               <GrLocationPin />
             </div>
@@ -398,7 +453,8 @@ const Programs = () => {
               <p>20 Level Creek Rd,</p>
               <p>Suwanee, GA 30024</p>
             </div>
-          </div>
+          </div> */}
+          {/* location 3 */}
           <div className="w-full flex justify-center items-start gap-2 text-white  pb-3">
             <div className="text-xl">
               <GrLocationPin />
@@ -430,19 +486,19 @@ const Programs = () => {
           <div className="flex flex-col justify-center items-center w-full p-2 gap-4 text-">
             <div className="w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white">
               <h1>Half Day</h1>
-              <h1>$230</h1>
+              <h1>$25</h1>
             </div>
-            <div className="w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white">
+            {/* <div className="w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white">
               <h1>Full Day</h1>
               <h1>$430</h1>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       <button
         onClick={handleRegister}
-        className="bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-4 xl:cursor-pointer"
+        className="bg-[#FF0066] px-4 py-2 text-white font-montserrat text-lg rounded-lg mt-4 lg:cursor-pointer lg:hover:scale-105 transition-all ease-in-out"
       >
         Enroll Now
       </button>
