@@ -137,7 +137,7 @@ const Registration = () => {
         </h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full md:w-[70%] lg:w-[70%] xl:w-[66%] 2xl:w-[50%] h-full flex flex-col justify-start items-center gap-2 bg-white drop-shadow-2xl p-4 rounded-xl"
+          className="w-full md:w-[70%] lg:w-[60%] h-full flex flex-col justify-start items-center gap-2 bg-white drop-shadow-2xl p-4 rounded-xl"
         >
           <div className="w-full h-auto flex flex-col lg:flex-row justify-center items-start gap-6">
             <div className="w-full flex flex-col justify-center items-start">
@@ -207,7 +207,7 @@ const Registration = () => {
             {/* Age */}
             <div className="w-full  flex flex-col justify-center items-start">
               <label className="font-montserrat text-lg text-black">
-                Age (7 - 13){" "}
+                Age (8 - 14){" "}
               </label>
               <input
                 type="number"
@@ -215,12 +215,12 @@ const Registration = () => {
                 {...register("age", {
                   required: "Age is required",
                   min: {
-                    value: 7,
-                    message: "Age must be 7 or above",
+                    value: 8,
+                    message: "Age must be 8 or above",
                   },
                   max: {
-                    value: 13,
-                    message: "Age must be 13 or below",
+                    value: 14,
+                    message: "Age must be 14 or below",
                   },
                 })}
               />
@@ -308,7 +308,7 @@ const Registration = () => {
                       value={`${camp.location} | ${camp.date} | Morning: ${
                         camp.morning
                       }, Afternoon: ${camp.afternoon || "N/A"}`}
-                     disabled
+                    disabled
                       className="text-sm"
                     >
                       {camp.location} – {camp.date}{" "}
