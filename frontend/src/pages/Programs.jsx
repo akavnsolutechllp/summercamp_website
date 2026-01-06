@@ -455,7 +455,7 @@ const Programs = () => {
             </div>
           </div> */}
           {/* location 3 */}
-          <div className="w-full flex justify-center items-start gap-2 text-white  pb-3">
+          <div className="w-full flex justify-center items-start gap-2 text-white border-b pb-3">
             <div className="text-xl">
               <GrLocationPin />
             </div>
@@ -463,6 +463,17 @@ const Programs = () => {
               <p>Sharon Forks Library</p>
               <p>2820 Old Atlanta Road,</p>
               <p>Cumming, GA, 30041.</p>
+            </div>
+          </div>
+          {/* new location */}
+          <div className="w-full flex justify-center items-start gap-2 text-white pb-3">
+            <div className="text-xl">
+              <GrLocationPin />
+            </div>
+            <div className="w-full flex flex-col justify-center items-start -mt-1">
+              <p>Suwanee Library</p>
+              <p>300 High Line Street,</p>
+              <p>Suwanee, GA 30024.</p>
             </div>
           </div>
           {/* <div className='w-full flex justify-center items-start gap-2 text-white '>
@@ -480,12 +491,12 @@ const Programs = () => {
 
       <div className="h-auto w-[92%] md:w-[60%] lg:w-[50%] xl:w-[40%] flex flex-col justify-center items-center bg-[#FFB202] rounded-3xl px-4 py-2 overflow-hidden relative mt-4">
         <h2 className="font-montserrat font-bold text-3xl text-[#16003E]">
-          Fees
+          Cost
         </h2>
         <div className="h-full w-full flex flex-col justify-center items-center gap-2 ">
           <div className="flex flex-col justify-center items-center w-full p-2 gap-4 text-">
             <div className="w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white">
-              <h1>Half Day</h1>
+              <h1>Workshop</h1>
               <h1>$25</h1>
             </div>
             {/* <div className="w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white">

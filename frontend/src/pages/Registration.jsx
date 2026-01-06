@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useFormData } from "../context/FormDataContext";
@@ -41,40 +42,54 @@ const Registration = () => {
   };
 
   const campSchedules = [
-    {
-      location: "GSMST",
-      date: "June 2 - June 5",
-      morning: "Inventor’s Workshop | 9am - 12pm",
-      afternoon: "Circuit Science | 1pm - 4pm",
-    },
+    //  old active 1
+    // {
+    //   location: "GSMST",
+    //   date: "June 2 - June 5",
+    //   morning: "Inventor’s Workshop | 9am - 12pm",
+    //   afternoon: "Circuit Science | 1pm - 4pm",
+    // },
     // {
     //   location: "Northview High School",
     //   date: "June 9 – June 12",
     //   morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
     //   afternoon: "Circuit Science | 01:00PM - 04:00PM",
     // },
-    {
-      location: "North Gwinnett High School",
-      date: "June 9 – June 12",
-      morning: "Inventor’s Workshop | 9am - 12pm",
-      afternoon: "Circuit Science | 1pm - 4pm",
-    },
+    //  old active 2
+    // {
+    //   location: "North Gwinnett High School",
+    //   date: "June 9 – June 12",
+    //   morning: "Inventor’s Workshop | 9am - 12pm",
+    //   afternoon: "Circuit Science | 1pm - 4pm",
+    // },
     // {
     //   location: "Alpharetta High School",
     //   date: "June 23 – June 26",
     //   morning: "Inventor’s Workshop | 09:00AM - 12:00PM",
     //   afternoon: "Circuit Science | 01:00PM - 04:00PM",
     // },
-    {
-      location: "GSMST",
-      date: "June 23 – June 26",
-      morning: "Inventor’s Workshop | 9am - 12pm",
-      afternoon: "Circuit Science | 1pm - 4pm",
-    },
+    //  old active 3
+    // {
+    //   location: "GSMST",
+    //   date: "June 23 – June 26",
+    //   morning: "Inventor’s Workshop | 9am - 12pm",
+    //   afternoon: "Circuit Science | 1pm - 4pm",
+    // },
+    //  old active 4
+    // {
+    //   location: "Sharon Forks Library ",
+    //   date: "June 30 - July 3",
+    //   morning: "Circuit Science | 9am - 12pm",
+    // },
     {
       location: "Sharon Forks Library ",
-      date: "June 30 - July 3",
-      morning: "Circuit Science | 9am - 12pm",
+      date: "January 17",
+      afternoon: "STEM Workshop | 1pm - 4pm",
+    },
+    {
+      location: "Suwanee Library, Suwanee",
+      date: "January 24",
+      afternoon: "STEM Workshop | 1pm - 4pm",
     },
     // {
     //   location: "Northview High School",
@@ -82,12 +97,13 @@ const Registration = () => {
     //   morning: "STEM Builders | 09:00AM - 12:00PM",
     //   afternoon: "Mini Makers | 01:00PM - 04:00PM",
     // },
-    {
-      location: "North Gwinnett High School",
-      date: "July 14 – July 17",
-      morning: "STEM Builders | 9am - 12pm",
-      afternoon: "Mini Makers | 1pm - 4pm",
-    },
+    //  old active 5
+    // {
+    //   location: "North Gwinnett High School",
+    //   date: "July 14 – July 17",
+    //   morning: "STEM Builders | 9am - 12pm",
+    //   afternoon: "Mini Makers | 1pm - 4pm",
+    // },
   ];
 
   const campSelection = watch("camp"); // watch camp selection
@@ -101,9 +117,9 @@ const Registration = () => {
 
   const isHalfDayOnly =
     selectedSession &&
-    selectedSession.includes("Sharon Forks Library") &&
-    selectedSession.includes("June 30 - July 3") &&
-    selectedSession.includes("Morning: Circuit Science | 9am - 12pm");
+    selectedSession.includes(`"Sharon Forks Library" || "Suwanee Library, Suwanee"`) &&
+    selectedSession.includes(`"January 17" || January 24`) &&
+    selectedSession.includes("Afternoon: STEM Workshop | 1pm - 4pm");
 
   const selectedLocation = selectedSession?.split(" | ")[0]?.trim();
   const isGSMST = selectedLocation === "GSMST";
@@ -116,7 +132,7 @@ const Registration = () => {
       <Navbar />
       <Menu />
       <div className="min-h-screen w-full flex flex-col justify-center items-center gap-4 p-4">
-        <h2 className="font-montserrat uppercase text-5xl text-center tracking-wider md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-9xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
+        <h2 className="font-montserrat uppercase text-5xl text-center tracking-wider md:text-7xl lg:text-7xl p-2 rounded-lg text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] z-20 text-stroke">
           Register Now
         </h2>
         <form
@@ -292,11 +308,11 @@ const Registration = () => {
                       value={`${camp.location} | ${camp.date} | Morning: ${
                         camp.morning
                       }, Afternoon: ${camp.afternoon || "N/A"}`}
-                      disabled
+                     disabled
                       className="text-sm"
                     >
                       {camp.location} – {camp.date}{" "}
-                      {"(Sold Out)"}
+                      
                     </option>
                   );
                 })}
@@ -318,10 +334,11 @@ const Registration = () => {
                 })}
               >
                 <option value="">Select Time</option>
+                <option value="half">Half Day (1pm - 4pm)</option>
 
                 {/* Show only Half Day for that session */}
-                {isHalfDayOnly ? (
-                  <option value="half">Half Day (9am - 12pm)</option>
+                {/* {isHalfDayOnly ? (
+                  <option value="half">Half Day (1pm - 4pm)</option>
                 ) : (
                   <>
                     <option value="full">Full Day (9am - 4pm)</option>
@@ -329,7 +346,7 @@ const Registration = () => {
                       Half Day (9am - 12pm OR 1pm - 4pm)
                     </option>
                   </>
-                )}
+                )} */}
               </select>
 
               {errors.camp && (
@@ -365,8 +382,8 @@ const Registration = () => {
                 {campSelection === "half" && selectedSchedule && (
                   <>
                     {isHalfDayOnly ? (
-                      <option value={selectedSchedule.morning}>
-                        {selectedSchedule.morning}
+                      <option value={selectedSchedule.afternoon}>
+                        {selectedSchedule.afternoon}
                       </option>
                     ) : (
                       <>
