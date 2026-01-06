@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { useFormData } from '../context/FormDataContext';
@@ -105,10 +106,10 @@ const Liability = () => {
                 required: "Date of Birth is required",
                 validate: (value) => {
                   const dob = new Date(value);
-                  const minDate = new Date("2011-06-01");
-                  const maxDate = new Date("2018-05-31");
+                  const minDate = new Date("2012-01-01");
+                  const maxDate = new Date("2018-12-31");
                   if (dob < minDate || dob > maxDate) {
-                    return "Child must be between 7 and 13 years old";
+                    return "Child must be between 8 and 14 years old";
                   }
                   return true;
                 },

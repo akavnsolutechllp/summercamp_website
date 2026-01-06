@@ -218,7 +218,6 @@ router.post("/send-invoice", async (req, res) => {
         
               <ul>
                 <li><strong>Student Name:</strong> ${firstName} ${lastName}</li>
-                <li><strong>Camp Type:</strong> ${campType === 'half' ? 'Half Day' : 'Full Day'}</li>
                 <li><strong>Date:</strong> ${campDate}</li>
                 <li><strong>Time:</strong> ${campType === 'half' ? time : ftime}</li>
                 <li><strong>Location:</strong> ${campLocation}</li>
@@ -291,7 +290,6 @@ router.post("/send-invoice", async (req, res) => {
 
     doc.fontSize(14).text('Camp Details', { underline: true }).moveDown(0.5);
     doc.fontSize(12)
-    .text(`Camp Type: ${campType}`).moveDown(0.2)
     .text(`Date: ${campDate}`).moveDown(0.2)
       .text(`Time: ${campType === 'half' ? `${time}` : '09:00 AM - 04:00 PM'}`).moveDown(0.2)
       .text(`Location: ${campLocation}`).moveDown(0.2)
