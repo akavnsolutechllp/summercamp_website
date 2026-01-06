@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
@@ -102,8 +103,8 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
 
 const Payment = () => {
     const [userData, setUserData] = useState(null);
-    const [baseAmount, setBaseAmount] = useState(420); // numeric base amount in dollars
-    const [amount, setAmount] = useState("420$");
+    const [baseAmount, setBaseAmount] = useState(25); // numeric base amount in dollars
+    const [amount, setAmount] = useState("25$");
     const [selectedCamp, setSelectedCamp] = useState("");
     const [selectedTiming, setSelectedTiming] = useState("");
 
@@ -135,8 +136,8 @@ const Payment = () => {
     }, []);
 
     useEffect(() => {
-        const newBase = selectedCamp === "half" ? 230 : 430;
-        const totalWithFee = Math.round(newBase * 1.03); // Add 3% fee
+        const newBase = selectedCamp === "half" ? 25 : 25;
+        const totalWithFee = Math.round(newBase); // Add 3% fee
         setBaseAmount(newBase);
         setAmount(`${totalWithFee}$`);
     }, [selectedCamp]);
@@ -170,8 +171,8 @@ const Payment = () => {
     
     return (
         <div className='min-h-screen w-full bg-gradient-to-b from-[#283353] via-[#16003E] to-[#16003E] flex flex-col justify-center items-center gap-2 p-4'>
-            <h2 className='font-montserrat uppercase text-5xl lg:text-6xl 2xl:text-7xl text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] -mt-4'>Checkout</h2>
-            <div className='w-full md:w-[60%] xl:w-[40%] 2xl:w-[30%] bg-white p-6 rounded-xl shadow-lg'>
+            <h2 className='font-montserrat uppercase text-5xl lg:text-6xl  text-[#f79824] drop-shadow-md drop-shadow-[#FF0066] -mt-4'>Checkout</h2>
+            <div className='w-full md:w-[60%] lg:w-[50%] bg-white p-6 rounded-xl shadow-lg'>
 
                 <div className='space-y-4'>
                     <input type="text" value={userData.studentFirstName} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
@@ -179,7 +180,7 @@ const Payment = () => {
                     <input type="email" value={userData.email} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     <input type="text" value={userData.phone} readOnly className='w-full font-montserrat p-3 border-b border-black/20 focus:outline-none' />
                     <div className='text-xl flex flex-col gap-2 justify-between'>
-                        <span >Camp Type: <span className='font-semibold'>{selectedCamp === "half" ? "Half Day" : "Full Day"}</span></span>
+                        {/* <span >Camp Type: <span className='font-semibold'>{selectedCamp === "half" ? "Half Day" : "Full Day"}</span></span> */}
                         <span >Date: <span className='font-semibold'>{date}</span></span>
                         <span>Time: <span className='font-semibold'>{time}</span></span>
                         <span >Location: <span className='font-semibold'>{location}</span> </span>
