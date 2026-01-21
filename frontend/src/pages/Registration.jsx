@@ -81,11 +81,11 @@ const Registration = () => {
     //   date: "June 30 - July 3",
     //   morning: "Circuit Science | 9am - 12pm",
     // },
-    {
-      location: "Sharon Forks Library ",
-      date: "January 17",
-      afternoon: "STEM Workshop | 1pm - 4pm",
-    },
+    // {
+    //   location: "Sharon Forks Library ",
+    //   date: "January 17",
+    //   afternoon: "STEM Workshop | 1pm - 4pm",
+    // },
     {
       location: "Blackstone Clubhouse",
       date: "January 24",
@@ -117,8 +117,8 @@ const Registration = () => {
 
   const isHalfDayOnly =
     selectedSession &&
-    selectedSession.includes(`"Sharon Forks Library" || "Blackstone Clubhouse"`) &&
-    selectedSession.includes(`"January 17" || January 24`) &&
+    selectedSession.includes("Blackstone Clubhouse") &&
+    selectedSession.includes("January 24") &&
     selectedSession.includes("Afternoon: STEM Workshop | 1pm - 4pm");
 
   const selectedLocation = selectedSession?.split(" | ")[0]?.trim();
