@@ -376,7 +376,7 @@ const Programs = () => {
               Sold Out
             </h2> */}
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
-              📍Suwanee Library, Suwanee
+              📍Blackstone Clubhouse
             </h1>
             <h3 className="text-2xl font-light px-2 2xl:text-[#FFB202]">
               24th January
@@ -471,8 +471,8 @@ const Programs = () => {
               <GrLocationPin />
             </div>
             <div className="w-full flex flex-col justify-center items-start -mt-1">
-              <p>Suwanee Library</p>
-              <p>300 High Line Street,</p>
+              <p>Blackstone Clubhouse</p>
+              <p>7905 Cavendish Pl,</p>
               <p>Suwanee, GA 30024.</p>
             </div>
           </div>
