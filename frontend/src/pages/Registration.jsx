@@ -87,7 +87,7 @@ const Registration = () => {
       afternoon: "STEM Workshop | 1pm - 4pm",
     },
     {
-      location: "Suwanee Library, Suwanee",
+      location: "Blackstone Clubhouse",
       date: "January 24",
       afternoon: "STEM Workshop | 1pm - 4pm",
     },
@@ -117,7 +117,7 @@ const Registration = () => {
 
   const isHalfDayOnly =
     selectedSession &&
-    selectedSession.includes(`"Sharon Forks Library" || "Suwanee Library, Suwanee"`) &&
+    selectedSession.includes(`"Sharon Forks Library" || "Blackstone Clubhouse"`) &&
     selectedSession.includes(`"January 17" || January 24`) &&
     selectedSession.includes("Afternoon: STEM Workshop | 1pm - 4pm");
 
