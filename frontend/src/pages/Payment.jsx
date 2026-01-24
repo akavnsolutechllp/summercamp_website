@@ -103,8 +103,8 @@ const CheckoutForm = ({ userData, amount ,selectedCamp, selectedTiming }) => {
 
 const Payment = () => {
     const [userData, setUserData] = useState(null);
-    const [baseAmount, setBaseAmount] = useState(25); // numeric base amount in dollars
-    const [amount, setAmount] = useState("25$");
+    const [baseAmount, setBaseAmount] = useState(40); // numeric base amount in dollars
+    const [amount, setAmount] = useState("40$");
     const [selectedCamp, setSelectedCamp] = useState("");
     const [selectedTiming, setSelectedTiming] = useState("");
 
@@ -136,7 +136,7 @@ const Payment = () => {
     }, []);
 
     useEffect(() => {
-        const newBase = selectedCamp === "half" ? 25 : 25;
+        const newBase = selectedCamp === "half" ? 40 : 40;
         const totalWithFee = Math.round(newBase); // Add 3% fee
         setBaseAmount(newBase);
         setAmount(`${totalWithFee}$`);
