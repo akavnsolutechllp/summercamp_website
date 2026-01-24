@@ -87,8 +87,13 @@ const Registration = () => {
     //   afternoon: "STEM Workshop | 1pm - 4pm",
     // },
     {
-      location: "Blackstone Clubhouse",
-      date: "January 24",
+      location: "George Pierce Park-Art Studio",
+      date: "February 7",
+      afternoon: "STEM Workshop | 1pm - 4pm",
+    },
+    {
+      location: "George Pierce Park-Art Studio",
+      date: "April 18",
       afternoon: "STEM Workshop | 1pm - 4pm",
     },
     // {
@@ -117,8 +122,8 @@ const Registration = () => {
 
   const isHalfDayOnly =
     selectedSession &&
-    selectedSession.includes("Blackstone Clubhouse") &&
-    selectedSession.includes("January 24") &&
+    selectedSession.includes("George Pierce Park-Art Studio") &&
+    selectedSession.includes(`"February 7" || "April 18"`) &&
     selectedSession.includes("Afternoon: STEM Workshop | 1pm - 4pm");
 
   const selectedLocation = selectedSession?.split(" | ")[0]?.trim();

@@ -137,7 +137,7 @@ const Programs = () => {
           <h4 className=" bg-white text-black p-1 border rounded-lg text-center  text-sm">
             Turn curiosity into circuitry! Campers will learn the basics of
             electricity by building light-up signs, touch-activated devices, and
-            buzzer games — all using safe, hands-on materials. Every child takes
+            buzzer games all using safe, hands-on materials. Every child takes
             home their own buzzing creation!
           </h4>
         </motion.div>
@@ -166,7 +166,7 @@ const Programs = () => {
 
           <h4 className="bg-white text-black p-1 border rounded-lg text-center  text-sm">
             Where creativity meets engineering! Campers build scribble bots,
-            race balloon-powered cars, and design musical machines — all while
+            race balloon-powered cars, and design musical machines all while
             learning about motion, sound, and science. Every project goes home,
             and every child leaves as a proud Maker.
           </h4>
@@ -356,10 +356,10 @@ const Programs = () => {
               Sold Out
             </h2> */}
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
-              📍Sharon Forks Library
+              📍George Pierce Park-Art Studio
             </h1>
             <h3 className="text-2xl font-light px-2 2xl:text-[#FFB202]">
-              17th January
+              7th February
             </h3>
             <div className="mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2">
               <div className=" h-auto flex justify-center items-center gap-2">
@@ -376,10 +376,10 @@ const Programs = () => {
               Sold Out
             </h2> */}
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
-              📍Blackstone Clubhouse
+              📍George Pierce Park-Art Studio
             </h1>
             <h3 className="text-2xl font-light px-2 2xl:text-[#FFB202]">
-              24th January
+              18th April
             </h3>
             <div className="mb-4 w-full flex flex-col justify-center items-start px-2 bg-[#16003E] shadow-lg p-2 rounded-xl text-lg gap-2">
               <div className=" h-auto flex justify-center items-center gap-2">
@@ -402,7 +402,7 @@ const Programs = () => {
           Monday - Thursday
         </h4> */}
         <h4 className="font-montserrat text-xl bg-white w-full text-center rounded-2xl">
-          January 17th & 24th
+           7th February & 18th April
         </h4>
         <div className="w-full h-auto flex justify-center items-center gap-2 relative">
           {/* <div className="min-h-[10vh] w-full bg-[#16003E] text-white border border-white rounded-xl flex  flex-col justify-center items-center font-montserrat text-lg font-medium">
@@ -455,7 +455,7 @@ const Programs = () => {
             </div>
           </div> */}
           {/* location 3 */}
-          <div className="w-full flex justify-center items-start gap-2 text-white border-b pb-3">
+          {/* <div className="w-full flex justify-center items-start gap-2 text-white border-b pb-3">
             <div className="text-xl">
               <GrLocationPin />
             </div>
@@ -464,15 +464,15 @@ const Programs = () => {
               <p>2820 Old Atlanta Road,</p>
               <p>Cumming, GA, 30041.</p>
             </div>
-          </div>
+          </div> */}
           {/* new location */}
           <div className="w-full flex justify-center items-start gap-2 text-white pb-3">
             <div className="text-xl">
               <GrLocationPin />
             </div>
             <div className="w-full flex flex-col justify-center items-start -mt-1">
-              <p>Blackstone Clubhouse</p>
-              <p>7905 Cavendish Pl,</p>
+              <p>George Pierce Park-Art Studio</p>
+              <p>55 Buford Hwy NE,</p>
               <p>Suwanee, GA 30024.</p>
             </div>
           </div>
@@ -497,7 +497,7 @@ const Programs = () => {
           <div className="flex flex-col justify-center items-center w-full p-2 gap-4 text-">
             <div className="w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white">
               <h1>Workshop</h1>
-              <h1>$25</h1>
+              <h1>$40</h1>
             </div>
             {/* <div className="w-full flex justify-between items-center p-2 font-montserrat rounded-lg text-2xl bg-[#16003E] border border-white text-white">
               <h1>Full Day</h1>
