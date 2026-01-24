@@ -356,7 +356,7 @@ const Programs = () => {
               Sold Out
             </h2> */}
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
-              📍George Pierce Park-Art Studio
+              📍George Pierce Park
             </h1>
             <h3 className="text-2xl font-light px-2 2xl:text-[#FFB202]">
               7th February
@@ -376,7 +376,7 @@ const Programs = () => {
               Sold Out
             </h2> */}
             <h1 className="text-xl mb-3 text-black 2xl:text-white">
-              📍George Pierce Park-Art Studio
+              📍George Pierce Park
             </h1>
             <h3 className="text-2xl font-light px-2 2xl:text-[#FFB202]">
               18th April
@@ -471,7 +471,8 @@ const Programs = () => {
               <GrLocationPin />
             </div>
             <div className="w-full flex flex-col justify-center items-start -mt-1">
-              <p>George Pierce Park-Art Studio</p>
+              <p>George Pierce Park</p>
+              <p>Community Recreation Center Art Studio </p>
               <p>55 Buford Hwy NE,</p>
               <p>Suwanee, GA 30024.</p>
             </div>
@@ -491,7 +492,7 @@ const Programs = () => {
 
       <div className="h-auto w-[92%] md:w-[60%] lg:w-[50%] xl:w-[40%] flex flex-col justify-center items-center bg-[#FFB202] rounded-3xl px-4 py-2 overflow-hidden relative mt-4">
         <h2 className="font-montserrat font-bold text-3xl text-[#16003E]">
-          Cost
+          Fees
         </h2>
         <div className="h-full w-full flex flex-col justify-center items-center gap-2 ">
           <div className="flex flex-col justify-center items-center w-full p-2 gap-4 text-">
